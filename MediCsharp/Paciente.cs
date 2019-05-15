@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace MediCsharp
 {
     public enum Sexo { Femenino, Masculino }
+    
     public class Paciente
     {
         public string CIPaciente { get; set; }
@@ -35,7 +36,7 @@ namespace MediCsharp
         }
         public override string ToString()
         {
-            return this.NombrePaciente;
+            return this.NombrePaciente+ " " + ApellidoPaciente;
         }
 
 

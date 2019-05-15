@@ -302,6 +302,7 @@
             // 
             // lstPaciente
             // 
+            this.lstPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstPaciente.FormattingEnabled = true;
             this.lstPaciente.Location = new System.Drawing.Point(107, 57);
             this.lstPaciente.Name = "lstPaciente";
@@ -328,6 +329,7 @@
             this.Name = "frmPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "..:Paciente:..";
+            this.Load += new System.EventHandler(this.frmPaciente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
