@@ -20,15 +20,109 @@ namespace InterfazMediCsharp
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Paciente pac = new Paciente();
-            pac.CIPaciente = txtCI.Text; // Preguntarle al profesor por que al poner en int da error en la clase paciente
-            pac.NombrePaciente = txtNombre.Text;
-            pac.ApellidoPaciente = txtApellido.Text;
-            pac.Edad = txtEdad.Text; // este tambien es entero
-             
+            Paciente paciente = ObtenerPacienteFormulario();
+
+            Paciente.AgregarPaciente(paciente);
+
+            ActualizarListaPacientes();
+            LimpiarFormulario();
+
 
         }
 
-        
+
+        private Paciente ObtenerPacienteFormulario()
+        {
+            Paciente paciente = new Paciente();
+            paciente.CIPaciente = txtCI.Text;
+            paciente.NombrePaciente = txtNombre.Text;
+            paciente.ApellidoPaciente = txtApellido.Text;
+            paciente.Edad = Convert.ToInt16(txtEdad.Text);
+            if (rdbFemenino.Checked)
+            {
+                paciente.sexo = Sexo.Femenino;
+            }
+            else if (rdbMasculino.Checked)
+            {
+                paciente.sexo = Sexo.Masculino;
+            }
+            paciente.FechaNacimiento = dtpFechaNacimiento.Value.Date;
+            paciente.Telefono = Convert.ToInt32(txtTelefono.Text);
+            paciente.estadocivil = txtEstadoCivil.Text;
+
+            return paciente;
+        }
+
+
+        private void LimpiarFormulario()
+        {
+            txtCI.Text = "";
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtEdad.Text = "";
+            rdbFemenino.Checked = true;
+            dtpFechaNacimiento.Value = System.DateTime.Now;
+            txtTelefono.Text = "";
+            txtEstadoCivil.Text = "";
+        }
+
+        private void lstPaciente_Click(object sender, EventArgs e)
+        {
+            Paciente paciente = (Paciente)lstPaciente.SelectedItem;
+
+            if (paciente != null)
+            {
+                txtCI.Text = paciente.CIPaciente;
+                txtNombre.Text = paciente.NombrePaciente;
+                txtApellido.Text = paciente.ApellidoPaciente;
+                txtEdad.Text = Convert.ToString(paciente.Edad);
+                if (paciente.sexo == Sexo.Femenino)
+                {
+                    rdbFemenino.Checked = true;
+                }
+                else if (paciente.sexo == Sexo.Masculino)
+                {
+                    rdbMasculino.Checked = true;
+                }
+                dtpFechaNacimiento.Value = paciente.FechaNacimiento;
+                txtTelefono.Text = Convert.ToString(paciente.Telefono);
+                txtEstadoCivil.Text = paciente.estadocivil;
+                
+            }
+
+
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            int index = lstPaciente.SelectedIndex;
+            Paciente.listaPacientes[index] = ObtenerPacienteFormulario();
+
+            ActualizarListaPacientes();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Paciente paciente = (Paciente)lstPaciente.SelectedItem;
+            Paciente.EliminarPaciente(paciente);
+            ActualizarListaPacientes();
+            LimpiarFormulario();
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarFormulario();
+        }
+
+
+
+        private void ActualizarListaPacientes()
+        {
+            lstPaciente.DataSource = null;
+            lstPaciente.DataSource = Paciente.ObtenerPaciente();
+
+        }
+
     }
 }
