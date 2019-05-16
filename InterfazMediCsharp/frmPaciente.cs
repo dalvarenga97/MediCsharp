@@ -98,7 +98,7 @@ namespace InterfazMediCsharp
         {
             int index = lstPaciente.SelectedIndex;
             Paciente.listaPacientes[index] = ObtenerPacienteFormulario();
-
+            MessageBox.Show ("Paciente Modificado con Exito");
             ActualizarListaPacientes();
         }
 

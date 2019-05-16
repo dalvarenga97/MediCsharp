@@ -35,12 +35,12 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rdbCritico = new System.Windows.Forms.RadioButton();
             this.rdbGrave = new System.Windows.Forms.RadioButton();
             this.rdbLeve = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dtpHoraInicio = new System.Windows.Forms.DateTimePicker();
             this.cmbSucursal = new System.Windows.Forms.ComboBox();
@@ -57,9 +57,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.gpbMedicamento = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gpbMedicamento.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -68,7 +76,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Script MT Bold", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(298, 9);
+            this.label1.Location = new System.Drawing.Point(369, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 35);
             this.label1.TabIndex = 12;
@@ -77,7 +85,7 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(524, 445);
+            this.btnLimpiar.Location = new System.Drawing.Point(554, 445);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 15;
@@ -87,7 +95,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(411, 445);
+            this.btnEliminar.Location = new System.Drawing.Point(441, 445);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 14;
@@ -97,7 +105,7 @@
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(299, 445);
+            this.btnModificar.Location = new System.Drawing.Point(329, 445);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 13;
@@ -107,7 +115,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(184, 445);
+            this.btnAgregar.Location = new System.Drawing.Point(214, 445);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 12;
@@ -122,8 +130,6 @@
             this.groupBox1.Controls.Add(this.rdbGrave);
             this.groupBox1.Controls.Add(this.rdbLeve);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.dtpHoraInicio);
             this.groupBox1.Controls.Add(this.cmbSucursal);
@@ -141,19 +147,29 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(281, 59);
+            this.groupBox1.Location = new System.Drawing.Point(425, 59);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(481, 350);
+            this.groupBox1.Size = new System.Drawing.Size(481, 323);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.para_consulta;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(364, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(111, 122);
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // rdbCritico
             // 
             this.rdbCritico.AutoSize = true;
             this.rdbCritico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbCritico.Location = new System.Drawing.Point(308, 311);
+            this.rdbCritico.Location = new System.Drawing.Point(308, 289);
             this.rdbCritico.Name = "rdbCritico";
             this.rdbCritico.Size = new System.Drawing.Size(61, 17);
             this.rdbCritico.TabIndex = 11;
@@ -165,7 +181,7 @@
             // 
             this.rdbGrave.AutoSize = true;
             this.rdbGrave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbGrave.Location = new System.Drawing.Point(243, 311);
+            this.rdbGrave.Location = new System.Drawing.Point(243, 289);
             this.rdbGrave.Name = "rdbGrave";
             this.rdbGrave.Size = new System.Drawing.Size(59, 17);
             this.rdbGrave.TabIndex = 10;
@@ -178,7 +194,7 @@
             // 
             this.rdbLeve.AutoSize = true;
             this.rdbLeve.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbLeve.Location = new System.Drawing.Point(184, 311);
+            this.rdbLeve.Location = new System.Drawing.Point(184, 289);
             this.rdbLeve.Name = "rdbLeve";
             this.rdbLeve.Size = new System.Drawing.Size(53, 17);
             this.rdbLeve.TabIndex = 9;
@@ -190,7 +206,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(67, 311);
+            this.label12.Location = new System.Drawing.Point(67, 289);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(111, 16);
             this.label12.TabIndex = 24;
@@ -200,19 +216,10 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(180, 237);
+            this.comboBox1.Location = new System.Drawing.Point(127, 22);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(164, 24);
             this.comboBox1.TabIndex = 7;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 242);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(177, 16);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "Medicamento Recetado:";
             // 
             // label10
             // 
@@ -258,7 +265,7 @@
             // 
             // txtDiagnostico
             // 
-            this.txtDiagnostico.Location = new System.Drawing.Point(178, 271);
+            this.txtDiagnostico.Location = new System.Drawing.Point(178, 245);
             this.txtDiagnostico.Name = "txtDiagnostico";
             this.txtDiagnostico.Size = new System.Drawing.Size(297, 22);
             this.txtDiagnostico.TabIndex = 8;
@@ -287,7 +294,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(83, 274);
+            this.label8.Location = new System.Drawing.Point(83, 248);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(95, 16);
             this.label8.TabIndex = 6;
@@ -305,7 +312,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(102, 169);
+            this.label6.Location = new System.Drawing.Point(102, 174);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 16);
             this.label6.TabIndex = 4;
@@ -346,15 +353,74 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Nombre Doctor:";
             // 
-            // pictureBox1
+            // gpbMedicamento
             // 
-            this.pictureBox1.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.para_consulta;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(364, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(111, 122);
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
+            this.gpbMedicamento.BackColor = System.Drawing.Color.Transparent;
+            this.gpbMedicamento.Controls.Add(this.button1);
+            this.gpbMedicamento.Controls.Add(this.button2);
+            this.gpbMedicamento.Controls.Add(this.dataGridView1);
+            this.gpbMedicamento.Controls.Add(this.txtCantidad);
+            this.gpbMedicamento.Controls.Add(this.label11);
+            this.gpbMedicamento.Controls.Add(this.label13);
+            this.gpbMedicamento.Controls.Add(this.comboBox1);
+            this.gpbMedicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbMedicamento.Location = new System.Drawing.Point(12, 62);
+            this.gpbMedicamento.Name = "gpbMedicamento";
+            this.gpbMedicamento.Size = new System.Drawing.Size(403, 320);
+            this.gpbMedicamento.TabIndex = 16;
+            this.gpbMedicamento.TabStop = false;
+            this.gpbMedicamento.Text = "Receta";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(16, 26);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(105, 16);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Medicamento:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(47, 63);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(74, 16);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "Cantidad:";
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(126, 59);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(165, 22);
+            this.txtCantidad.TabIndex = 25;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(19, 144);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(356, 162);
+            this.dataGridView1.TabIndex = 26;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(216, 109);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(95, 109);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 27;
+            this.button2.Text = "Agregar";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // frmConsulta
             // 
@@ -362,7 +428,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.PARA_FONDO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(774, 494);
+            this.ClientSize = new System.Drawing.Size(933, 513);
+            this.Controls.Add(this.gpbMedicamento);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -376,6 +443,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.gpbMedicamento.ResumeLayout(false);
+            this.gpbMedicamento.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,12 +475,18 @@
         private System.Windows.Forms.ComboBox cmbSucursal;
         private System.Windows.Forms.DateTimePicker dtpHoraInicio;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.RadioButton rdbGrave;
         private System.Windows.Forms.RadioButton rdbLeve;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.RadioButton rdbCritico;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox gpbMedicamento;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

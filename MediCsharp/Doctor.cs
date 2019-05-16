@@ -23,16 +23,24 @@ namespace MediCsharp
         public DiaSemana GuardiaMedico { get; set; }
 
 
-        public Doctor()
-        { }
-       
+        public static List<Doctor> listaDoctor = new List<Doctor>();
 
-        
-
-              
-
-        public void ActualizarDatosDoctor()
-        { }
+        public static void AgregarDoctor(Doctor d)
+        {
+            listaDoctor.Add(d);
+        }
+        public static void EliminarDoctor(Doctor d)
+        {
+            listaDoctor.Remove(d);
+        }
+        public static List<Doctor> ObtenerDoctor()
+        {
+            return listaDoctor;
+        }
+        public override string ToString()
+        {
+            return this.NombreDoctor + "" + ApellidoDoctor;
+        }
 
 
     }

@@ -20,13 +20,26 @@ namespace MediCsharp
 
         public TipoMedicamento tipomedicamento { get; set; }
 
-        
 
-        public Medicamento()
-        { }
 
-        public void  ActualizarMedicamento()
-        { }
+        public static List<Medicamento> listaMedicamento = new List<Medicamento>();
+
+        public static void AgregarMedicamento(Medicamento m)
+        {
+            listaMedicamento.Add(m);
+        }
+        public static void EliminarMedicamento(Medicamento m)
+        {
+            listaMedicamento.Remove(m);
+        }
+        public static List<Medicamento> ObtenerMedicamento()
+        {
+            return listaMedicamento;
+        }
+        public override string ToString()
+        {
+            return this.NombreMedicamento;
+        }
 
 
 
