@@ -23,15 +23,29 @@ namespace MediCsharp
         public String Observaciones { get; set; }
         public string TipoUrgencia { get; set; }
 
-        public Consulta()
-        { }
-
-        public void ActualizarDatosConsulta()
-        { }
 
 
 
 
+        public List<DetalleMedicamento> detalle_medicamento = new List<DetalleMedicamento>();
+
+        public static List<Consulta> listaConsulta = new List<Consulta>();
+
+        public static void Agregar(Consulta c)
+        {
+            listaConsulta.Add(c);
+        }
+        public static void Eliminar(Consulta c)
+        {
+            listaConsulta.Remove(c);
+        }
+
+        public static List<Consulta> Obtener()
+        {
+            return listaConsulta;
+        }
+
+        
 
     }
 }

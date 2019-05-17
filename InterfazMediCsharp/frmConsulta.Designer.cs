@@ -35,12 +35,12 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbCIpaciente = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rdbCritico = new System.Windows.Forms.RadioButton();
             this.rdbGrave = new System.Windows.Forms.RadioButton();
             this.rdbLeve = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dtpHoraInicio = new System.Windows.Forms.DateTimePicker();
             this.cmbSucursal = new System.Windows.Forms.ComboBox();
@@ -48,7 +48,6 @@
             this.cmbNombreDoctor = new System.Windows.Forms.ComboBox();
             this.txtDiagnostico = new System.Windows.Forms.TextBox();
             this.txtEdad = new System.Windows.Forms.TextBox();
-            this.txtCedulaPaciente = new System.Windows.Forms.TextBox();
             this.txtNumeroConsulta = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -57,17 +56,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cmbMedicamento = new System.Windows.Forms.ComboBox();
             this.gpbMedicamento = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.dtgDetalleMedicamento = new System.Windows.Forms.DataGridView();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gpbMedicamento.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleMedicamento)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -125,6 +125,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.cmbCIpaciente);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.rdbCritico);
             this.groupBox1.Controls.Add(this.rdbGrave);
@@ -137,7 +138,6 @@
             this.groupBox1.Controls.Add(this.cmbNombreDoctor);
             this.groupBox1.Controls.Add(this.txtDiagnostico);
             this.groupBox1.Controls.Add(this.txtEdad);
-            this.groupBox1.Controls.Add(this.txtCedulaPaciente);
             this.groupBox1.Controls.Add(this.txtNumeroConsulta);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
@@ -153,7 +153,14 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cmbCIpaciente
+            // 
+            this.cmbCIpaciente.FormattingEnabled = true;
+            this.cmbCIpaciente.Location = new System.Drawing.Point(180, 96);
+            this.cmbCIpaciente.Name = "cmbCIpaciente";
+            this.cmbCIpaciente.Size = new System.Drawing.Size(164, 24);
+            this.cmbCIpaciente.TabIndex = 25;
             // 
             // pictureBox1
             // 
@@ -188,7 +195,6 @@
             this.rdbGrave.TabStop = true;
             this.rdbGrave.Text = "Grave";
             this.rdbGrave.UseVisualStyleBackColor = true;
-            this.rdbGrave.CheckedChanged += new System.EventHandler(this.rdbMasculino_CheckedChanged);
             // 
             // rdbLeve
             // 
@@ -201,7 +207,6 @@
             this.rdbLeve.TabStop = true;
             this.rdbLeve.Text = "Leve";
             this.rdbLeve.UseVisualStyleBackColor = true;
-            this.rdbLeve.CheckedChanged += new System.EventHandler(this.rdbFemenino_CheckedChanged);
             // 
             // label12
             // 
@@ -211,15 +216,6 @@
             this.label12.Size = new System.Drawing.Size(111, 16);
             this.label12.TabIndex = 24;
             this.label12.Text = "Tipo Urgencia:";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(127, 22);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(164, 24);
-            this.comboBox1.TabIndex = 7;
             // 
             // label10
             // 
@@ -276,13 +272,6 @@
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(165, 22);
             this.txtEdad.TabIndex = 4;
-            // 
-            // txtCedulaPaciente
-            // 
-            this.txtCedulaPaciente.Location = new System.Drawing.Point(179, 95);
-            this.txtCedulaPaciente.Name = "txtCedulaPaciente";
-            this.txtCedulaPaciente.Size = new System.Drawing.Size(164, 22);
-            this.txtCedulaPaciente.TabIndex = 3;
             // 
             // txtNumeroConsulta
             // 
@@ -353,16 +342,24 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Nombre Doctor:";
             // 
+            // cmbMedicamento
+            // 
+            this.cmbMedicamento.FormattingEnabled = true;
+            this.cmbMedicamento.Location = new System.Drawing.Point(127, 22);
+            this.cmbMedicamento.Name = "cmbMedicamento";
+            this.cmbMedicamento.Size = new System.Drawing.Size(164, 24);
+            this.cmbMedicamento.TabIndex = 7;
+            // 
             // gpbMedicamento
             // 
             this.gpbMedicamento.BackColor = System.Drawing.Color.Transparent;
             this.gpbMedicamento.Controls.Add(this.button1);
             this.gpbMedicamento.Controls.Add(this.button2);
-            this.gpbMedicamento.Controls.Add(this.dataGridView1);
+            this.gpbMedicamento.Controls.Add(this.dtgDetalleMedicamento);
             this.gpbMedicamento.Controls.Add(this.txtCantidad);
             this.gpbMedicamento.Controls.Add(this.label11);
             this.gpbMedicamento.Controls.Add(this.label13);
-            this.gpbMedicamento.Controls.Add(this.comboBox1);
+            this.gpbMedicamento.Controls.Add(this.cmbMedicamento);
             this.gpbMedicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbMedicamento.Location = new System.Drawing.Point(12, 62);
             this.gpbMedicamento.Name = "gpbMedicamento";
@@ -370,39 +367,6 @@
             this.gpbMedicamento.TabIndex = 16;
             this.gpbMedicamento.TabStop = false;
             this.gpbMedicamento.Text = "Receta";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(16, 26);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(105, 16);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "Medicamento:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(47, 63);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 16);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "Cantidad:";
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Location = new System.Drawing.Point(126, 59);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(165, 22);
-            this.txtCantidad.TabIndex = 25;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 144);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(356, 162);
-            this.dataGridView1.TabIndex = 26;
             // 
             // button1
             // 
@@ -421,6 +385,40 @@
             this.button2.TabIndex = 27;
             this.button2.Text = "Agregar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // dtgDetalleMedicamento
+            // 
+            this.dtgDetalleMedicamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgDetalleMedicamento.Location = new System.Drawing.Point(19, 144);
+            this.dtgDetalleMedicamento.Name = "dtgDetalleMedicamento";
+            this.dtgDetalleMedicamento.Size = new System.Drawing.Size(356, 162);
+            this.dtgDetalleMedicamento.TabIndex = 26;
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(126, 59);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(165, 22);
+            this.txtCantidad.TabIndex = 25;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(47, 63);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(74, 16);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "Cantidad:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(16, 26);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(105, 16);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Medicamento:";
             // 
             // frmConsulta
             // 
@@ -440,12 +438,13 @@
             this.Name = "frmConsulta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ".:Consulta:.";
+            this.Load += new System.EventHandler(this.frmConsulta_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gpbMedicamento.ResumeLayout(false);
             this.gpbMedicamento.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleMedicamento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -463,7 +462,6 @@
         private System.Windows.Forms.ComboBox cmbNombreDoctor;
         private System.Windows.Forms.TextBox txtDiagnostico;
         private System.Windows.Forms.TextBox txtEdad;
-        private System.Windows.Forms.TextBox txtCedulaPaciente;
         private System.Windows.Forms.TextBox txtNumeroConsulta;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -474,7 +472,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbSucursal;
         private System.Windows.Forms.DateTimePicker dtpHoraInicio;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbMedicamento;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.RadioButton rdbGrave;
         private System.Windows.Forms.RadioButton rdbLeve;
@@ -482,11 +480,12 @@
         private System.Windows.Forms.RadioButton rdbCritico;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox gpbMedicamento;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgDetalleMedicamento;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cmbCIpaciente;
     }
 }

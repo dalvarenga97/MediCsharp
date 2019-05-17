@@ -117,6 +117,11 @@ namespace InterfazMediCsharp
         {
             LimpiarFormulario();
         }
+
+        private void frmMedicamento_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
