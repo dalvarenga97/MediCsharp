@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDoctor));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtGuardiaMedico = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lstDoctor = new System.Windows.Forms.ListBox();
-            this.txtGuardia = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +72,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.txtGuardia);
+            this.groupBox1.Controls.Add(this.txtGuardiaMedico);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.label9);
@@ -96,6 +96,13 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
+            // 
+            // txtGuardiaMedico
+            // 
+            this.txtGuardiaMedico.Location = new System.Drawing.Point(152, 276);
+            this.txtGuardiaMedico.Name = "txtGuardiaMedico";
+            this.txtGuardiaMedico.Size = new System.Drawing.Size(153, 22);
+            this.txtGuardiaMedico.TabIndex = 21;
             // 
             // pictureBox1
             // 
@@ -241,6 +248,7 @@
             this.btnLimpiar.TabIndex = 18;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnEliminar
             // 
@@ -251,6 +259,7 @@
             this.btnEliminar.TabIndex = 17;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -261,6 +270,7 @@
             this.btnModificar.TabIndex = 16;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -281,13 +291,7 @@
             this.lstDoctor.Name = "lstDoctor";
             this.lstDoctor.Size = new System.Drawing.Size(186, 342);
             this.lstDoctor.TabIndex = 19;
-            // 
-            // txtGuardia
-            // 
-            this.txtGuardia.Location = new System.Drawing.Point(152, 276);
-            this.txtGuardia.Name = "txtGuardia";
-            this.txtGuardia.Size = new System.Drawing.Size(153, 22);
-            this.txtGuardia.TabIndex = 21;
+            this.lstDoctor.SelectedIndexChanged += new System.EventHandler(this.lstDoctor_SelectedIndexChanged);
             // 
             // frmDoctor
             // 
@@ -340,6 +344,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListBox lstDoctor;
-        private System.Windows.Forms.TextBox txtGuardia;
+        private System.Windows.Forms.TextBox txtGuardiaMedico;
     }
 }
