@@ -124,9 +124,6 @@ namespace InterfazMediCsharp
 
         }
 
-        private void frmPaciente_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
