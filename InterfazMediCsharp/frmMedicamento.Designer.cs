@@ -30,7 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMedicamento));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdbFemenino = new System.Windows.Forms.RadioButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.rdbInyectable = new System.Windows.Forms.RadioButton();
             this.rdbPastillas = new System.Windows.Forms.RadioButton();
             this.rdbJarabe = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,7 +50,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lstMedicamento = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +59,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.rdbFemenino);
+            this.groupBox1.Controls.Add(this.rdbInyectable);
             this.groupBox1.Controls.Add(this.rdbPastillas);
             this.groupBox1.Controls.Add(this.rdbJarabe);
             this.groupBox1.Controls.Add(this.label5);
@@ -80,17 +81,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
-            // rdbFemenino
+            // pictureBox1
             // 
-            this.rdbFemenino.AutoSize = true;
-            this.rdbFemenino.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbFemenino.Location = new System.Drawing.Point(150, 307);
-            this.rdbFemenino.Name = "rdbFemenino";
-            this.rdbFemenino.Size = new System.Drawing.Size(90, 17);
-            this.rdbFemenino.TabIndex = 8;
-            this.rdbFemenino.TabStop = true;
-            this.rdbFemenino.Text = "Inyectables";
-            this.rdbFemenino.UseVisualStyleBackColor = true;
+            this.pictureBox1.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.para_medicamento;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(322, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(118, 108);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // rdbInyectable
+            // 
+            this.rdbInyectable.AutoSize = true;
+            this.rdbInyectable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbInyectable.Location = new System.Drawing.Point(150, 307);
+            this.rdbInyectable.Name = "rdbInyectable";
+            this.rdbInyectable.Size = new System.Drawing.Size(90, 17);
+            this.rdbInyectable.TabIndex = 8;
+            this.rdbInyectable.TabStop = true;
+            this.rdbInyectable.Text = "Inyectables";
+            this.rdbInyectable.UseVisualStyleBackColor = true;
             // 
             // rdbPastillas
             // 
@@ -159,6 +170,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(153, 22);
             this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // label7
             // 
@@ -226,6 +238,7 @@
             this.btnLimpiar.TabIndex = 12;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnEliminar
             // 
@@ -236,6 +249,7 @@
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -246,6 +260,7 @@
             this.btnModificar.TabIndex = 10;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -256,16 +271,17 @@
             this.btnAgregar.TabIndex = 9;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // pictureBox1
+            // lstMedicamento
             // 
-            this.pictureBox1.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.para_medicamento;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(322, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(118, 108);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            this.lstMedicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstMedicamento.FormattingEnabled = true;
+            this.lstMedicamento.Location = new System.Drawing.Point(118, 64);
+            this.lstMedicamento.Name = "lstMedicamento";
+            this.lstMedicamento.Size = new System.Drawing.Size(186, 342);
+            this.lstMedicamento.TabIndex = 15;
+            this.lstMedicamento.Click += new System.EventHandler(this.lstMedicamento_Click);
             // 
             // frmMedicamento
             // 
@@ -274,6 +290,7 @@
             this.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.PARA_FONDO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(774, 494);
+            this.Controls.Add(this.lstMedicamento);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -307,7 +324,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RadioButton rdbFemenino;
+        private System.Windows.Forms.RadioButton rdbInyectable;
         private System.Windows.Forms.RadioButton rdbPastillas;
         private System.Windows.Forms.RadioButton rdbJarabe;
         private System.Windows.Forms.Button btnLimpiar;
@@ -315,5 +332,6 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ListBox lstMedicamento;
     }
 }
