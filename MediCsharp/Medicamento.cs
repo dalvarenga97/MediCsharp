@@ -41,8 +41,6 @@ namespace MediCsharp
             return this.NombreMedicamento;
         }
 
-
-
-
+        
     }
 }
