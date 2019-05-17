@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDoctor));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtGuardiaMedico = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -38,13 +39,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.ckbDomingo = new System.Windows.Forms.CheckBox();
-            this.ckbSabado = new System.Windows.Forms.CheckBox();
-            this.ckbViernes = new System.Windows.Forms.CheckBox();
-            this.ckbJueves = new System.Windows.Forms.CheckBox();
-            this.ckbMiercoles = new System.Windows.Forms.CheckBox();
-            this.ckbMartes = new System.Windows.Forms.CheckBox();
-            this.chkLunes = new System.Windows.Forms.CheckBox();
             this.txtEspecialidad = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -78,6 +72,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.txtGuardiaMedico);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.label9);
@@ -85,13 +80,6 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtEdad);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.ckbDomingo);
-            this.groupBox1.Controls.Add(this.ckbSabado);
-            this.groupBox1.Controls.Add(this.ckbViernes);
-            this.groupBox1.Controls.Add(this.ckbJueves);
-            this.groupBox1.Controls.Add(this.ckbMiercoles);
-            this.groupBox1.Controls.Add(this.ckbMartes);
-            this.groupBox1.Controls.Add(this.chkLunes);
             this.groupBox1.Controls.Add(this.txtEspecialidad);
             this.groupBox1.Controls.Add(this.txtApellido);
             this.groupBox1.Controls.Add(this.txtNombre);
@@ -108,6 +96,13 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
+            // 
+            // txtGuardiaMedico
+            // 
+            this.txtGuardiaMedico.Location = new System.Drawing.Point(152, 276);
+            this.txtGuardiaMedico.Name = "txtGuardiaMedico";
+            this.txtGuardiaMedico.Size = new System.Drawing.Size(153, 22);
+            this.txtGuardiaMedico.TabIndex = 21;
             // 
             // pictureBox1
             // 
@@ -171,83 +166,6 @@
             this.label5.Text = "Edad:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // ckbDomingo
-            // 
-            this.ckbDomingo.AutoSize = true;
-            this.ckbDomingo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbDomingo.Location = new System.Drawing.Point(294, 310);
-            this.ckbDomingo.Name = "ckbDomingo";
-            this.ckbDomingo.Size = new System.Drawing.Size(48, 17);
-            this.ckbDomingo.TabIndex = 14;
-            this.ckbDomingo.Text = "Dom";
-            this.ckbDomingo.UseVisualStyleBackColor = true;
-            // 
-            // ckbSabado
-            // 
-            this.ckbSabado.AutoSize = true;
-            this.ckbSabado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbSabado.Location = new System.Drawing.Point(254, 310);
-            this.ckbSabado.Name = "ckbSabado";
-            this.ckbSabado.Size = new System.Drawing.Size(45, 17);
-            this.ckbSabado.TabIndex = 13;
-            this.ckbSabado.Text = "Sab";
-            this.ckbSabado.UseVisualStyleBackColor = true;
-            // 
-            // ckbViernes
-            // 
-            this.ckbViernes.AutoSize = true;
-            this.ckbViernes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbViernes.Location = new System.Drawing.Point(219, 310);
-            this.ckbViernes.Name = "ckbViernes";
-            this.ckbViernes.Size = new System.Drawing.Size(41, 17);
-            this.ckbViernes.TabIndex = 12;
-            this.ckbViernes.Text = "Vie";
-            this.ckbViernes.UseVisualStyleBackColor = true;
-            // 
-            // ckbJueves
-            // 
-            this.ckbJueves.AutoSize = true;
-            this.ckbJueves.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbJueves.Location = new System.Drawing.Point(182, 310);
-            this.ckbJueves.Name = "ckbJueves";
-            this.ckbJueves.Size = new System.Drawing.Size(43, 17);
-            this.ckbJueves.TabIndex = 11;
-            this.ckbJueves.Text = "Jue";
-            this.ckbJueves.UseVisualStyleBackColor = true;
-            // 
-            // ckbMiercoles
-            // 
-            this.ckbMiercoles.AutoSize = true;
-            this.ckbMiercoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbMiercoles.Location = new System.Drawing.Point(146, 310);
-            this.ckbMiercoles.Name = "ckbMiercoles";
-            this.ckbMiercoles.Size = new System.Drawing.Size(43, 17);
-            this.ckbMiercoles.TabIndex = 10;
-            this.ckbMiercoles.Text = "Mie";
-            this.ckbMiercoles.UseVisualStyleBackColor = true;
-            // 
-            // ckbMartes
-            // 
-            this.ckbMartes.AutoSize = true;
-            this.ckbMartes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbMartes.Location = new System.Drawing.Point(110, 310);
-            this.ckbMartes.Name = "ckbMartes";
-            this.ckbMartes.Size = new System.Drawing.Size(41, 17);
-            this.ckbMartes.TabIndex = 9;
-            this.ckbMartes.Text = "Ma";
-            this.ckbMartes.UseVisualStyleBackColor = true;
-            // 
-            // chkLunes
-            // 
-            this.chkLunes.AutoSize = true;
-            this.chkLunes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkLunes.Location = new System.Drawing.Point(77, 310);
-            this.chkLunes.Name = "chkLunes";
-            this.chkLunes.Size = new System.Drawing.Size(38, 17);
-            this.chkLunes.TabIndex = 8;
-            this.chkLunes.Text = "Lu";
-            this.chkLunes.UseVisualStyleBackColor = true;
-            // 
             // txtEspecialidad
             // 
             this.txtEspecialidad.Location = new System.Drawing.Point(151, 195);
@@ -288,7 +206,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(50, 280);
+            this.label6.Location = new System.Drawing.Point(81, 280);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 16);
             this.label6.TabIndex = 4;
@@ -330,6 +248,7 @@
             this.btnLimpiar.TabIndex = 18;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnEliminar
             // 
@@ -340,6 +259,7 @@
             this.btnEliminar.TabIndex = 17;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -350,6 +270,7 @@
             this.btnModificar.TabIndex = 16;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -360,6 +281,7 @@
             this.btnAgregar.TabIndex = 15;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lstDoctor
             // 
@@ -369,6 +291,7 @@
             this.lstDoctor.Name = "lstDoctor";
             this.lstDoctor.Size = new System.Drawing.Size(186, 342);
             this.lstDoctor.TabIndex = 19;
+            this.lstDoctor.SelectedIndexChanged += new System.EventHandler(this.lstDoctor_SelectedIndexChanged);
             // 
             // frmDoctor
             // 
@@ -409,13 +332,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox ckbDomingo;
-        private System.Windows.Forms.CheckBox ckbSabado;
-        private System.Windows.Forms.CheckBox ckbViernes;
-        private System.Windows.Forms.CheckBox ckbJueves;
-        private System.Windows.Forms.CheckBox ckbMiercoles;
-        private System.Windows.Forms.CheckBox ckbMartes;
-        private System.Windows.Forms.CheckBox chkLunes;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
@@ -428,5 +344,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListBox lstDoctor;
+        private System.Windows.Forms.TextBox txtGuardiaMedico;
     }
 }
