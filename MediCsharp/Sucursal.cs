@@ -13,7 +13,7 @@ namespace MediCsharp
 
    public class Sucursal
     {
-        public int NumeroSucursal { get; set; }
+        public Int64 NumeroSucursal { get; set; }
         public String NombreSucursal { get; set; }
         public string Direccion { get; set; }
         public int CantidadPisos { get; set; }
@@ -28,6 +28,24 @@ namespace MediCsharp
         public void ActualizarDatosSucursal()
         { }
 
+        public static List<Sucursal> listaSucursal = new List<Sucursal>();
+
+        public static void AgregarSucursal(Sucursal s)
+        {
+            listaSucursal.Add(s);
+        }
+        public static void EliminarSucursal(Sucursal s)
+        {
+            listaSucursal.Remove(s);
+        }
+        public static List<Sucursal> ObtenerSucursal()
+        {
+            return listaSucursal;
+        }
+        public override string ToString()
+        {
+            return this.NombreSucursal;
+        }
 
 
     }

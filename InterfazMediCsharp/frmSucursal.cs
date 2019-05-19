@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MediCsharp;
 
 namespace InterfazMediCsharp
 {
@@ -34,7 +35,11 @@ namespace InterfazMediCsharp
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            Sucursal sucursal = ObtenerSucursalFormulario();
 
+            Sucursal.AgregarSucursal(sucursal);
+
+            LimpiarFormulario();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -44,7 +49,35 @@ namespace InterfazMediCsharp
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
+            LimpiarFormulario();
+        }
 
+        private void frmSucursal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private Sucursal ObtenerSucursalFormulario()
+        {
+            Sucursal s = new Sucursal();
+            s.NumeroSucursal = Convert.ToInt64(txtCodigo.Text);
+            s.NombreSucursal = txtNombre.Text;
+            s.Direccion = txtDescripcion.Text;
+            s.CantidadPisos = Convert.ToInt64(txtCantidadPisos.Text);
+            s.HorarioInicioVisitas = dtpiniciovisitas.Value.Date;
+            s.HorarioFinVisitas = dtpfinvisitas.Value.Date;
+            return s;
+
+        }
+
+        private void LimpiarFormulario()
+        {
+            txtCodigo.Text = "";
+            txtNombre.Text = "";
+            txtDescripcion.Text = "";
+            txtCantidadPisos.Text = "";
+            dtpiniciovisitas.Value = System.DateTime.Now;
+            dtpfinvisitas.Value = System.DateTime.Now;
         }
     }
 }
