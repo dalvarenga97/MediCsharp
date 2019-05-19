@@ -16,10 +16,10 @@ namespace MediCsharp
         public Int64 NumeroSucursal { get; set; }
         public String NombreSucursal { get; set; }
         public string Direccion { get; set; }
-        public int CantidadPisos { get; set; }
+        public Int64 CantidadPisos { get; set; }
 
-        public Horario HorarioInicioVisitas { get; set; }
-        public Horario HorarioFinVisitas { get; set; }
+        public DateTime HorarioInicioVisitas { get; set; }
+        public DateTime HorarioFinVisitas { get; set; }
 
         public Sucursal()
         { }
