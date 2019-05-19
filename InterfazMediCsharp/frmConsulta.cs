@@ -55,6 +55,59 @@ namespace InterfazMediCsharp
             cmbMedicamento.SelectedItem = null;
         }
 
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Consulta consulta = new Consulta();
+            consulta.NumeroConsulta = Convert.ToInt16(txtNumeroConsulta.Text);
+            consulta.NombreDoctor = (Doctor)cmbNombreDoctor.SelectedItem;
+            consulta.CIPaciente = (Paciente)cmbCIpaciente.SelectedItem;
+            consulta.NombrePaciente = txtNombrePaciente.Text;
+            consulta.Sucursal = (Sucursal)cmbSucursal.SelectedValue;
+            consulta.HoraInicioConsulta = dtpHoraInicio.Value.Date;
+            consulta.HoraFinConsulta = dtpHoraFin.Value.Date;
+            consulta.Diagnostico = txtDiagnostico.Text;
+
+            Consulta.listaConsulta.Add(consulta);
+
+            ActualizarDataGrid();
+            LimpiarForm();
+        }
+        
+        public void LimpiarForm() {
+            txtNumeroConsulta.Text = "";
+            cmbNombreDoctor.SelectedItem = null;
+            cmbCIpaciente.SelectedItem = null;
+            txtNombrePaciente.Text = "";
+            cmbSucursal.SelectedItem = null;
+            dtpHoraInicio.Value = System.DateTime.Now;
+            dtpHoraFin.Value = System.DateTime.Now;
+            txtDiagnostico.Text = "";
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Consulta consulta = (Consulta)dtgDetalleMedicamento.CurrentRow.DataBoundItem;
+            if (consulta != null)
+            {
+                Consulta.listaConsulta.Remove(consulta);
+            }
+            ActualizarDataGrid();
+            LimpiarForm();
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarForm();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            int index = lstconsultas.SelectedIndex;
+            Sucursal.listaSucursal[index] = ObtenerlistaConsulta();
+            MessageBox.Show("Sucursal Modificada con Exito");
+            ActualizarListaSucursal();
+        }
     }
 
 
