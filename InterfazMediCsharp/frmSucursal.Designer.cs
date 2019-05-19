@@ -292,6 +292,7 @@
             this.Name = "frmSucursal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ".:Sucursal:.";
+            this.Load += new System.EventHandler(this.frmSucursal_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
