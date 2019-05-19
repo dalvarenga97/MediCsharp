@@ -17,6 +17,8 @@ namespace InterfazMediCsharp
         public frmreposo()
         {
             InitializeComponent();
+            LimpiarForm();
+            ActualizarDataGrid();
         }
 
         private void frmreposo_Load(object sender, EventArgs e)
@@ -79,6 +81,7 @@ namespace InterfazMediCsharp
             Reposo.AgregarReposo(reposo);
             MessageBox.Show("El reposo se guardó con Exito!!");
             LimpiarForm();
+            //ActualizarDataGrid();
             dtgReposo.DataSource = null;
             cmbDoctor.SelectedItem = null;
             cmbPaciente.SelectedItem = null;
