@@ -329,7 +329,7 @@
             this.Name = "frmPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "..:Paciente:..";
-#            this.Load += new System.EventHandler(this.frmPaciente_Load);
+            this.Load += new System.EventHandler(this.frmPaciente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
