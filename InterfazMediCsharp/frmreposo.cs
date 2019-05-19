@@ -86,5 +86,10 @@ namespace InterfazMediCsharp
             dtpHasta.Value = System.DateTime.Now;
             reposo = new Reposo();
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

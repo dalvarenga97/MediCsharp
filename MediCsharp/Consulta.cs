@@ -8,19 +8,19 @@ namespace MediCsharp
 {
     public class Consulta
     {
-        public int NumeroConsulta { get; set; }
-        public string NombreDoctor { get; set; }
-        public string CIPaciente { get; set; }
+        public Int64 NumeroConsulta { get; set; }
+        public Doctor NombreDoctor { get; set; }
+        public Paciente CIPaciente { get; set; }
 
         public string NombrePaciente { get; set; }
-        public Horario HoraInicioConsulta { get; set; }
-        public Horario HoraFinConsulta { get; set; }
+        public DateTime HoraInicioConsulta { get; set; }
+        public DateTime HoraFinConsulta { get; set; }
 
-        public int Sucursal { get; set; }
+        public Sucursal Sucursal { get; set; }
 
         public String Medicamento { get; set; }
         
-        public String Observaciones { get; set; }
+        public String Diagnostico { get; set; }
         public string TipoUrgencia { get; set; }
 
 
