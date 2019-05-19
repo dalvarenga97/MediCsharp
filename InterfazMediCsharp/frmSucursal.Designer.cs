@@ -268,9 +268,9 @@
             // lstSucursal
             // 
             this.lstSucursal.FormattingEnabled = true;
-            this.lstSucursal.Location = new System.Drawing.Point(83, 164);
+            this.lstSucursal.Location = new System.Drawing.Point(110, 81);
             this.lstSucursal.Name = "lstSucursal";
-            this.lstSucursal.Size = new System.Drawing.Size(182, 121);
+            this.lstSucursal.Size = new System.Drawing.Size(155, 329);
             this.lstSucursal.TabIndex = 12;
             this.lstSucursal.Click += new System.EventHandler(this.lstSucursal_Click);
             // 

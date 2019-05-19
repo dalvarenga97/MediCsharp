@@ -81,7 +81,6 @@ namespace InterfazMediCsharp
             Reposo.AgregarReposo(reposo);
             MessageBox.Show("El reposo se guardó con Exito!!");
             LimpiarForm();
-            //ActualizarDataGrid();
             dtgReposo.DataSource = null;
             cmbDoctor.SelectedItem = null;
             cmbPaciente.SelectedItem = null;
