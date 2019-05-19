@@ -16,6 +16,8 @@ namespace InterfazMediCsharp
         public frmMedicamento()
         {
             InitializeComponent();
+            LimpiarFormulario();
+            ActualizarListaMedicamento();
         }
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)

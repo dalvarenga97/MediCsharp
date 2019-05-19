@@ -17,6 +17,7 @@ namespace InterfazMediCsharp
         {
             InitializeComponent();
             LimpiarFormulario();
+            ActualizarListaSucursal();
         }
 
         private void label1_Click(object sender, EventArgs e)

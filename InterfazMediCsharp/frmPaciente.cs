@@ -16,6 +16,8 @@ namespace InterfazMediCsharp
         public frmPaciente()
         {
             InitializeComponent();
+            LimpiarFormulario();
+            ActualizarListaPacientes();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -60,7 +62,7 @@ namespace InterfazMediCsharp
             txtNombre.Text = "";
             txtApellido.Text = "";
             txtEdad.Text = "";
-            rdbFemenino.Checked = true;
+            //rdbFemenino.Checked = true;
             dtpFechaNacimiento.Value = System.DateTime.Now;
             txtTelefono.Text = "";
             txtEstadoCivil.Text = "";
@@ -124,6 +126,9 @@ namespace InterfazMediCsharp
 
         }
 
-       
+        private void frmPaciente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

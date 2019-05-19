@@ -16,6 +16,8 @@ namespace InterfazMediCsharp
         public frmDoctor()
         {
             InitializeComponent();
+            LimpiarFormulario();
+            ActualizarListaDoctor();
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -118,6 +120,11 @@ namespace InterfazMediCsharp
             Doctor.listaDoctor[index] = ObtenerDoctorFormulario();
             MessageBox.Show("Doctor Modificado con Exito");
             ActualizarListaDoctor();
+        }
+
+        private void frmDoctor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

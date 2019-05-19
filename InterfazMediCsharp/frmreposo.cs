@@ -17,6 +17,8 @@ namespace InterfazMediCsharp
         public frmreposo()
         {
             InitializeComponent();
+            LimpiarForm();
+            ActualizarDataGrid();
         }
 
         private void frmreposo_Load(object sender, EventArgs e)
