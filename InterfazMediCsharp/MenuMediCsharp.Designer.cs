@@ -38,7 +38,6 @@
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reposoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaReposoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emitirReposoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -116,24 +115,17 @@
             // 
             this.consultaToolStripMenuItem.Image = global::InterfazMediCsharp.Properties.Resources.REPOSO;
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.consultaToolStripMenuItem.Text = "Consulta";
             this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
             // reposoToolStripMenuItem
             // 
-            this.reposoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaReposoToolStripMenuItem});
             this.reposoToolStripMenuItem.Image = global::InterfazMediCsharp.Properties.Resources.REPOSO;
             this.reposoToolStripMenuItem.Name = "reposoToolStripMenuItem";
-            this.reposoToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.reposoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.reposoToolStripMenuItem.Text = "Reposo";
-            // 
-            // altaReposoToolStripMenuItem
-            // 
-            this.altaReposoToolStripMenuItem.Name = "altaReposoToolStripMenuItem";
-            this.altaReposoToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.altaReposoToolStripMenuItem.Text = "Alta Reposo";
+            this.reposoToolStripMenuItem.Click += new System.EventHandler(this.reposoToolStripMenuItem_Click);
             // 
             // informesToolStripMenuItem
             // 
@@ -190,7 +182,6 @@
         private System.Windows.Forms.ToolStripMenuItem procesosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reposoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem altaReposoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem emitirReposoToolStripMenuItem;

@@ -55,5 +55,11 @@ namespace InterfazMediCsharp
             frmAcercade form = new frmAcercade();
             form.Show();
         }
+
+        private void reposoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmreposo form = new frmreposo();
+            form.Show();
+        }
     }
 }
