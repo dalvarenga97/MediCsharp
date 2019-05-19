@@ -30,7 +30,10 @@ namespace InterfazMediCsharp
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            Sucursal sucursal = (Sucursal)lstSucursal.SelectedItem;
+            Sucursal.EliminarSucursal(sucursal);
+            ActualizarListaSucursal();
+            LimpiarFormulario();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -46,7 +49,10 @@ namespace InterfazMediCsharp
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-
+            int index = lstSucursal.SelectedIndex;
+            Sucursal.listaSucursal[index] = ObtenerSucursalFormulario();
+            MessageBox.Show("Sucursal Modificada con Exito");
+            ActualizarListaSucursal();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -64,7 +70,7 @@ namespace InterfazMediCsharp
             Sucursal s = new Sucursal();
             s.NumeroSucursal = Convert.ToInt64(txtCodigo.Text);
             s.NombreSucursal = txtNombre.Text;
-            s.Direccion = txtDescripcion.Text;
+            s.Direccion = txtDireccion.Text;
             s.CantidadPisos = Convert.ToInt64(txtCantidadPisos.Text);
             s.HorarioInicioVisitas = dtpiniciovisitas.Value.Date;
             s.HorarioFinVisitas = dtpfinvisitas.Value.Date;
@@ -81,10 +87,25 @@ namespace InterfazMediCsharp
         {
             txtCodigo.Text = "";
             txtNombre.Text = "";
-            txtDescripcion.Text = "";
+            txtDireccion.Text = "";
             txtCantidadPisos.Text = "";
             dtpiniciovisitas.Value = System.DateTime.Now;
             dtpfinvisitas.Value = System.DateTime.Now;
+        }
+
+        private void lstSucursal_Click(object sender, EventArgs e)
+        {
+            Sucursal sucursal = (Sucursal)lstSucursal.SelectedItem;
+
+            if (sucursal != null)
+            {
+                txtCodigo.Text = Convert.ToString(sucursal.NumeroSucursal);
+                txtNombre.Text = sucursal.NombreSucursal;
+                txtDireccion.Text = sucursal.Direccion;
+                txtCantidadPisos.Text = Convert.ToString(sucursal.CantidadPisos);
+                dtpiniciovisitas.Value = sucursal.HorarioInicioVisitas;
+                dtpfinvisitas.Value = sucursal.HorarioFinVisitas;
+            }
         }
     }
 }

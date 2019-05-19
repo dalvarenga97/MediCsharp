@@ -44,7 +44,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtCantidadPisos = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -124,7 +124,7 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtCantidadPisos);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtDescripcion);
+            this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.label4);
@@ -217,12 +217,12 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Cantidad de Pisos:";
             // 
-            // txtDescripcion
+            // txtDireccion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(178, 115);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(153, 22);
-            this.txtDescripcion.TabIndex = 3;
+            this.txtDireccion.Location = new System.Drawing.Point(178, 115);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(153, 22);
+            this.txtDireccion.TabIndex = 3;
             // 
             // txtNombre
             // 
@@ -272,6 +272,7 @@
             this.lstSucursal.Name = "lstSucursal";
             this.lstSucursal.Size = new System.Drawing.Size(182, 121);
             this.lstSucursal.TabIndex = 12;
+            this.lstSucursal.Click += new System.EventHandler(this.lstSucursal_Click);
             // 
             // frmSucursal
             // 
@@ -307,7 +308,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label4;
