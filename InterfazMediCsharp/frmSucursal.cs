@@ -39,6 +39,8 @@ namespace InterfazMediCsharp
 
             Sucursal.AgregarSucursal(sucursal);
 
+            ActualizarListaSucursal();
+
             LimpiarFormulario();
         }
 
@@ -69,7 +71,12 @@ namespace InterfazMediCsharp
             return s;
 
         }
+        private void ActualizarListaSucursal()
+        {
+            lstSucursal.DataSource = null;
+            lstSucursal.DataSource = Sucursal.ObtenerSucursal();
 
+        }
         private void LimpiarFormulario()
         {
             txtCodigo.Text = "";

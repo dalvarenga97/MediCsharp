@@ -35,6 +35,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dtpfinvisitas = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,7 +50,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lstSucursal = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -102,11 +103,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Script MT Bold", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(289, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 35);
+            this.label1.Size = new System.Drawing.Size(137, 33);
             this.label1.TabIndex = 11;
             this.label1.Text = "Sucursal";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -137,6 +138,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.para_sucursal;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(349, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(113, 123);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // label7
             // 
@@ -254,15 +265,13 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Nombre:";
             // 
-            // pictureBox1
+            // lstSucursal
             // 
-            this.pictureBox1.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.para_sucursal;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(349, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(113, 123);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.lstSucursal.FormattingEnabled = true;
+            this.lstSucursal.Location = new System.Drawing.Point(83, 164);
+            this.lstSucursal.Name = "lstSucursal";
+            this.lstSucursal.Size = new System.Drawing.Size(182, 121);
+            this.lstSucursal.TabIndex = 12;
             // 
             // frmSucursal
             // 
@@ -271,6 +280,7 @@
             this.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.PARA_FONDO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(774, 494);
+            this.Controls.Add(this.lstSucursal);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -312,5 +322,6 @@
         private System.Windows.Forms.DateTimePicker dtpiniciovisitas;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ListBox lstSucursal;
     }
 }
