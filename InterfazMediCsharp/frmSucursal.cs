@@ -16,6 +16,7 @@ namespace InterfazMediCsharp
         public frmSucursal()
         {
             InitializeComponent();
+            LimpiarFormulario();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -72,8 +73,8 @@ namespace InterfazMediCsharp
             s.NombreSucursal = txtNombre.Text;
             s.Direccion = txtDireccion.Text;
             s.CantidadPisos = Convert.ToInt64(txtCantidadPisos.Text);
-            s.HorarioInicioVisitas = dtpiniciovisitas.Value.Date;
-            s.HorarioFinVisitas = dtpfinvisitas.Value.Date;
+            s.HorarioInicioVisitas = dtpiniciovisitas.Value;
+            s.HorarioFinVisitas = dtpfinvisitas.Value;
             return s;
 
         }
@@ -106,6 +107,11 @@ namespace InterfazMediCsharp
                 dtpiniciovisitas.Value = sucursal.HorarioInicioVisitas;
                 dtpfinvisitas.Value = sucursal.HorarioFinVisitas;
             }
+        }
+
+        private void frmSucursal_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
