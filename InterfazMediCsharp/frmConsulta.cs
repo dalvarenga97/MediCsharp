@@ -51,7 +51,7 @@ namespace InterfazMediCsharp
 
         private void Limpiar()
         {
-            txtCantidad.Text = "0";
+            txtCantidad.Text = "";
             cmbMedicamento.SelectedItem = null;
         }
 

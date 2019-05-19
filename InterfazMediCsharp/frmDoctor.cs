@@ -42,6 +42,7 @@ namespace InterfazMediCsharp
             Doctor.AgregarDoctor(doctor);
 
             ActualizarListaDoctor();
+
             LimpiarFormulario();
         }
 
@@ -78,7 +79,6 @@ namespace InterfazMediCsharp
             dtpFechaNacimiento.Value = System.DateTime.Now;
             txtEspecialidad.Text = "";
             txtTelefono.Text = "";
-
             txtGuardiaMedico.Text = "";
 
         }

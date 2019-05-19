@@ -27,6 +27,7 @@ namespace InterfazMediCsharp
             Paciente.AgregarPaciente(paciente);
 
             ActualizarListaPacientes();
+
             LimpiarFormulario();
 
 
@@ -62,7 +63,8 @@ namespace InterfazMediCsharp
             txtNombre.Text = "";
             txtApellido.Text = "";
             txtEdad.Text = "";
-            //rdbFemenino.Checked = true;
+            rdbFemenino.Checked = false;
+            rdbMasculino.Checked = false;
             dtpFechaNacimiento.Value = System.DateTime.Now;
             txtTelefono.Text = "";
             txtEstadoCivil.Text = "";

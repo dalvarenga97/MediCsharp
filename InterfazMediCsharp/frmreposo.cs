@@ -81,12 +81,13 @@ namespace InterfazMediCsharp
             Reposo.AgregarReposo(reposo);
             MessageBox.Show("El reposo se guardó con Exito!!");
             LimpiarForm();
-            dtgReposo.DataSource = null;
-            cmbDoctor.SelectedItem = null;
-            cmbPaciente.SelectedItem = null;
-            dtpDesde.Value = System.DateTime.Now;
-            dtpHasta.Value = System.DateTime.Now;
-            reposo = new Reposo();
+            ActualizarDataGrid();
+            //dtgReposo.DataSource = null;
+            //cmbDoctor.SelectedItem = null;
+            //cmbPaciente.SelectedItem = null;
+            //dtpDesde.Value = System.DateTime.Now;
+            //dtpHasta.Value = System.DateTime.Now;
+            //reposo = new Reposo();
         }
     }
 }
