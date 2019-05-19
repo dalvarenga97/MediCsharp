@@ -38,8 +38,6 @@
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reposoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.emitirReposoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +47,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mantenimientoToolStripMenuItem,
             this.procesosToolStripMenuItem,
-            this.informesToolStripMenuItem,
             this.acercaDeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -115,7 +112,7 @@
             // 
             this.consultaToolStripMenuItem.Image = global::InterfazMediCsharp.Properties.Resources.REPOSO;
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.consultaToolStripMenuItem.Text = "Consulta";
             this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
@@ -123,24 +120,9 @@
             // 
             this.reposoToolStripMenuItem.Image = global::InterfazMediCsharp.Properties.Resources.REPOSO;
             this.reposoToolStripMenuItem.Name = "reposoToolStripMenuItem";
-            this.reposoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.reposoToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.reposoToolStripMenuItem.Text = "Reposo";
             this.reposoToolStripMenuItem.Click += new System.EventHandler(this.reposoToolStripMenuItem_Click);
-            // 
-            // informesToolStripMenuItem
-            // 
-            this.informesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.emitirReposoToolStripMenuItem});
-            this.informesToolStripMenuItem.Image = global::InterfazMediCsharp.Properties.Resources._285154;
-            this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
-            this.informesToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
-            this.informesToolStripMenuItem.Text = "Informes";
-            // 
-            // emitirReposoToolStripMenuItem
-            // 
-            this.emitirReposoToolStripMenuItem.Name = "emitirReposoToolStripMenuItem";
-            this.emitirReposoToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
-            this.emitirReposoToolStripMenuItem.Text = "Emitir Reposo";
             // 
             // acercaDeToolStripMenuItem
             // 
@@ -182,8 +164,6 @@
         private System.Windows.Forms.ToolStripMenuItem procesosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reposoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem emitirReposoToolStripMenuItem;
     }
 }
