@@ -20,7 +20,7 @@ namespace MediCsharp
 
         public TipoMedicamento tipomedicamento { get; set; }
 
-
+        public List<DetalleMedicamento> listaDetalleMedicamento = new List<DetalleMedicamento>();
 
         public static List<Medicamento> listaMedicamento = new List<Medicamento>();
 

@@ -60,8 +60,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmbMedicamento = new System.Windows.Forms.ComboBox();
             this.gpbMedicamento = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnEliminarReceta = new System.Windows.Forms.Button();
+            this.btnAgregarReceta = new System.Windows.Forms.Button();
             this.dtgDetalleMedicamento = new System.Windows.Forms.DataGridView();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -380,8 +380,8 @@
             // gpbMedicamento
             // 
             this.gpbMedicamento.BackColor = System.Drawing.Color.Transparent;
-            this.gpbMedicamento.Controls.Add(this.button1);
-            this.gpbMedicamento.Controls.Add(this.button2);
+            this.gpbMedicamento.Controls.Add(this.btnEliminarReceta);
+            this.gpbMedicamento.Controls.Add(this.btnAgregarReceta);
             this.gpbMedicamento.Controls.Add(this.dtgDetalleMedicamento);
             this.gpbMedicamento.Controls.Add(this.txtCantidad);
             this.gpbMedicamento.Controls.Add(this.label11);
@@ -395,24 +395,25 @@
             this.gpbMedicamento.TabStop = false;
             this.gpbMedicamento.Text = "Receta";
             // 
-            // button1
+            // btnEliminarReceta
             // 
-            this.button1.Location = new System.Drawing.Point(216, 109);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEliminarReceta.Location = new System.Drawing.Point(216, 109);
+            this.btnEliminarReceta.Name = "btnEliminarReceta";
+            this.btnEliminarReceta.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarReceta.TabIndex = 28;
+            this.btnEliminarReceta.Text = "Eliminar";
+            this.btnEliminarReceta.UseVisualStyleBackColor = true;
+            this.btnEliminarReceta.Click += new System.EventHandler(this.btnEliminarReceta_Click);
             // 
-            // button2
+            // btnAgregarReceta
             // 
-            this.button2.Location = new System.Drawing.Point(95, 109);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "Agregar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnAgregarReceta.Location = new System.Drawing.Point(95, 109);
+            this.btnAgregarReceta.Name = "btnAgregarReceta";
+            this.btnAgregarReceta.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarReceta.TabIndex = 27;
+            this.btnAgregarReceta.Text = "Agregar";
+            this.btnAgregarReceta.UseVisualStyleBackColor = true;
+            this.btnAgregarReceta.Click += new System.EventHandler(this.button2_Click);
             // 
             // dtgDetalleMedicamento
             // 
@@ -521,8 +522,8 @@
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnEliminarReceta;
+        private System.Windows.Forms.Button btnAgregarReceta;
         private System.Windows.Forms.ComboBox cmbCIpaciente;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DateTimePicker dtpHoraFin;

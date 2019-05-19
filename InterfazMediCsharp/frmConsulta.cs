@@ -31,7 +31,7 @@ namespace InterfazMediCsharp
             dtgDetalleMedicamento.AutoGenerateColumns = true;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)  //Es el boton btnAgregarReceta
         {
             DetalleMedicamento dm = new DetalleMedicamento();
             dm.Cantidad = Convert.ToInt16(txtCantidad.Text);
@@ -39,8 +39,6 @@ namespace InterfazMediCsharp
             consulta.detalle_medicamento.Add(dm);
             ActualizarDataGrid();
             Limpiar();
-    
-
         }
 
         private void ActualizarDataGrid()
@@ -82,7 +80,6 @@ namespace InterfazMediCsharp
             dtpHoraInicio.Value = System.DateTime.Now;
             dtpHoraFin.Value = System.DateTime.Now;
             txtDiagnostico.Text = "";
-
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -103,10 +100,21 @@ namespace InterfazMediCsharp
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            int index = lstconsultas.SelectedIndex;
-            Sucursal.listaSucursal[index] = ObtenerlistaConsulta();
+           // int index = lstconsultas.SelectedIndex;
+           // Sucursal.listaSucursal[index] = ObtenerlistaConsulta();
             MessageBox.Show("Sucursal Modificada con Exito");
-            ActualizarListaSucursal();
+          //  ActualizarListaSucursal();
+        }
+
+        private void btnEliminarReceta_Click(object sender, EventArgs e)
+        {
+            DetalleMedicamento dtm = (DetalleMedicamento)dtgDetalleMedicamento.CurrentRow.DataBoundItem;
+            if (dtm != null)
+            {
+                Medicamento.listaMedicamento.Remove(dtm);
+            }
+            ActualizarDataGrid();
+            LimpiarForm();
         }
     }
 
