@@ -19,8 +19,7 @@ namespace MediCsharp
         public string ObservacionMedicamento { get; set; }
 
         public TipoMedicamento tipomedicamento { get; set; }
-
-        public List<DetalleMedicamento> listaDetalleMedicamento = new List<DetalleMedicamento>();
+        
 
         public static List<Medicamento> listaMedicamento = new List<Medicamento>();
 

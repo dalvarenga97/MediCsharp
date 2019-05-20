@@ -31,16 +31,6 @@ namespace InterfazMediCsharp
             dtgDetalleMedicamento.AutoGenerateColumns = true;
         }
 
-        private void button2_Click(object sender, EventArgs e)  //Es el boton btnAgregarReceta
-        {
-            DetalleMedicamento dm = new DetalleMedicamento();
-            dm.Cantidad = Convert.ToInt16(txtCantidad.Text);
-            dm.NombreMedicamento = (Medicamento)cmbMedicamento.SelectedItem;
-            consulta.detalle_medicamento.Add(dm);
-            ActualizarDataGrid();
-            Limpiar();
-        }
-
         private void ActualizarDataGrid()
         {
             dtgDetalleMedicamento.DataSource = null;
@@ -106,12 +96,22 @@ namespace InterfazMediCsharp
           //  ActualizarListaSucursal();
         }
 
+        private void button2_Click(object sender, EventArgs e)  //Es el boton btnAgregarReceta
+        {
+            DetalleMedicamento dm = new DetalleMedicamento();
+            dm.Cantidad = Convert.ToInt16(txtCantidad.Text);
+            dm.NombreMedicamento = (Medicamento)cmbMedicamento.SelectedItem;
+            consulta.detalle_medicamento.Add(dm);
+            ActualizarDataGrid();
+            Limpiar();
+        }
+
         private void btnEliminarReceta_Click(object sender, EventArgs e)
         {
             DetalleMedicamento dtm = (DetalleMedicamento)dtgDetalleMedicamento.CurrentRow.DataBoundItem;
             if (dtm != null)
             {
-                Medicamento.listaMedicamento.Remove(dtm);
+                consulta.detalle_medicamento.Remove(dtm);
             }
             ActualizarDataGrid();
             LimpiarForm();
