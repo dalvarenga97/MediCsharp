@@ -42,8 +42,8 @@ namespace InterfazMediCsharp
             consulta.CIPaciente = (Paciente)cmbCIpaciente.SelectedItem;
             consulta.NombrePaciente = txtNombrePaciente.Text;
             consulta.Sucursal = (Sucursal)cmbSucursal.SelectedValue;
-            consulta.HoraInicioConsulta = dtpHoraInicio.Value.Date;
-            consulta.HoraFinConsulta = dtpHoraFin.Value.Date;
+            consulta.HoraInicioConsulta = dtpHoraInicio.Value;
+            consulta.HoraFinConsulta = dtpHoraFin.Value;
             consulta.Diagnostico = txtDiagnostico.Text;
 
             Consulta.listaConsulta.Add(consulta);
