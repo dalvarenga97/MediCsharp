@@ -44,7 +44,7 @@ namespace MediCsharp
 
         public override string ToString()
         {
-            return this.NumeroConsulta + " " + NombreDoctor;
+            return this.NumeroConsulta + "      " + NombreDoctor + "      " + NombrePaciente;
         }
 
 
