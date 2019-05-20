@@ -51,6 +51,9 @@ namespace InterfazMediCsharp
             dtpHoraInicio.Value = System.DateTime.Now;
             dtpHoraFin.Value = System.DateTime.Now;
             txtDiagnostico.Text = "";
+            rdbCritico.Checked = false;
+            rdbGrave.Checked = false;
+            rdbLeve.Checked = false;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -70,7 +73,7 @@ namespace InterfazMediCsharp
         {;
             int index = lstconsultas.SelectedIndex;
             Consulta.listaConsulta[index] = ObtenerConsultasFormulario();
-            MessageBox.Show("Consultas Modificada con Exito");
+            MessageBox.Show("Consulta modificada con Exito");
             ActualizarListaConsultas();
         }
 
@@ -88,6 +91,18 @@ namespace InterfazMediCsharp
                 dtpHoraInicio.Value = consul.HoraInicioConsulta;
                 dtpHoraFin.Value = consul.HoraFinConsulta;
                 txtDiagnostico.Text = consul.Diagnostico;
+                if (consul.TipoUrgencia == TipoUrgencia.Critico)
+                {
+                    rdbCritico.Checked = true;
+                }
+                else if (consul.TipoUrgencia == TipoUrgencia.Grave)
+                {
+                    rdbGrave.Checked = true;
+                }
+                else if (consul.TipoUrgencia == TipoUrgencia.Leve)
+                {
+                    rdbLeve.Checked = true;
+                };
             }
         }
 
@@ -103,6 +118,18 @@ namespace InterfazMediCsharp
             c.HoraInicioConsulta = dtpHoraInicio.Value;
             c.HoraFinConsulta = dtpHoraFin.Value;
             c.Diagnostico = txtDiagnostico.Text;
+            if (rdbCritico.Checked)
+            {
+                c.TipoUrgencia = TipoUrgencia.Critico;
+            }
+            else if (rdbGrave.Checked)
+            {
+                c.TipoUrgencia = TipoUrgencia.Grave;
+            }
+            else if (rdbLeve.Checked)
+            {
+                c.TipoUrgencia = TipoUrgencia.Leve;
+            }
             return c;
 
         }

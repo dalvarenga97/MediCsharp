@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediCsharp
 {
+    public enum TipoUrgencia {Critico, Grave, Leve}
     public class Consulta
     {
         public Int64 NumeroConsulta { get; set; }
@@ -21,7 +22,7 @@ namespace MediCsharp
         public String Medicamento { get; set; }
         
         public String Diagnostico { get; set; }
-        public string TipoUrgencia { get; set; }
+        public TipoUrgencia TipoUrgencia { get; set; }
 
         public List<DetalleMedicamento> detalle_medicamento = new List<DetalleMedicamento>();
 
