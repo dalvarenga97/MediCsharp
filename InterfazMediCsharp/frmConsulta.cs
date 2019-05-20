@@ -36,18 +36,8 @@ namespace InterfazMediCsharp
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Consulta consulta = new Consulta();
-            consulta.NumeroConsulta = Convert.ToInt16(txtNumeroConsulta.Text);
-            consulta.NombreDoctor = (Doctor)cmbNombreDoctor.SelectedItem;
-            consulta.CIPaciente = (Paciente)cmbCIpaciente.SelectedItem;
-            consulta.NombrePaciente = txtNombrePaciente.Text;
-            consulta.Sucursal = (Sucursal)cmbSucursal.SelectedValue;
-            consulta.HoraInicioConsulta = dtpHoraInicio.Value;
-            consulta.HoraFinConsulta = dtpHoraFin.Value;
-            consulta.Diagnostico = txtDiagnostico.Text;
-
+            Consulta consulta = ObtenerConsultasFormulario();
             Consulta.listaConsulta.Add(consulta);
-
             ActualizarListaConsultas();
             LimpiarForm();
         }
@@ -77,11 +67,11 @@ namespace InterfazMediCsharp
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
-        {
-           // int index = lstconsultas.SelectedIndex;
-           // Sucursal.listaSucursal[index] = ObtenerlistaConsulta();
-            MessageBox.Show("Sucursal Modificada con Exito");
-          //  ActualizarListaSucursal();
+        {;
+            int index = lstconsultas.SelectedIndex;
+            Consulta.listaConsulta[index] = ObtenerConsultasFormulario();
+            MessageBox.Show("Consultas Modificada con Exito");
+            ActualizarListaConsultas();
         }
 
         private void lstconsultas_Click(object sender, EventArgs e)
@@ -99,6 +89,22 @@ namespace InterfazMediCsharp
                 dtpHoraFin.Value = consul.HoraFinConsulta;
                 txtDiagnostico.Text = consul.Diagnostico;
             }
+        }
+
+        private Consulta ObtenerConsultasFormulario()
+        {
+            Consulta c = new Consulta();
+
+            c.NumeroConsulta = Convert.ToInt16(txtNumeroConsulta.Text);
+            c.NombreDoctor = (Doctor)cmbNombreDoctor.SelectedItem;
+            c.CIPaciente = (Paciente)cmbCIpaciente.SelectedItem;
+            c.NombrePaciente = txtNombrePaciente.Text;
+            c.Sucursal = (Sucursal)cmbSucursal.SelectedValue;
+            c.HoraInicioConsulta = dtpHoraInicio.Value;
+            c.HoraFinConsulta = dtpHoraFin.Value;
+            c.Diagnostico = txtDiagnostico.Text;
+            return c;
+
         }
 
         private void ActualizarListaConsultas()
