@@ -452,10 +452,11 @@
             // 
             this.lstconsultas.FormattingEnabled = true;
             this.lstconsultas.Location = new System.Drawing.Point(476, 372);
-            this.lstconsultas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstconsultas.Margin = new System.Windows.Forms.Padding(2);
             this.lstconsultas.Name = "lstconsultas";
             this.lstconsultas.Size = new System.Drawing.Size(308, 69);
             this.lstconsultas.TabIndex = 17;
+            this.lstconsultas.Click += new System.EventHandler(this.lstconsultas_Click);
             // 
             // frmConsulta
             // 

@@ -17,6 +17,7 @@ namespace InterfazMediCsharp
         public frmConsulta()
         {
             InitializeComponent();
+            LimpiarForm();
         }
 
 
@@ -26,21 +27,11 @@ namespace InterfazMediCsharp
             cmbMedicamento.DataSource = Medicamento.ObtenerMedicamento();
             cmbNombreDoctor.DataSource = Doctor.ObtenerDoctor();
             cmbCIpaciente.DataSource = Paciente.ObtenerPaciente();
+           // txtNombrePaciente.Text = Paciente.ObtenerPaciente();
+            cmbSucursal.DataSource = Sucursal.ObtenerSucursal();
 
             consulta = new Consulta();
             dtgDetalleMedicamento.AutoGenerateColumns = true;
-        }
-
-        private void ActualizarDataGrid()
-        {
-            dtgDetalleMedicamento.DataSource = null;
-            dtgDetalleMedicamento.DataSource = consulta.detalle_medicamento;
-        }
-
-        private void Limpiar()
-        {
-            txtCantidad.Text = "";
-            cmbMedicamento.SelectedItem = null;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -57,7 +48,7 @@ namespace InterfazMediCsharp
 
             Consulta.listaConsulta.Add(consulta);
 
-            ActualizarDataGrid();
+            ActualizarListaConsultas();
             LimpiarForm();
         }
         
@@ -74,12 +65,9 @@ namespace InterfazMediCsharp
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Consulta consulta = (Consulta)dtgDetalleMedicamento.CurrentRow.DataBoundItem;
-            if (consulta != null)
-            {
-                Consulta.listaConsulta.Remove(consulta);
-            }
-            ActualizarDataGrid();
+            Consulta consulta = (Consulta)lstconsultas.SelectedItem;
+            Consulta.EliminarConsulta(consulta);
+            ActualizarListaConsultas();
             LimpiarForm();
         }
 
@@ -96,14 +84,38 @@ namespace InterfazMediCsharp
           //  ActualizarListaSucursal();
         }
 
-        private void button2_Click(object sender, EventArgs e)  //Es el boton btnAgregarReceta
+        private void lstconsultas_Click(object sender, EventArgs e)
+        {
+            Consulta consul = (Consulta)lstconsultas.SelectedItem;
+
+            if (consul != null)
+            {
+                txtNumeroConsulta.Text = Convert.ToString(consul.NumeroConsulta);
+                cmbNombreDoctor.SelectedItem = consul.NombreDoctor;
+                cmbCIpaciente.SelectedItem = consul.CIPaciente;
+                txtNombrePaciente.Text = consul.NombrePaciente;
+                cmbSucursal.SelectedItem = consul.Sucursal;
+                dtpHoraInicio.Value = consul.HoraInicioConsulta;
+                dtpHoraFin.Value = consul.HoraFinConsulta;
+                txtDiagnostico.Text = consul.Diagnostico;
+            }
+        }
+
+        private void ActualizarListaConsultas()
+        {
+            lstconsultas.DataSource = null;
+            lstconsultas.DataSource = Consulta.ObtenerConsulta();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)  // btnAgregarReceta
         {
             DetalleMedicamento dm = new DetalleMedicamento();
             dm.Cantidad = Convert.ToInt16(txtCantidad.Text);
             dm.NombreMedicamento = (Medicamento)cmbMedicamento.SelectedItem;
             consulta.detalle_medicamento.Add(dm);
             ActualizarDataGrid();
-            Limpiar();
+            LimpiarReceta();
         }
 
         private void btnEliminarReceta_Click(object sender, EventArgs e)
@@ -114,8 +126,22 @@ namespace InterfazMediCsharp
                 consulta.detalle_medicamento.Remove(dtm);
             }
             ActualizarDataGrid();
-            LimpiarForm();
+            LimpiarReceta();
         }
+
+        private void ActualizarDataGrid()
+        {
+            dtgDetalleMedicamento.DataSource = null;
+            dtgDetalleMedicamento.DataSource = consulta.detalle_medicamento;
+        }
+        
+        private void LimpiarReceta()
+        {
+            txtCantidad.Text = "";
+            cmbMedicamento.SelectedItem = null;
+        }
+
+        
     }
 
 

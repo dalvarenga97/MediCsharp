@@ -34,14 +34,17 @@ namespace MediCsharp
         {
             return listaPacientes;
         }
+
+        public static List<Paciente> ObtenerCIPaciente()
+        {
+            return listaPacientes;
+        }
+
         public override string ToString()
         {
             return this.NombrePaciente+ " " + ApellidoPaciente;
         }
-
-
-
-
+    
 
     }
 }
