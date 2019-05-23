@@ -77,11 +77,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Script MT Bold", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(369, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 35);
+            this.label1.Size = new System.Drawing.Size(138, 33);
             this.label1.TabIndex = 12;
             this.label1.Text = "Consulta";
             // 
@@ -320,7 +320,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 127);
+            this.label7.Location = new System.Drawing.Point(4, 133);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(132, 16);
             this.label7.TabIndex = 5;
