@@ -45,7 +45,8 @@ namespace MediCsharp
             return this.NombrePaciente+ " " + ApellidoPaciente;
         }
 
-        public String obtenerPacientexNombre(String nombre)
+       /* No funciona, cambio de planes
+        * public String obtenerPacientexNombre(String nombre)
         {
             foreach (Paciente p in listaPacientes)
             {
@@ -69,7 +70,7 @@ namespace MediCsharp
             }
 
             return null;
-        }
+        }*/
 
 
     }
