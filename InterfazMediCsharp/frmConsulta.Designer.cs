@@ -299,6 +299,7 @@
             this.txtNombrePaciente.Name = "txtNombrePaciente";
             this.txtNombrePaciente.Size = new System.Drawing.Size(152, 22);
             this.txtNombrePaciente.TabIndex = 4;
+            this.txtNombrePaciente.Leave += new System.EventHandler(this.txtNombrePaciente_Leave);
             // 
             // txtNumeroConsulta
             // 

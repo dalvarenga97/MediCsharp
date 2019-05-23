@@ -44,7 +44,33 @@ namespace MediCsharp
         {
             return this.NombrePaciente+ " " + ApellidoPaciente;
         }
-    
+
+        public String obtenerPacientexNombre(String nombre)
+        {
+            foreach (Paciente p in listaPacientes)
+            {
+                if (p.NombrePaciente == nombre)
+                {
+                    return p.CIPaciente;
+                }
+            }
+
+            return null;
+        }
+
+        public String obtenerPacientexCI(String ci)
+        {
+            foreach (Paciente p in listaPacientes)
+            {
+                if (p.CIPaciente == ci)
+                {
+                    return p.NombrePaciente + " " + p.ApellidoPaciente;
+                }
+            }
+
+            return null;
+        }
+
 
     }
 }
