@@ -124,7 +124,7 @@ namespace InterfazMediCsharp
 
         private void frmDoctor_Load(object sender, EventArgs e)
         {
-
+            // PRUEBA
         }
     }
 }
