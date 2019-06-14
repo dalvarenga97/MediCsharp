@@ -14,6 +14,9 @@ namespace InterfazMediCsharp
     public partial class frmConsulta : Form
     {
         Consulta consulta;
+
+        Paciente paciente;
+
         public frmConsulta()
         {
             InitializeComponent();
@@ -174,7 +177,11 @@ namespace InterfazMediCsharp
             cmbMedicamento.SelectedItem = null;
         }
 
-        
+        // cambio de planes
+        private void txtNombrePaciente_Leave(object sender, EventArgs e)
+        {
+          //  cmbCIpaciente.Text = paciente.obtenerPacientexNombre(txtNombrePaciente.Text);
+        }
     }
 
 
