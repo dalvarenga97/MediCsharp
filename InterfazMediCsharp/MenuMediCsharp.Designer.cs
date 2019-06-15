@@ -146,6 +146,7 @@
             this.Name = "frmMenu";
             this.Text = "..:SISTEMA HOSPITALARIO MEDICSHARP:..";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

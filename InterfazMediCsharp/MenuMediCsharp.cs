@@ -61,5 +61,10 @@ namespace InterfazMediCsharp
             frmreposo form = new frmreposo();
             form.Show();
         }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -14,6 +14,8 @@ namespace InterfazMediCsharp
     public partial class frmPaciente : Form
     {
         string modo;
+
+        bool BANDERA;
         public frmPaciente()
         {
             InitializeComponent();
@@ -34,8 +36,12 @@ namespace InterfazMediCsharp
             if (modo == "I")
             {
                 Paciente paciente = ObtenerPacienteFormulario();
+               
 
-                Paciente.AgregarPaciente(paciente);
+
+                    Paciente.AgregarPaciente(paciente);
+               
+               
 
 
             }
@@ -80,6 +86,7 @@ namespace InterfazMediCsharp
             paciente.Telefono = Convert.ToInt32(txtTelefono.Text);
             cmbEstadoCivil.DataSource = Enum.GetValues(typeof(EstadoCivil));
 
+           
             return paciente;
         }
 
