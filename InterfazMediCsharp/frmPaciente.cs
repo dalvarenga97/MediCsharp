@@ -60,6 +60,10 @@ namespace InterfazMediCsharp
         private Paciente ObtenerPacienteFormulario()
         {
             Paciente paciente = new Paciente();
+            if (!string.IsNullOrEmpty(txtId.Text))
+            {
+                paciente.Id = Convert.ToInt32(txtId.Text);
+            }
             paciente.CIPaciente = txtCI.Text;
             paciente.NombrePaciente = txtNombre.Text;
             paciente.ApellidoPaciente = txtApellido.Text;
@@ -83,6 +87,7 @@ namespace InterfazMediCsharp
 
         private void LimpiarFormulario()
         {
+            txtId.Text = "";
             txtCI.Text = "";
             txtNombre.Text = "";
             txtApellido.Text = "";
@@ -100,6 +105,7 @@ namespace InterfazMediCsharp
 
             if (paciente != null)
             {
+                txtId.Text = Convert.ToString(paciente.Id);
                 txtCI.Text = paciente.CIPaciente;
                 txtNombre.Text = paciente.NombrePaciente;
                 txtApellido.Text = paciente.ApellidoPaciente;
@@ -124,7 +130,7 @@ namespace InterfazMediCsharp
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Paciente paciente = (Paciente)lstPaciente.SelectedItem;
+            Paciente paciente = ObtenerPacienteFormulario();
 
             int index = lstPaciente.SelectedIndex;
             Paciente.EditarPaciente(index, paciente);
@@ -216,5 +222,11 @@ namespace InterfazMediCsharp
 
         }
 
+        private void lstPaciente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
+
+ 
 }
