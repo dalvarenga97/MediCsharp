@@ -61,7 +61,7 @@ namespace InterfazMediCsharp
             doctor.ApellidoDoctor = txtApellido.Text;
             doctor.Edad = txtEdad.Text;
             doctor.FechaNacimiento = dtpFechaNacimiento.Value.Date;
-            doctor.Especialidad = txtEspecialidad.Text;
+            doctor.especialidad = (Especialidad)txtEspecialidad.Text;
             doctor.Telefono = Convert.ToInt64(txtTelefono.Text);
             doctor.GuardiaMedico = txtGuardiaMedico.Text;
 
