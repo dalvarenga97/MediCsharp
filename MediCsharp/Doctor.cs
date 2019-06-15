@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 namespace MediCsharp
 {
     public enum DiaSemana {Lunes, Martes, Miercoles, Jueves,  Viernes, Sabado, Domingo }
-    public enum Especialida { Clinico, Pediatra, Ginecologo, Dentista, Mastologo, Dermatologo, Oculista, Fonoaudiologo, Psicologo }
+    public enum Especialidad { Clinico, Pediatra, Ginecologo, Dentista, Mastologo, Dermatologo, Oculista, Fonoaudiologo, Psicologo }
     public class Doctor
     {
         public string Matricula { get; set; }
         public string NombreDoctor { get; set; }
         public String ApellidoDoctor { get; set; }
-        public string Especialidad { get; set; }
+        public Especialidad especialidad { get; set; }
         public String Sexo { get; set; }
         public string Edad { get; set; }
         public DateTime FechaNacimiento { get; set; }
