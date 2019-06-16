@@ -40,7 +40,7 @@ namespace MediCsharp
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"INSERT INTO Sucursal (NroSucursal, Nombre_Sucursal, Direccion varchar, Cantidad_Pisos, HorarioInicioVisitas, HorarioFinVisitas) VALUES (@NumeroSucursal, @NombreSucursal, @Direccion, @CantidadPisos, @HorarioInicioVisitas, @HorarioFinVisitas)";
+                string textoCmd = @"INSERT INTO Sucursal (NroSucursal, Nombre_Sucursal, Direccion, Cantidad_Pisos, HorarioInicioVisitas, HorarioFinVisitas) VALUES (@NumeroSucursal, @NombreSucursal, @Direccion, @CantidadPisos, @HorarioInicioVisitas, @HorarioFinVisitas)";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
                 cmd = s.ObtenerParametros(cmd);
 
@@ -55,7 +55,7 @@ namespace MediCsharp
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"delete from Sucursal where NroSucursal = @NumeroSucursal";
+                string textoCmd = @"DELETE FROM Sucursal WHERE NroSucursal = @NumeroSucursal";
 
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
                 cmd = s.ObtenerParametroId(cmd);
@@ -64,6 +64,59 @@ namespace MediCsharp
             }
 
         }
+
+        public static void EditarSucursal(int index, Sucursal s)
+        {
+
+            using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
+            {
+                con.Open();
+                string textoCmd = @"UPDATE Sucursal SET Nombre_Sucursal = @NombreSucursal, Direccion = @Direccion ,Cantidad_Pisos = @CantidadPisos, HorarioInicioVisitas = @HorarioInicioVisitas, HorarioFinVisitas = @HorarioFinVisitas WHERE NroSucursal = @NumeroSucursal";
+                SqlCommand cmd = new SqlCommand(textoCmd, con);
+                cmd = s.ObtenerParametros(cmd, true);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
+        private SqlCommand ObtenerParametros(SqlCommand cmd, Boolean Id = false)
+        {
+            SqlParameter p1 = new SqlParameter("@Nombre_Sucursal", this.NombreSucursal);
+            SqlParameter p2 = new SqlParameter("@Direccion", this.Direccion);
+            SqlParameter p3 = new SqlParameter("@Cantidad_Pisos", this.CantidadPisos);
+            SqlParameter p4 = new SqlParameter("@HorarioInicioVisitas", this.HorarioInicioVisitas);
+            SqlParameter p5 = new SqlParameter("@HorarioFinVisitas", this.HorarioFinVisitas);
+
+            p1.SqlDbType = SqlDbType.VarChar;
+            p2.SqlDbType = SqlDbType.VarChar;
+            p3.SqlDbType = SqlDbType.Int;
+            p4.SqlDbType = SqlDbType.DateTime;
+            p5.SqlDbType = SqlDbType.DateTime;
+            cmd.Parameters.Add(p1);
+            cmd.Parameters.Add(p2);
+            cmd.Parameters.Add(p3);
+            cmd.Parameters.Add(p4);
+            cmd.Parameters.Add(p5);
+
+
+            if (Id == true) cmd = ObtenerParametroId(cmd);
+
+            return cmd;
+
+        }
+
+
+
+        private SqlCommand ObtenerParametroId(SqlCommand cmd)
+        {
+            SqlParameter p6 = new SqlParameter("@NroSucursal", this.NumeroSucursal);
+            p6.SqlDbType = SqlDbType.Int;
+            cmd.Parameters.Add(p6);
+            return cmd;
+        }
+
+
         public static List<Sucursal> ObtenerSucursal()
         {
             return listaSucursal;
