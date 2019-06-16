@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MediCsharp
 {
-    public enum DiaSemana {Lunes, Martes, Miercoles, Jueves,  Viernes, Sabado, Domingo }
+    
     public enum Especialidad { Clinico, Pediatra, Ginecologo, Dentista, Mastologo, Dermatologo, Oculista, Fonoaudiologo, Psicologo }
     public class Doctor
     {
@@ -20,11 +20,11 @@ namespace MediCsharp
         public string ApellidoDoctor { get; set; }
         public Especialidad especialidad { get; set; }
         public Sexo sexo { get; set; }
-        public string Edad { get; set; }
+        public  Int32 Edad { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public string Telefono { get; set; }
 
-        public List<string> dias_guardia { get; set; }
+        public List<string> DiasGuardia { get; set; }
 
 
         public static List<Doctor> listaDoctores = new List<Doctor>();
@@ -34,7 +34,7 @@ namespace MediCsharp
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"INSERT INTO Doctor (nombredoctor, apellidodoctor, especialidad, sexo, edad, fechanacimiento, telefono, diasguardia) VALUES (@nombredoctor, @apellidodoctor, @especialidad, @sexo, @edad, @fechanacimiento, @telefono, @diasguardia)";
+                string textoCmd = @"INSERT INTO Doctor (NombreDoctor, ApellidoDoctor, especialidad, sexo, Edad, FechaNacimiento, Telefono, DiasGuardia) VALUES (@NombreDoctor, @ApellidoDoctor, @especialidad, @sexo, @Edad, @FechaNacimiento, @Telefono, @DiasGuardia)";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
                 cmd = d.ObtenerParametros(cmd);
 
@@ -61,7 +61,7 @@ namespace MediCsharp
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"UPDATE Doctor SET nombredoctor = @nombredoctor, apellidodoctor = @apellidodoctor, especialidad = @especialidad, sexo = @sexo, edad = @edad, fechanacimiento = @fechanacimiento, telelfono = @telelfono ,dias_guardia = @dias_guardia where id = @id";
+                string textoCmd = @"UPDATE Doctor SET NombreDoctor = @NombreDoctor, ApellidoDoctor = @ApellidoDoctor, especialidad = @especialidad, sexo = @sexo, Edad = @Edad, FechaNacimiento = @FechaNacimiento, Telefono = @Telefono ,DiasGuardia = @DiasGuardia where Id = @Id";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
                 cmd = d.ObtenerParametros(cmd, true);
 
@@ -91,10 +91,10 @@ namespace MediCsharp
                     doctor.ApellidoDoctor = elLectorDeDatos.GetString(2);
                     doctor.especialidad = (Especialidad)elLectorDeDatos.GetInt32(3);
                     doctor.sexo = (Sexo)elLectorDeDatos.GetInt32(4);
-                    doctor.Edad = elLectorDeDatos.GetString(5);
+                    doctor.Edad = elLectorDeDatos.GetInt32(5);
                     doctor.FechaNacimiento = elLectorDeDatos.GetDateTime(6);
                     doctor.Telefono = elLectorDeDatos.GetString(7);
-                    doctor.dias_guardia = ObtenerListaDiasEntrega(elLectorDeDatos.GetString(8));
+                    doctor.DiasGuardia = ObtenerListaDiasGuardia(elLectorDeDatos.GetString(8));
 
 
                     listaDoctores.Add(doctor);
@@ -105,7 +105,7 @@ namespace MediCsharp
 
         private string ObtenerStringDiasGuardia()
         {
-            return string.Join(",", this.dias_guardia);
+            return string.Join(",", this.DiasGuardia);
 
         }
 
@@ -119,6 +119,50 @@ namespace MediCsharp
         public override string ToString()
         {
             return this.NombreDoctor + " " + ApellidoDoctor;
+        }
+
+
+        private SqlCommand ObtenerParametros(SqlCommand cmd, Boolean Id = false)
+        {
+
+            SqlParameter p1 = new SqlParameter("@NombreDoctor", this.NombreDoctor);
+            SqlParameter p2 = new SqlParameter("@ApellidoDoctor", this.ApellidoDoctor);
+            SqlParameter p3 = new SqlParameter("@especialidad", this.especialidad);
+            SqlParameter p4 = new SqlParameter("@sexo", this.sexo);
+            SqlParameter p5 = new SqlParameter("@Edad", this.Edad);
+            SqlParameter p6 = new SqlParameter("@FechaNacimiento", this.FechaNacimiento);
+            SqlParameter p7 = new SqlParameter("@Telefono", this.Telefono);
+            SqlParameter p8 = new SqlParameter("@DiasGuardia", this.ObtenerStringDiasGuardia());
+            p1.SqlDbType = SqlDbType.VarChar;
+            p2.SqlDbType = SqlDbType.VarChar;
+            p3.SqlDbType = SqlDbType.Int;
+            p4.SqlDbType = SqlDbType.Int;
+            p5.SqlDbType = SqlDbType.VarChar;
+            p6.SqlDbType = SqlDbType.DateTime;
+            p7.SqlDbType = SqlDbType.VarChar;
+            p8.SqlDbType = SqlDbType.VarChar;
+            cmd.Parameters.Add(p1);
+            cmd.Parameters.Add(p2);
+            cmd.Parameters.Add(p3);
+            cmd.Parameters.Add(p4);
+            cmd.Parameters.Add(p5);
+            cmd.Parameters.Add(p6);
+            cmd.Parameters.Add(p7);
+            cmd.Parameters.Add(p8);
+
+            if (Id == true) cmd = ObtenerParametroId(cmd);
+
+            return cmd;
+        }
+
+
+        private SqlCommand ObtenerParametroId(SqlCommand cmd)
+        {
+            SqlParameter p9 = new SqlParameter("@Id", this.Id);
+            p9.SqlDbType = SqlDbType.Int;
+            cmd.Parameters.Add(p9);
+
+            return cmd;
         }
 
 
