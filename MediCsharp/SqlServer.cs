@@ -9,7 +9,7 @@ namespace MediCsharp
    public  class SqlServer
     {
 
-        public const string CADENA_CONEXION = "Data Source = LOCALHOST; Initial Catalog = Carniceria; Integrated Security=true";
+        public const string CADENA_CONEXION = "Data Source = LOCALHOST; Initial Catalog = MediCsharp; Integrated Security=true";
 
 
     }

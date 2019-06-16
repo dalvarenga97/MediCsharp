@@ -15,7 +15,7 @@ namespace InterfazMediCsharp
     {
         string modo;
 
-        bool BANDERA;
+       
         public frmPaciente()
         {
             InitializeComponent();
@@ -130,7 +130,7 @@ namespace InterfazMediCsharp
                 cmbEstadoCivil.SelectedItem = paciente.estadocivil;
 
             }
-
+            DesbloquearFormulario();
 
 
         }

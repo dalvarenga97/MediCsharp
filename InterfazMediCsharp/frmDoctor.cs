@@ -215,7 +215,7 @@ namespace InterfazMediCsharp
 
                 }
 
-
+                DesbloquearFormulario();
             }
 
 

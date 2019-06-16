@@ -36,10 +36,8 @@
             this.rdbJarabe = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.txtObservacion = new System.Windows.Forms.TextBox();
-            this.txtOrigen = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,6 +49,9 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lstMedicamento = new System.Windows.Forms.ListBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.cmbOrigen = new System.Windows.Forms.ComboBox();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,16 +59,16 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.cmbOrigen);
+            this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.rdbInyectable);
             this.groupBox1.Controls.Add(this.rdbPastillas);
             this.groupBox1.Controls.Add(this.rdbJarabe);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtObservacion);
-            this.groupBox1.Controls.Add(this.txtOrigen);
             this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label4);
@@ -143,13 +144,6 @@
             this.txtObservacion.Size = new System.Drawing.Size(153, 22);
             this.txtObservacion.TabIndex = 5;
             // 
-            // txtOrigen
-            // 
-            this.txtOrigen.Location = new System.Drawing.Point(144, 156);
-            this.txtOrigen.Name = "txtOrigen";
-            this.txtOrigen.Size = new System.Drawing.Size(153, 22);
-            this.txtOrigen.TabIndex = 4;
-            // 
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(144, 115);
@@ -163,14 +157,6 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(153, 22);
             this.txtNombre.TabIndex = 2;
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(144, 29);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(153, 22);
-            this.txtCodigo.TabIndex = 1;
-            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // label7
             // 
@@ -283,6 +269,33 @@
             this.lstMedicamento.TabIndex = 15;
             this.lstMedicamento.Click += new System.EventHandler(this.lstMedicamento_Click);
             // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(144, 29);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(153, 22);
+            this.txtId.TabIndex = 27;
+            // 
+            // cmbOrigen
+            // 
+            this.cmbOrigen.FormattingEnabled = true;
+            this.cmbOrigen.Location = new System.Drawing.Point(148, 158);
+            this.cmbOrigen.Name = "cmbOrigen";
+            this.cmbOrigen.Size = new System.Drawing.Size(151, 24);
+            this.cmbOrigen.TabIndex = 28;
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Location = new System.Drawing.Point(84, 432);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 29;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
             // frmMedicamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,6 +303,7 @@
             this.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.PARA_FONDO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(774, 494);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.lstMedicamento);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
@@ -314,10 +328,8 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtObservacion;
-        private System.Windows.Forms.TextBox txtOrigen;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
@@ -334,5 +346,8 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListBox lstMedicamento;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.ComboBox cmbOrigen;
+        private System.Windows.Forms.Button btnNuevo;
     }
 }
