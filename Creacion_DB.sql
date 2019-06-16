@@ -77,26 +77,25 @@ CREATE TABLE Reposo
 	  CONSTRAINT FK_Reposo_Nombre_Paciente FOREIGN KEY (Paciente) REFERENCES Paciente);
 
 CREATE TABLE Consulta
-	 (Numero_Consulta int,
+	 (NroConsulta int,
 	  Doctor varchar(255),
 	  Paciente varchar(255),
-	  --Edad_Paciente varchar(255),
-	  --Sexo_Paciente varchar(255),
 	  Hora_Inicio_Consulta datetime,
+	  Hora_Fin_Consulta datetime,
 	  NroSucursal int,
 	  Diagnostico varchar(255),
 	  Tipo_Urgencia varchar(255),
-	  CONSTRAINT PK_Consulta PRIMARY KEY NONCLUSTERED (Numero_Consulta),
-	  CONSTRAINT FK_Consulta_Nombre_Doctor FOREIGN KEY (Doctor) REFERENCES Doctor, --(Nombre),
-	  CONSTRAINT FK_Consulta_Nombre_Paciente FOREIGN KEY (Paciente) REFERENCES Paciente, --(Nombre),					
+	  CONSTRAINT PK_Consulta PRIMARY KEY NONCLUSTERED (NroConsulta),
+	  CONSTRAINT FK_Consulta_Nombre_Doctor FOREIGN KEY (Doctor) REFERENCES Doctor,
+	  CONSTRAINT FK_Consulta_Nombre_Paciente FOREIGN KEY (Paciente) REFERENCES Paciente,
 	  CONSTRAINT FK_Consulta_Sucursal FOREIGN KEY (NroSucursal) REFERENCES Sucursal,
 	  CONSTRAINT CHK_Consulta_Tipo_Urgencia check (Tipo_Urgencia in ('Critico', 'Grave', 'Leve')));
 
 CREATE TABLE DetalleMedicamento
 	 (Codigo_Medicamento int,
-	  Numero_Consulta int,
+	  NroConsulta int,
 	  Cantidad int,
-	  CONSTRAINT PK_DetalleMedicamento PRIMARY KEY NONCLUSTERED (Codigo_Medicamento, Numero_Consulta),						
+	  CONSTRAINT PK_DetalleMedicamento PRIMARY KEY NONCLUSTERED (Codigo_Medicamento, NroConsulta),						
 	  CONSTRAINT FK_DetalleMedicamento_Medicamento FOREIGN KEY (Codigo_Medicamento) REFERENCES Medicamento,
-	  CONSTRAINT FK_DetalleMedicamento_Consulta FOREIGN KEY (Numero_Consulta) REFERENCES Consulta);
+	  CONSTRAINT FK_DetalleMedicamento_Consulta FOREIGN KEY (NroConsulta) REFERENCES Consulta);
 

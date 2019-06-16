@@ -32,15 +32,13 @@ namespace MediCsharp
 
         public static void AgregarConsulta(Consulta c)
         {
-            //listaConsulta.Add(c);
 
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"INSERT INTO Medicamento (NombreMedicamento, DescripcionMedicamento,origen,ObservacionMedicamento,tipomedicamento) VALUES (@NombreMedicamento, @DescripcionMedicamento, @origen, @ObservacionMedicamento, @tipomedicamento)";
-                SqlCommand cmd = new SqlCommand(textoCmd, con);
-                cmd = c.ObtenerParametros(cmd);
-
+                string textoCmd = @"INSERT INTO Consulta (Doctor, Paciente, Hora_Inicio_Consulta, Hora_Fin_Consulta, NroSucursal, Diagnostico, Tipo_Urgencia) VALUES (@Doctor, @Paciente, @HoraInicioConsulta, @HoraFinConsulta, @NumeroSucursal, @NumeroMedicamento)"; // DEJO CONSULTA PARA DESPUES
+                SqlCommand cmd = new SqlCommand(textoCmd, con);            // AL LLAMAR A DOCTOR, PACIENTE Y MEDICAMENTO
+                cmd = c.ObtenerParametros(cmd);                            // Medicamento no seiria llamar a Detallemedic
                 cmd.ExecuteNonQuery();
             }
 
@@ -74,18 +72,27 @@ namespace MediCsharp
         }
         private SqlCommand ObtenerParametroId(SqlCommand cmd)
         {
-            SqlParameter p6 = new SqlParameter("@Id", this.NumeroConsulta);
+            SqlParameter p6 = new SqlParameter("@NroConsulta", this.NumeroConsulta);
             p6.SqlDbType = SqlDbType.Int;
             cmd.Parameters.Add(p6);
             return cmd;
         }
-
         
-        /// 
         
         public static void EliminarConsulta(Consulta c)
         {
-            listaConsulta.Remove(c);
+            //listaConsulta.Remove(c);
+
+            using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
+            {
+                con.Open();
+                string textoCmd = @"DELETE FROM Consulta WHERE NroConsulta = @NumeroConsulta";
+
+                SqlCommand cmd = new SqlCommand(textoCmd, con);
+                cmd = c.ObtenerParametroId(cmd);
+
+                cmd.ExecuteNonQuery();
+            }
         }
 
         public static List<Consulta> ObtenerConsulta()
