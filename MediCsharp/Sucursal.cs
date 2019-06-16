@@ -17,7 +17,7 @@ namespace MediCsharp
     {
         //public int Id { get; set; }               No se necesita, se usa el numero de sucursal(?)
         public Int64 NumeroSucursal { get; set; }
-        public String NombreSucursal { get; set; }
+        public string NombreSucursal { get; set; }
         public string Direccion { get; set; }
         public Int64 CantidadPisos { get; set; }
 
@@ -119,8 +119,37 @@ namespace MediCsharp
 
         public static List<Sucursal> ObtenerSucursal()
         {
+            //return listaSucursal;
+            Sucursal sucursal;
+            listaSucursal.Clear();
+            using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
+            {
+
+                con.Open();
+                string textoCmd = "SELECT * FROM Scursal";
+                SqlCommand cmd = new SqlCommand(textoCmd, con);
+
+                SqlDataReader elLectorDeDatos = cmd.ExecuteReader();
+
+                while (elLectorDeDatos.Read())
+                {
+                    sucursal = new Sucursal();
+                    sucursal.NumeroSucursal = elLectorDeDatos.GetInt64(0);
+                    sucursal.NombreSucursal = elLectorDeDatos.GetString(1);
+                    sucursal.Direccion = elLectorDeDatos.GetString(2);
+                    sucursal.CantidadPisos = elLectorDeDatos.GetInt32(3);
+                    sucursal.HorarioInicioVisitas = elLectorDeDatos.GetDateTime(4);
+                    sucursal.HorarioFinVisitas = elLectorDeDatos.GetDateTime(5);
+
+
+
+                    listaSucursal.Add(sucursal);
+
+                }
+            }
             return listaSucursal;
         }
+    
         public override string ToString()
         {
             return this.NombreSucursal;
