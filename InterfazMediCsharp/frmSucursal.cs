@@ -32,29 +32,52 @@ namespace InterfazMediCsharp
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Sucursal sucursal = (Sucursal)lstSucursal.SelectedItem;
-            Sucursal.EliminarSucursal(sucursal);
-            ActualizarListaSucursal();
-            LimpiarFormulario();
+            if (lstSucursal.SelectedItem != null)
+            {
+                Sucursal sucursalSeleccionada = (Sucursal)lstSucursal.SelectedItem;
+                Sucursal.EliminarSucursal(sucursalSeleccionada);
+
+                lstSucursal.DataSource = null;
+                lstSucursal.DataSource = Sucursal.ObtenerSucursal();
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Sucursal sucursal = ObtenerSucursalFormulario();
+            Sucursal su = new Sucursal();
+             su.NombreSucursal = txtNombre.Text;
+            su.Direccion = txtDireccion.Text;
+            su.CantidadPisos = Convert.ToInt64(txtCantidadPisos);
+            su.HorarioInicioVisitas = dtpiniciovisitas.Value.Date;
+            su.HorarioFinVisitas = dtpfinvisitas.Value.Date;
 
-            Sucursal.AgregarSucursal(sucursal);
 
-            ActualizarListaSucursal();
+            if (DateTime.Parse(dtpfinvisitas.Text) > DateTime.Parse(dtpfinvisitas.Text))
+                System.Windows.Forms.MessageBox.Show("La fecha de inicio de visita no puede superar a la fecha fin de visita");
+            return;
 
-            LimpiarFormulario();
+            if (txtNombre.Text == "")
+                System.Windows.Forms.MessageBox.Show("El nombre se ecuentra vacio favor llenar..");
+            return;
+            if (txtDireccion.Text == "")
+                System.Windows.Forms.MessageBox.Show("la direccion se encuentra vacio favor llenar..");
+            return;
+            if (txtNombre.Text == "")
+                System.Windows.Forms.MessageBox.Show("El nombre se ecuentra vacio favor llenar..");
+            return;
         }
-
+    
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            Sucursal su = ObtenerSucursalFormulario();
+
             int index = lstSucursal.SelectedIndex;
-            Sucursal.listaSucursal[index] = ObtenerSucursalFormulario();
-            MessageBox.Show("Sucursal Modificada con Exito");
+            Sucursal.EditarSucursal(index, su);
+
+            MessageBox.Show("La sucursal se modifico con Exito");
+
             ActualizarListaSucursal();
+            LimpiarFormulario();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
