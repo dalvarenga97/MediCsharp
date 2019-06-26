@@ -47,7 +47,7 @@ namespace InterfazMediCsharp
             Sucursal su = new Sucursal();
              su.NombreSucursal = txtNombre.Text;
             su.Direccion = txtDireccion.Text;
-            su.CantidadPisos = Convert.ToInt64(txtCantidadPisos);
+            su.CantidadPisos = Convert.ToInt16(txtCantidadPisos.Text);
             su.HorarioInicioVisitas = dtpiniciovisitas.Value.Date;
             su.HorarioFinVisitas = dtpfinvisitas.Value.Date;
 
@@ -93,10 +93,10 @@ namespace InterfazMediCsharp
         private Sucursal ObtenerSucursalFormulario()
         {
             Sucursal s = new Sucursal();
-            s.NumeroSucursal = Convert.ToInt64(txtCodigo.Text);
+            s.NumeroSucursal = Convert.ToInt32(txtId.Text);
             s.NombreSucursal = txtNombre.Text;
             s.Direccion = txtDireccion.Text;
-            s.CantidadPisos = Convert.ToInt64(txtCantidadPisos.Text);
+            s.CantidadPisos = Convert.ToInt32(txtCantidadPisos.Text);
             s.HorarioInicioVisitas = dtpiniciovisitas.Value;
             s.HorarioFinVisitas = dtpfinvisitas.Value;
             return s;
@@ -110,7 +110,7 @@ namespace InterfazMediCsharp
         }
         private void LimpiarFormulario()
         {
-            txtCodigo.Text = "";
+            txtId.Text = "";
             txtNombre.Text = "";
             txtDireccion.Text = "";
             txtCantidadPisos.Text = "";
@@ -124,7 +124,7 @@ namespace InterfazMediCsharp
 
             if (sucursal != null)
             {
-                txtCodigo.Text = Convert.ToString(sucursal.NumeroSucursal);
+                txtId.Text = Convert.ToString(sucursal.NumeroSucursal);
                 txtNombre.Text = sucursal.NombreSucursal;
                 txtDireccion.Text = sucursal.Direccion;
                 txtCantidadPisos.Text = Convert.ToString(sucursal.CantidadPisos);

@@ -16,10 +16,10 @@ namespace MediCsharp
    public class Sucursal
     {
         //public int Id { get; set; }               No se necesita, se usa el numero de sucursal(?)
-        public Int64 NumeroSucursal { get; set; }
+        public int NumeroSucursal { get; set; }
         public string NombreSucursal { get; set; }
         public string Direccion { get; set; }
-        public Int64 CantidadPisos { get; set; }
+        public Int32 CantidadPisos { get; set; }
 
         public DateTime HorarioInicioVisitas { get; set; }
         public DateTime HorarioFinVisitas { get; set; }
@@ -40,7 +40,7 @@ namespace MediCsharp
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"INSERT INTO Sucursal (NroSucursal, Nombre_Sucursal, Direccion, Cantidad_Pisos, HorarioInicioVisitas, HorarioFinVisitas) VALUES (@NumeroSucursal, @NombreSucursal, @Direccion, @CantidadPisos, @HorarioInicioVisitas, @HorarioFinVisitas)";
+                string textoCmd = @"INSERT INTO Sucursal (NumeroSucursal, NombreSucursal, Direccion, CantidadPisos, HorarioInicioVisitas, HorarioFinVisitas) VALUES (@NumeroSucursal, @NombreSucursal, @Direccion, @CantidadPisos, @HorarioInicioVisitas, @HorarioFinVisitas)";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
                 cmd = s.ObtenerParametros(cmd);
 
@@ -55,7 +55,7 @@ namespace MediCsharp
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"DELETE FROM Sucursal WHERE NroSucursal = @NumeroSucursal";
+                string textoCmd = @"DELETE FROM Sucursal WHERE NumeroSucursal = @NumeroSucursal";
 
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
                 cmd = s.ObtenerParametroId(cmd);
@@ -126,7 +126,7 @@ namespace MediCsharp
             {
 
                 con.Open();
-                string textoCmd = "SELECT * FROM Scursal";
+                string textoCmd = "SELECT * FROM Sucursal";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
 
                 SqlDataReader elLectorDeDatos = cmd.ExecuteReader();
@@ -134,7 +134,7 @@ namespace MediCsharp
                 while (elLectorDeDatos.Read())
                 {
                     sucursal = new Sucursal();
-                    sucursal.NumeroSucursal = elLectorDeDatos.GetInt64(0);
+                    sucursal.NumeroSucursal = elLectorDeDatos.GetInt32(0);
                     sucursal.NombreSucursal = elLectorDeDatos.GetString(1);
                     sucursal.Direccion = elLectorDeDatos.GetString(2);
                     sucursal.CantidadPisos = elLectorDeDatos.GetInt32(3);

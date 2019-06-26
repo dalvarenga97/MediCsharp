@@ -14,8 +14,7 @@ namespace InterfazMediCsharp
     public partial class frmConsulta : Form
     {
         Consulta consulta;
-
-        Paciente paciente;
+        
 
         public frmConsulta()
         {
@@ -32,6 +31,7 @@ namespace InterfazMediCsharp
             cmbCIpaciente.DataSource = Paciente.ObtenerPaciente();
            // txtNombrePaciente.Text = Paciente.ObtenerPaciente();
             cmbSucursal.DataSource = Sucursal.ObtenerSucursal();
+            BloquearFormulario();
 
             consulta = new Consulta();
             dtgDetalleMedicamento.AutoGenerateColumns = true;
@@ -46,13 +46,10 @@ namespace InterfazMediCsharp
         }
         
         public void LimpiarForm() {
-            txtNumeroConsulta.Text = "";
+            txtId.Text = "";
             cmbNombreDoctor.SelectedItem = null;
-            cmbCIpaciente.SelectedItem = null;
-            txtNombrePaciente.Text = "";
+            cmbCIpaciente.SelectedItem = null;            
             cmbSucursal.SelectedItem = null;
-            dtpHoraInicio.Value = System.DateTime.Now;
-            dtpHoraFin.Value = System.DateTime.Now;
             txtDiagnostico.Text = "";
             rdbCritico.Checked = false;
             rdbGrave.Checked = false;
@@ -80,46 +77,16 @@ namespace InterfazMediCsharp
             ActualizarListaConsultas();
         }
 
-        private void lstconsultas_Click(object sender, EventArgs e)
-        {
-            Consulta consul = (Consulta)lstconsultas.SelectedItem;
-
-            if (consul != null)
-            {
-                txtNumeroConsulta.Text = Convert.ToString(consul.NumeroConsulta);
-                cmbNombreDoctor.SelectedItem = consul.NombreDoctor;
-                cmbCIpaciente.SelectedItem = consul.CIPaciente;
-                txtNombrePaciente.Text = consul.NombrePaciente;
-                cmbSucursal.SelectedItem = consul.Sucursal;
-                dtpHoraInicio.Value = consul.HoraInicioConsulta;
-                dtpHoraFin.Value = consul.HoraFinConsulta;
-                txtDiagnostico.Text = consul.Diagnostico;
-                if (consul.TipoUrgencia == TipoUrgencia.Critico)
-                {
-                    rdbCritico.Checked = true;
-                }
-                else if (consul.TipoUrgencia == TipoUrgencia.Grave)
-                {
-                    rdbGrave.Checked = true;
-                }
-                else if (consul.TipoUrgencia == TipoUrgencia.Leve)
-                {
-                    rdbLeve.Checked = true;
-                };
-            }
-        }
+       
 
         private Consulta ObtenerConsultasFormulario()
         {
             Consulta c = new Consulta();
 
-            c.NumeroConsulta = Convert.ToInt16(txtNumeroConsulta.Text);
+            c.NumeroConsulta = Convert.ToInt16(txtId.Text);
             c.NombreDoctor = (Doctor)cmbNombreDoctor.SelectedItem;
-            c.CIPaciente = (Paciente)cmbCIpaciente.SelectedItem;
-            c.NombrePaciente = txtNombrePaciente.Text;
-            c.Sucursal = (Sucursal)cmbSucursal.SelectedValue;
-            c.HoraInicioConsulta = dtpHoraInicio.Value;
-            c.HoraFinConsulta = dtpHoraFin.Value;
+            c.CIPaciente = (Paciente)cmbCIpaciente.SelectedItem;            
+            c.Sucursal = (Sucursal)cmbSucursal.SelectedValue;            
             c.Diagnostico = txtDiagnostico.Text;
             if (rdbCritico.Checked)
             {
@@ -182,7 +149,73 @@ namespace InterfazMediCsharp
         {
           //  cmbCIpaciente.Text = paciente.obtenerPacientexNombre(txtNombrePaciente.Text);
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReceta_Click(object sender, EventArgs e)
+        {
+            DesbloquearFormulario();
+        }
+
+        /*private void lstconsultas_Click_1(object sender, EventArgs e)
+        {
+            Consulta consul = (Consulta)lstconsultas.SelectedItem;
+
+            if (consul != null)
+            {
+                txtNumeroConsulta.Text = Convert.ToString(consul.NumeroConsulta);
+                cmbNombreDoctor.SelectedItem = consul.NombreDoctor;
+                cmbCIpaciente.SelectedItem = consul.CIPaciente;
+                txtNombrePaciente.Text = consul.NombrePaciente;
+                cmbSucursal.SelectedItem = consul.Sucursal;
+                dtpHoraInicio.Value = consul.HoraInicioConsulta;
+                dtpHoraFin.Value = consul.HoraFinConsulta;
+                txtDiagnostico.Text = consul.Diagnostico;
+                if (consul.TipoUrgencia == TipoUrgencia.Critico)
+                {
+                    rdbCritico.Checked = true;
+                }
+                else if (consul.TipoUrgencia == TipoUrgencia.Grave)
+                {
+                    rdbGrave.Checked = true;
+                }
+                else if (consul.TipoUrgencia == TipoUrgencia.Leve)
+                {
+                    rdbLeve.Checked = true;
+                };
+            }
+        }*/
+
+
+
+
+        private void DesbloquearFormulario()
+        {
+           cmbMedicamento.Enabled = true;
+            txtCantidad.Enabled = true;
+            btnAgregarReceta.Enabled = true;
+            btnEliminarReceta.Enabled = true;
+
+
+        }
+
+        private void BloquearFormulario()
+        {
+            cmbMedicamento.Enabled = false;
+            txtCantidad.Enabled = false;
+            btnAgregarReceta.Enabled = false;
+            btnEliminarReceta.Enabled = false;
+
+        }
     }
+
+
+
+
+
 
 
 }
