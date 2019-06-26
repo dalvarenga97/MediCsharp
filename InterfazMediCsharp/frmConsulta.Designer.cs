@@ -66,7 +66,6 @@
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.lstconsultas = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gpbMedicamento.SuspendLayout();
@@ -88,7 +87,7 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(356, 444);
+            this.btnLimpiar.Location = new System.Drawing.Point(585, 441);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 15;
@@ -99,7 +98,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(243, 444);
+            this.btnEliminar.Location = new System.Drawing.Point(472, 441);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 14;
@@ -110,7 +109,7 @@
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(131, 444);
+            this.btnModificar.Location = new System.Drawing.Point(360, 441);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 13;
@@ -121,7 +120,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(16, 444);
+            this.btnAgregar.Location = new System.Drawing.Point(245, 441);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 12;
@@ -156,9 +155,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(425, 59);
+            this.groupBox1.Location = new System.Drawing.Point(25, 82);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(406, 308);
+            this.groupBox1.Size = new System.Drawing.Size(406, 339);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
@@ -389,7 +388,7 @@
             this.gpbMedicamento.Controls.Add(this.label13);
             this.gpbMedicamento.Controls.Add(this.cmbMedicamento);
             this.gpbMedicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbMedicamento.Location = new System.Drawing.Point(12, 59);
+            this.gpbMedicamento.Location = new System.Drawing.Point(493, 82);
             this.gpbMedicamento.Name = "gpbMedicamento";
             this.gpbMedicamento.Size = new System.Drawing.Size(403, 308);
             this.gpbMedicamento.TabIndex = 16;
@@ -449,24 +448,13 @@
             this.label13.TabIndex = 3;
             this.label13.Text = "Medicamento:";
             // 
-            // lstconsultas
-            // 
-            this.lstconsultas.FormattingEnabled = true;
-            this.lstconsultas.Location = new System.Drawing.Point(476, 372);
-            this.lstconsultas.Margin = new System.Windows.Forms.Padding(2);
-            this.lstconsultas.Name = "lstconsultas";
-            this.lstconsultas.Size = new System.Drawing.Size(308, 69);
-            this.lstconsultas.TabIndex = 17;
-            this.lstconsultas.Click += new System.EventHandler(this.lstconsultas_Click);
-            // 
             // frmConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.PARA_FONDO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(933, 513);
-            this.Controls.Add(this.lstconsultas);
+            this.ClientSize = new System.Drawing.Size(933, 476);
             this.Controls.Add(this.gpbMedicamento);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
@@ -529,6 +517,5 @@
         private System.Windows.Forms.ComboBox cmbCIpaciente;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DateTimePicker dtpHoraFin;
-        private System.Windows.Forms.ListBox lstconsultas;
     }
 }

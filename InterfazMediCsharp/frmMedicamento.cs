@@ -11,8 +11,10 @@ using MediCsharp;
 
 namespace InterfazMediCsharp
 {
+    
     public partial class frmMedicamento : Form
     {
+        string modo;
         public frmMedicamento()
         {
             InitializeComponent();
@@ -27,12 +29,26 @@ namespace InterfazMediCsharp
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Medicamento medicamento = ObtenerMedicamentoFormulario();
+            if (modo == "I")
+            {
+                Medicamento medicamento = ObtenerMedicamentoFormulario();
 
-            Medicamento.AgregarMedicamento(medicamento);
+                Medicamento.AgregarMedicamento(medicamento);
+
+
+            }
+            else if (modo == "E")
+            {
+                int index = lstMedicamento.SelectedIndex;
+
+                Medicamento medicamento = ObtenerMedicamentoFormulario();
+                Medicamento.EditarMedicamento(index, medicamento);
+
+            }
 
             ActualizarListaMedicamento();
             LimpiarFormulario();
+            BloquearFormulario();
         }
         private void ActualizarListaMedicamento()
         {
@@ -42,10 +58,10 @@ namespace InterfazMediCsharp
         }
         private void LimpiarFormulario()
         {
-            txtCodigo.Text = "";
+            txtId.Text = "";
             txtNombre.Text = "";
             txtDescripcion.Text = "";
-            txtOrigen.Text = "";
+            cmbOrigen.SelectedItem = null;
             txtObservacion.Text = "";
             rdbJarabe.Checked = false;
             rdbPastillas.Checked = false;
@@ -60,10 +76,10 @@ namespace InterfazMediCsharp
 
             if (medi != null)
             {
-                txtCodigo.Text = Convert.ToString(medi.CodigoMedicamento);
+                txtId.Text = Convert.ToString(medi.Id);
                 txtNombre.Text = medi.NombreMedicamento;
                 txtDescripcion.Text = medi.DescripcionMedicamento;
-                txtOrigen.Text = medi.Origen;
+                cmbOrigen.SelectedItem = medi.origen;
                 txtObservacion.Text = medi.ObservacionMedicamento;
                 if (medi.tipomedicamento == TipoMedicamento.jarabe)
                 {
@@ -77,7 +93,7 @@ namespace InterfazMediCsharp
                 {
                     rdbInyectable.Checked = true;
                 }
-
+                DesbloquearFormulario();
 
 
             }
@@ -85,19 +101,32 @@ namespace InterfazMediCsharp
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            Medicamento medicamento = ObtenerMedicamentoFormulario();
+
             int index = lstMedicamento.SelectedIndex;
-            Medicamento.listaMedicamento[index] = ObtenerMedicamentoFormulario();
+            Medicamento.EditarMedicamento(index, medicamento);
+
             MessageBox.Show("Medicamento Modificado con Exito");
+
             ActualizarListaMedicamento();
+            LimpiarFormulario();
+
+
         }
 
         private Medicamento ObtenerMedicamentoFormulario()
         {
+            
             Medicamento m = new Medicamento();
-            m.CodigoMedicamento = Convert.ToInt64(txtCodigo.Text);
+            
+            if (!string.IsNullOrEmpty(txtId.Text))
+            {
+                m.Id = Convert.ToInt32(txtId.Text);
+            }
+           
             m.NombreMedicamento = txtNombre.Text;
             m.DescripcionMedicamento = txtDescripcion.Text;
-            m.Origen = txtOrigen.Text;
+            m.origen = (Origen)cmbOrigen.SelectedItem;
             m.ObservacionMedicamento = txtObservacion.Text;
             if (rdbJarabe.Checked) { m.tipomedicamento = TipoMedicamento.jarabe; }
             if (rdbPastillas.Checked) { m.tipomedicamento = TipoMedicamento.pastillas; }
@@ -109,10 +138,20 @@ namespace InterfazMediCsharp
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Medicamento medic = (Medicamento)lstMedicamento.SelectedItem;
-            Medicamento.EliminarMedicamento(medic);
-            ActualizarListaMedicamento();
-            LimpiarFormulario();
+            {
+                Medicamento medicamento = (Medicamento)lstMedicamento.SelectedItem;
+                if (medicamento != null)
+                {
+                    Medicamento.EliminarMedicamento(medicamento);
+                    ActualizarListaMedicamento();
+                    LimpiarFormulario();
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, Seleccione un item de la lista");
+                }
+
+            }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -122,8 +161,56 @@ namespace InterfazMediCsharp
 
         private void frmMedicamento_Load(object sender, EventArgs e)
         {
+            ActualizarMedicamento();
+            cmbOrigen.DataSource = Enum.GetValues(typeof(Origen));
+            BloquearFormulario();
+        }
+
+        private void ActualizarMedicamento()
+        {
+            lstMedicamento.DataSource = null;
+            lstMedicamento.DataSource = Medicamento.ObtenerMedicamento();
 
         }
+        private void BloquearFormulario()
+        {
+            txtNombre.Enabled = false;
+            txtDescripcion.Enabled = false;
+            cmbOrigen.Enabled = false;
+            txtObservacion.Enabled = false;
+            rdbInyectable.Enabled = false;
+            rdbJarabe.Enabled = false;
+            rdbPastillas.Enabled = false;
+            btnLimpiar.Enabled = false;
+            btnAgregar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnModificar.Enabled = false;
+
+        }
+
+        private void DesbloquearFormulario()
+        {
+            txtNombre.Enabled = true;
+            txtDescripcion.Enabled = true;
+            cmbOrigen.Enabled = true;
+            txtObservacion.Enabled = true;        
+            rdbInyectable.Enabled = true;
+            rdbJarabe.Enabled = true;
+            rdbPastillas.Enabled = true;
+            btnLimpiar.Enabled = true;
+            btnAgregar.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnModificar.Enabled = true;
+
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            modo = "I";
+            LimpiarFormulario();
+            DesbloquearFormulario();
+        }
     }
+    
 
 }

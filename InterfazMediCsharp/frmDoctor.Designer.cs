@@ -31,7 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDoctor));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtGuardiaMedico = new System.Windows.Forms.TextBox();
+            this.cmbEspecialidad = new System.Windows.Forms.ComboBox();
+            this.rdbMasculino = new System.Windows.Forms.RadioButton();
+            this.rdbFemenino = new System.Windows.Forms.RadioButton();
+            this.lblSexo = new System.Windows.Forms.Label();
+            this.clbDiasGuardia = new System.Windows.Forms.CheckedListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -39,10 +43,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtEspecialidad = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtMatricula = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,6 +56,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lstDoctor = new System.Windows.Forms.ListBox();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +76,11 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.txtGuardiaMedico);
+            this.groupBox1.Controls.Add(this.cmbEspecialidad);
+            this.groupBox1.Controls.Add(this.rdbMasculino);
+            this.groupBox1.Controls.Add(this.rdbFemenino);
+            this.groupBox1.Controls.Add(this.lblSexo);
+            this.groupBox1.Controls.Add(this.clbDiasGuardia);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.label9);
@@ -80,10 +88,9 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtEdad);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtEspecialidad);
             this.groupBox1.Controls.Add(this.txtApellido);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.txtMatricula);
+            this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label4);
@@ -92,17 +99,68 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(312, 56);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(458, 350);
+            this.groupBox1.Size = new System.Drawing.Size(458, 411);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
-            // txtGuardiaMedico
+            // cmbEspecialidad
             // 
-            this.txtGuardiaMedico.Location = new System.Drawing.Point(152, 276);
-            this.txtGuardiaMedico.Name = "txtGuardiaMedico";
-            this.txtGuardiaMedico.Size = new System.Drawing.Size(153, 22);
-            this.txtGuardiaMedico.TabIndex = 21;
+            this.cmbEspecialidad.FormattingEnabled = true;
+            this.cmbEspecialidad.Location = new System.Drawing.Point(154, 193);
+            this.cmbEspecialidad.Name = "cmbEspecialidad";
+            this.cmbEspecialidad.Size = new System.Drawing.Size(151, 24);
+            this.cmbEspecialidad.TabIndex = 26;
+            // 
+            // rdbMasculino
+            // 
+            this.rdbMasculino.AutoSize = true;
+            this.rdbMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbMasculino.Location = new System.Drawing.Point(276, 331);
+            this.rdbMasculino.Name = "rdbMasculino";
+            this.rdbMasculino.Size = new System.Drawing.Size(82, 17);
+            this.rdbMasculino.TabIndex = 24;
+            this.rdbMasculino.TabStop = true;
+            this.rdbMasculino.Text = "Masculino";
+            this.rdbMasculino.UseVisualStyleBackColor = true;
+            // 
+            // rdbFemenino
+            // 
+            this.rdbFemenino.AutoSize = true;
+            this.rdbFemenino.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbFemenino.Location = new System.Drawing.Point(276, 308);
+            this.rdbFemenino.Name = "rdbFemenino";
+            this.rdbFemenino.Size = new System.Drawing.Size(79, 17);
+            this.rdbFemenino.TabIndex = 23;
+            this.rdbFemenino.TabStop = true;
+            this.rdbFemenino.Text = "Femenino";
+            this.rdbFemenino.UseVisualStyleBackColor = true;
+            // 
+            // lblSexo
+            // 
+            this.lblSexo.AutoSize = true;
+            this.lblSexo.Location = new System.Drawing.Point(273, 280);
+            this.lblSexo.Name = "lblSexo";
+            this.lblSexo.Size = new System.Drawing.Size(47, 16);
+            this.lblSexo.TabIndex = 22;
+            this.lblSexo.Text = "Sexo:";
+            // 
+            // clbDiasGuardia
+            // 
+            this.clbDiasGuardia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.clbDiasGuardia.FormattingEnabled = true;
+            this.clbDiasGuardia.Items.AddRange(new object[] {
+            "L",
+            "M",
+            "X",
+            "J",
+            "V",
+            "S",
+            "D"});
+            this.clbDiasGuardia.Location = new System.Drawing.Point(159, 277);
+            this.clbDiasGuardia.Name = "clbDiasGuardia";
+            this.clbDiasGuardia.Size = new System.Drawing.Size(46, 123);
+            this.clbDiasGuardia.TabIndex = 21;
             // 
             // pictureBox1
             // 
@@ -129,7 +187,6 @@
             this.label9.Size = new System.Drawing.Size(74, 16);
             this.label9.TabIndex = 12;
             this.label9.Text = "Telefono:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // dtpFechaNacimiento
             // 
@@ -154,7 +211,6 @@
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(153, 22);
             this.txtEdad.TabIndex = 4;
-            this.txtEdad.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label5
             // 
@@ -164,14 +220,6 @@
             this.label5.Size = new System.Drawing.Size(49, 16);
             this.label5.TabIndex = 18;
             this.label5.Text = "Edad:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // txtEspecialidad
-            // 
-            this.txtEspecialidad.Location = new System.Drawing.Point(151, 195);
-            this.txtEspecialidad.Name = "txtEspecialidad";
-            this.txtEspecialidad.Size = new System.Drawing.Size(153, 22);
-            this.txtEspecialidad.TabIndex = 6;
             // 
             // txtApellido
             // 
@@ -187,12 +235,13 @@
             this.txtNombre.Size = new System.Drawing.Size(153, 22);
             this.txtNombre.TabIndex = 2;
             // 
-            // txtMatricula
+            // txtId
             // 
-            this.txtMatricula.Location = new System.Drawing.Point(151, 14);
-            this.txtMatricula.Name = "txtMatricula";
-            this.txtMatricula.Size = new System.Drawing.Size(153, 22);
-            this.txtMatricula.TabIndex = 1;
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(151, 14);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(153, 22);
+            this.txtId.TabIndex = 1;
             // 
             // label7
             // 
@@ -215,11 +264,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(70, 17);
+            this.label4.Location = new System.Drawing.Point(118, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 16);
+            this.label4.Size = new System.Drawing.Size(25, 16);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Matricula:";
+            this.label4.Text = "Id:";
             // 
             // label3
             // 
@@ -242,7 +291,7 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(526, 434);
+            this.btnLimpiar.Location = new System.Drawing.Point(534, 491);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 18;
@@ -253,7 +302,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(413, 434);
+            this.btnEliminar.Location = new System.Drawing.Point(421, 491);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 17;
@@ -264,7 +313,7 @@
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(301, 434);
+            this.btnModificar.Location = new System.Drawing.Point(309, 491);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 16;
@@ -275,7 +324,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(186, 434);
+            this.btnAgregar.Location = new System.Drawing.Point(194, 491);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 15;
@@ -289,9 +338,21 @@
             this.lstDoctor.FormattingEnabled = true;
             this.lstDoctor.Location = new System.Drawing.Point(106, 62);
             this.lstDoctor.Name = "lstDoctor";
-            this.lstDoctor.Size = new System.Drawing.Size(186, 342);
+            this.lstDoctor.Size = new System.Drawing.Size(186, 407);
             this.lstDoctor.TabIndex = 19;
+            this.lstDoctor.Click += new System.EventHandler(this.lstDoctor_Click);
             this.lstDoctor.SelectedIndexChanged += new System.EventHandler(this.lstDoctor_SelectedIndexChanged);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Location = new System.Drawing.Point(80, 491);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 20;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // frmDoctor
             // 
@@ -299,7 +360,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.PARA_FONDO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(774, 494);
+            this.ClientSize = new System.Drawing.Size(774, 539);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.lstDoctor);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
@@ -324,10 +386,9 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtEspecialidad;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtMatricula;
+        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
@@ -345,6 +406,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListBox lstDoctor;
-        private System.Windows.Forms.TextBox txtGuardiaMedico;
+        private System.Windows.Forms.CheckedListBox clbDiasGuardia;
+        private System.Windows.Forms.RadioButton rdbMasculino;
+        private System.Windows.Forms.RadioButton rdbFemenino;
+        private System.Windows.Forms.Label lblSexo;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.ComboBox cmbEspecialidad;
     }
 }

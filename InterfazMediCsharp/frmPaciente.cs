@@ -13,6 +13,9 @@ namespace InterfazMediCsharp
 {
     public partial class frmPaciente : Form
     {
+        string modo;
+
+       
         public frmPaciente()
         {
             InitializeComponent();
@@ -22,13 +25,39 @@ namespace InterfazMediCsharp
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Paciente paciente = ObtenerPacienteFormulario();
+            //int contador = 0;
 
-            Paciente.AgregarPaciente(paciente);
+            // Paciente paciente = ObtenerPacienteFormulario();
+
+            // Paciente.AgregarPaciente(paciente);
+
+
+            //            LimpiarFormulario();
+            if (modo == "I")
+            {
+                Paciente paciente = ObtenerPacienteFormulario();
+               
+
+
+                    Paciente.AgregarPaciente(paciente);
+               
+               
+
+
+            }
+            else if (modo == "E")
+            {
+                int index = lstPaciente.SelectedIndex;
+
+                Paciente paciente = ObtenerPacienteFormulario();
+                Paciente.EditarPaciente(index, paciente);
+
+            }
 
             ActualizarListaPacientes();
-
             LimpiarFormulario();
+            BloquearFormulario();
+
 
 
         }
@@ -37,6 +66,10 @@ namespace InterfazMediCsharp
         private Paciente ObtenerPacienteFormulario()
         {
             Paciente paciente = new Paciente();
+            if (!string.IsNullOrEmpty(txtId.Text))
+            {
+                paciente.Id = Convert.ToInt32(txtId.Text);
+            }
             paciente.CIPaciente = txtCI.Text;
             paciente.NombrePaciente = txtNombre.Text;
             paciente.ApellidoPaciente = txtApellido.Text;
@@ -51,14 +84,17 @@ namespace InterfazMediCsharp
             }
             paciente.FechaNacimiento = dtpFechaNacimiento.Value.Date;
             paciente.Telefono = Convert.ToInt32(txtTelefono.Text);
-            paciente.estadocivil = txtEstadoCivil.Text;
+            cmbEstadoCivil.DataSource = Enum.GetValues(typeof(EstadoCivil));
 
+           
             return paciente;
         }
 
 
+
         private void LimpiarFormulario()
         {
+            txtId.Text = "";
             txtCI.Text = "";
             txtNombre.Text = "";
             txtApellido.Text = "";
@@ -67,7 +103,7 @@ namespace InterfazMediCsharp
             rdbMasculino.Checked = false;
             dtpFechaNacimiento.Value = System.DateTime.Now;
             txtTelefono.Text = "";
-            txtEstadoCivil.Text = "";
+            cmbEstadoCivil.SelectedItem = null;
         }
 
         private void lstPaciente_Click(object sender, EventArgs e)
@@ -76,6 +112,7 @@ namespace InterfazMediCsharp
 
             if (paciente != null)
             {
+                txtId.Text = Convert.ToString(paciente.Id);
                 txtCI.Text = paciente.CIPaciente;
                 txtNombre.Text = paciente.NombrePaciente;
                 txtApellido.Text = paciente.ApellidoPaciente;
@@ -90,28 +127,44 @@ namespace InterfazMediCsharp
                 }
                 dtpFechaNacimiento.Value = paciente.FechaNacimiento;
                 txtTelefono.Text = Convert.ToString(paciente.Telefono);
-                txtEstadoCivil.Text = paciente.estadocivil;
-                
-            }
+                cmbEstadoCivil.SelectedItem = paciente.estadocivil;
 
+            }
+            DesbloquearFormulario();
 
 
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            Paciente paciente = ObtenerPacienteFormulario();
+
             int index = lstPaciente.SelectedIndex;
-            Paciente.listaPacientes[index] = ObtenerPacienteFormulario();
-            MessageBox.Show ("Paciente Modificado con Exito");
+            Paciente.EditarPaciente(index, paciente);
+
+            MessageBox.Show("Paciente Modificado con Exito");
+
             ActualizarListaPacientes();
+            LimpiarFormulario();
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Paciente paciente = (Paciente)lstPaciente.SelectedItem;
-            Paciente.EliminarPaciente(paciente);
-            ActualizarListaPacientes();
-            LimpiarFormulario();
+            {
+                Paciente paciente = (Paciente)lstPaciente.SelectedItem;
+                if (paciente != null)
+                {
+                    Paciente.EliminarPaciente(paciente);
+                    ActualizarListaPacientes();
+                    LimpiarFormulario();
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, Seleccione un item de la lista");
+                }
+
+            }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -128,14 +181,59 @@ namespace InterfazMediCsharp
 
         }
 
+       
+
+
+        
+
         private void frmPaciente_Load(object sender, EventArgs e)
         {
+            cmbEstadoCivil.DataSource = Enum.GetValues(typeof(EstadoCivil));
+            BloquearFormulario();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            modo = "I";
+            LimpiarFormulario();
+            DesbloquearFormulario();
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void DesbloquearFormulario()
+        {
+            txtCI.Enabled = true;
+            txtNombre.Enabled = true;
+            txtApellido.Enabled = true;
+            rdbFemenino.Enabled = true;
+            rdbMasculino.Enabled = true;
+            txtEdad.Enabled = true;
+            dtpFechaNacimiento.Enabled = true;
+            txtTelefono.Enabled = true;
+            cmbEstadoCivil.Enabled = true;
+            
+
+        }
+
+        private void BloquearFormulario()
+        {
+            txtCI.Enabled = false;
+            txtNombre.Enabled = false;
+            txtApellido.Enabled = false;
+            rdbFemenino.Enabled = false;
+            rdbMasculino.Enabled = false;
+            txtEdad.Enabled = false;
+            dtpFechaNacimiento.Enabled = false;
+            txtTelefono.Enabled = false;
+            cmbEstadoCivil.Enabled = false;
+
+        }
+
+        private void lstPaciente_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
     }
+
+ 
 }
