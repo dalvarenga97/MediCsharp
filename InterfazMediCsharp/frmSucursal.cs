@@ -76,6 +76,7 @@ namespace InterfazMediCsharp
             s.CantidadPisos = Convert.ToInt64(txtCantidadPisos.Text);
             s.HorarioInicioVisitas = dtpiniciovisitas.Value;
             s.HorarioFinVisitas = dtpfinvisitas.Value;
+
             return s;
 
         }
@@ -112,6 +113,7 @@ namespace InterfazMediCsharp
 
         private void frmSucursal_Load_1(object sender, EventArgs e)
         {
+           
 
         }
     }
