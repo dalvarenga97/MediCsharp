@@ -11,14 +11,12 @@ namespace MediCsharp
     public enum TipoUrgencia {Critico, Grave, Leve}
     public class Consulta
     {
-        public Int64 NumeroConsulta { get; set; }
+        public Int32 NumeroConsulta { get; set; }
         public Doctor NombreDoctor { get; set; }
         public Paciente CIPaciente { get; set; }
 
         public string NombrePaciente { get; set; }
-        public DateTime HoraInicioConsulta { get; set; }
-        public DateTime HoraFinConsulta { get; set; }
-
+        
         public Sucursal Sucursal { get; set; }
 
         public String Medicamento { get; set; }
@@ -38,14 +36,14 @@ namespace MediCsharp
                 con.Open();
                 string textoCmd = @"INSERT INTO Consulta (Doctor, Paciente, Hora_Inicio_Consulta, Hora_Fin_Consulta, NroSucursal, Diagnostico, Tipo_Urgencia) VALUES (@Doctor, @Paciente, @HoraInicioConsulta, @HoraFinConsulta, @NumeroSucursal, @NumeroMedicamento)"; // DEJO CONSULTA PARA DESPUES
                 SqlCommand cmd = new SqlCommand(textoCmd, con);            // AL LLAMAR A DOCTOR, PACIENTE Y MEDICAMENTO
-                cmd = c.ObtenerParametros(cmd);                            // Medicamento no seiria llamar a Detallemedic
+                //cmd = c.ObtenerParametros(cmd);                            // Medicamento no seiria llamar a Detallemedic
                 cmd.ExecuteNonQuery();
             }
 
         }
 
 
-        private SqlCommand ObtenerParametros(SqlCommand cmd, Boolean Id = false)
+       /* private SqlCommand ObtenerParametros(SqlCommand cmd, Boolean Id = false)
         {
             SqlParameter p1 = new SqlParameter("@NombreMedicamento", this.NombreMedicamento);
             SqlParameter p2 = new SqlParameter("@DescripcionMedicamento", this.DescripcionMedicamento);
@@ -69,7 +67,7 @@ namespace MediCsharp
 
             return cmd;
 
-        }
+        }*/
         private SqlCommand ObtenerParametroId(SqlCommand cmd)
         {
             SqlParameter p6 = new SqlParameter("@NroConsulta", this.NumeroConsulta);
