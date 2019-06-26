@@ -35,6 +35,9 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdbNoNecesita = new System.Windows.Forms.RadioButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnReceta = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
             this.cmbCIpaciente = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -59,14 +62,13 @@
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.btnReceta = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.rdbNoNecesita = new System.Windows.Forms.RadioButton();
             this.lstconsultas = new System.Windows.Forms.ListBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gpbMedicamento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleMedicamento)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -75,7 +77,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(369, 9);
+            this.label1.Location = new System.Drawing.Point(558, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 33);
             this.label1.TabIndex = 12;
@@ -84,7 +86,7 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(585, 441);
+            this.btnLimpiar.Location = new System.Drawing.Point(748, 451);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 15;
@@ -95,7 +97,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(472, 441);
+            this.btnEliminar.Location = new System.Drawing.Point(635, 451);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 14;
@@ -106,7 +108,7 @@
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(360, 441);
+            this.btnModificar.Location = new System.Drawing.Point(523, 451);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 13;
@@ -117,7 +119,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(245, 441);
+            this.btnAgregar.Location = new System.Drawing.Point(408, 451);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 12;
@@ -154,6 +156,39 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
+            // 
+            // rdbNoNecesita
+            // 
+            this.rdbNoNecesita.AutoSize = true;
+            this.rdbNoNecesita.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbNoNecesita.Location = new System.Drawing.Point(166, 257);
+            this.rdbNoNecesita.Name = "rdbNoNecesita";
+            this.rdbNoNecesita.Size = new System.Drawing.Size(95, 17);
+            this.rdbNoNecesita.TabIndex = 29;
+            this.rdbNoNecesita.TabStop = true;
+            this.rdbNoNecesita.Text = "No Necesita";
+            this.rdbNoNecesita.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 257);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(154, 16);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Prescripción Medica:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // btnReceta
+            // 
+            this.btnReceta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReceta.Location = new System.Drawing.Point(267, 254);
+            this.btnReceta.Name = "btnReceta";
+            this.btnReceta.Size = new System.Drawing.Size(75, 23);
+            this.btnReceta.TabIndex = 17;
+            this.btnReceta.Text = "Receta";
+            this.btnReceta.UseVisualStyleBackColor = true;
+            this.btnReceta.Click += new System.EventHandler(this.btnReceta_Click);
             // 
             // txtId
             // 
@@ -321,7 +356,7 @@
             this.gpbMedicamento.Controls.Add(this.label13);
             this.gpbMedicamento.Controls.Add(this.cmbMedicamento);
             this.gpbMedicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbMedicamento.Location = new System.Drawing.Point(493, 82);
+            this.gpbMedicamento.Location = new System.Drawing.Point(482, 82);
             this.gpbMedicamento.Name = "gpbMedicamento";
             this.gpbMedicamento.Size = new System.Drawing.Size(403, 308);
             this.gpbMedicamento.TabIndex = 16;
@@ -381,46 +416,26 @@
             this.label13.TabIndex = 3;
             this.label13.Text = "Medicamento:";
             // 
-            // btnReceta
-            // 
-            this.btnReceta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReceta.Location = new System.Drawing.Point(267, 254);
-            this.btnReceta.Name = "btnReceta";
-            this.btnReceta.Size = new System.Drawing.Size(75, 23);
-            this.btnReceta.TabIndex = 17;
-            this.btnReceta.Text = "Receta";
-            this.btnReceta.UseVisualStyleBackColor = true;
-            this.btnReceta.Click += new System.EventHandler(this.btnReceta_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 257);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(154, 16);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "Prescripción Medica:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // rdbNoNecesita
-            // 
-            this.rdbNoNecesita.AutoSize = true;
-            this.rdbNoNecesita.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbNoNecesita.Location = new System.Drawing.Point(166, 257);
-            this.rdbNoNecesita.Name = "rdbNoNecesita";
-            this.rdbNoNecesita.Size = new System.Drawing.Size(95, 17);
-            this.rdbNoNecesita.TabIndex = 29;
-            this.rdbNoNecesita.TabStop = true;
-            this.rdbNoNecesita.Text = "No Necesita";
-            this.rdbNoNecesita.UseVisualStyleBackColor = true;
-            // 
             // lstconsultas
             // 
             this.lstconsultas.FormattingEnabled = true;
-            this.lstconsultas.Location = new System.Drawing.Point(77, 416);
+            this.lstconsultas.ItemHeight = 16;
+            this.lstconsultas.Location = new System.Drawing.Point(26, 46);
             this.lstconsultas.Name = "lstconsultas";
-            this.lstconsultas.Size = new System.Drawing.Size(84, 17);
+            this.lstconsultas.Size = new System.Drawing.Size(197, 228);
             this.lstconsultas.TabIndex = 17;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.lstconsultas);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(918, 82);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(262, 308);
+            this.groupBox2.TabIndex = 18;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Consultas Grabadas";
             // 
             // frmConsulta
             // 
@@ -428,8 +443,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.PARA_FONDO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(933, 476);
-            this.Controls.Add(this.lstconsultas);
+            this.ClientSize = new System.Drawing.Size(1193, 516);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gpbMedicamento);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
@@ -448,6 +463,7 @@
             this.gpbMedicamento.ResumeLayout(false);
             this.gpbMedicamento.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleMedicamento)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -489,5 +505,6 @@
         private System.Windows.Forms.Button btnReceta;
         private System.Windows.Forms.RadioButton rdbNoNecesita;
         private System.Windows.Forms.ListBox lstconsultas;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
