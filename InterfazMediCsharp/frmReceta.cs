@@ -33,6 +33,7 @@ namespace InterfazMediCsharp
             DetalleMedicamento dm = new DetalleMedicamento();
             dm.Cantidad = Convert.ToInt16(txtCantidad.Text);
             dm.NombreMedicamento = (Medicamento)cmbMedicamento.SelectedItem;
+            dm.NumeroConsulta = (Consulta)cmbConsulta.SelectedItem;
             consulta.detalle_medicamento.Add(dm);
             ActualizarDataGrid();
             LimpiarReceta();
