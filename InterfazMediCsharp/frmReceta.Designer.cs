@@ -35,6 +35,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.cmbMedicamento = new System.Windows.Forms.ComboBox();
+            this.cmbConsulta = new System.Windows.Forms.ComboBox();
+            this.lblConsulta = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleMedicamento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,6 +108,26 @@
             this.cmbMedicamento.TabIndex = 30;
             this.cmbMedicamento.SelectedIndexChanged += new System.EventHandler(this.cmbMedicamento_SelectedIndexChanged);
             // 
+            // cmbConsulta
+            // 
+            this.cmbConsulta.FormattingEnabled = true;
+            this.cmbConsulta.Location = new System.Drawing.Point(292, 78);
+            this.cmbConsulta.Name = "cmbConsulta";
+            this.cmbConsulta.Size = new System.Drawing.Size(126, 21);
+            this.cmbConsulta.TabIndex = 36;
+            // 
+            // lblConsulta
+            // 
+            this.lblConsulta.AutoSize = true;
+            this.lblConsulta.BackColor = System.Drawing.Color.Transparent;
+            this.lblConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConsulta.Location = new System.Drawing.Point(181, 78);
+            this.lblConsulta.Name = "lblConsulta";
+            this.lblConsulta.Size = new System.Drawing.Size(60, 13);
+            this.lblConsulta.TabIndex = 37;
+            this.lblConsulta.Text = "Consulta:";
+            this.lblConsulta.Click += new System.EventHandler(this.label1_Click);
+            // 
             // frmReceta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -113,6 +135,8 @@
             this.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.PARA_FONDO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(720, 483);
+            this.Controls.Add(this.lblConsulta);
+            this.Controls.Add(this.cmbConsulta);
             this.Controls.Add(this.btnEliminarReceta);
             this.Controls.Add(this.btnAgregarReceta);
             this.Controls.Add(this.dtgDetalleMedicamento);
@@ -138,5 +162,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbMedicamento;
+        private System.Windows.Forms.ComboBox cmbConsulta;
+        private System.Windows.Forms.Label lblConsulta;
     }
 }

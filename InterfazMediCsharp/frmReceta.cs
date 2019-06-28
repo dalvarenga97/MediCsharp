@@ -23,6 +23,9 @@ namespace InterfazMediCsharp
         private void frmReceta_Load(object sender, EventArgs e)
         {
 
+            cmbConsulta.DataSource = Consulta.ObtenerConsulta();
+            cmbConsulta.SelectedItem = null;
+            ActualizarDataGrid();
         }
 
         private void btnAgregarReceta_Click(object sender, EventArgs e)
@@ -71,6 +74,11 @@ namespace InterfazMediCsharp
         {
             txtCantidad.Text = "";
             cmbMedicamento.SelectedItem = null;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

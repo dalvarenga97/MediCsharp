@@ -9,6 +9,7 @@ namespace MediCsharp
     public class DetalleMedicamento
     {
         public Medicamento NombreMedicamento { get; set; }
+        public Consulta NumeroConsulta { get; set; }
         public Int16 Cantidad { get; set; }
     }
 }
