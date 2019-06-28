@@ -37,12 +37,14 @@
             this.cmbMedicamento = new System.Windows.Forms.ComboBox();
             this.cmbConsulta = new System.Windows.Forms.ComboBox();
             this.lblConsulta = new System.Windows.Forms.Label();
+            this.Recetas = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleMedicamento)).BeginInit();
+            this.Recetas.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnEliminarReceta
             // 
-            this.btnEliminarReceta.Location = new System.Drawing.Point(381, 192);
+            this.btnEliminarReceta.Location = new System.Drawing.Point(278, 147);
             this.btnEliminarReceta.Name = "btnEliminarReceta";
             this.btnEliminarReceta.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarReceta.TabIndex = 35;
@@ -52,7 +54,7 @@
             // 
             // btnAgregarReceta
             // 
-            this.btnAgregarReceta.Location = new System.Drawing.Point(260, 192);
+            this.btnAgregarReceta.Location = new System.Drawing.Point(157, 147);
             this.btnAgregarReceta.Name = "btnAgregarReceta";
             this.btnAgregarReceta.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarReceta.TabIndex = 34;
@@ -63,7 +65,7 @@
             // dtgDetalleMedicamento
             // 
             this.dtgDetalleMedicamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgDetalleMedicamento.Location = new System.Drawing.Point(184, 227);
+            this.dtgDetalleMedicamento.Location = new System.Drawing.Point(81, 182);
             this.dtgDetalleMedicamento.Name = "dtgDetalleMedicamento";
             this.dtgDetalleMedicamento.Size = new System.Drawing.Size(356, 151);
             this.dtgDetalleMedicamento.TabIndex = 33;
@@ -71,9 +73,9 @@
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(292, 139);
+            this.txtCantidad.Location = new System.Drawing.Point(189, 94);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(126, 20);
+            this.txtCantidad.Size = new System.Drawing.Size(126, 22);
             this.txtCantidad.TabIndex = 31;
             this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
             // 
@@ -82,7 +84,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(181, 145);
+            this.label11.Location = new System.Drawing.Point(78, 100);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(61, 13);
             this.label11.TabIndex = 32;
@@ -93,7 +95,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(181, 109);
+            this.label13.Location = new System.Drawing.Point(78, 64);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(86, 13);
             this.label13.TabIndex = 29;
@@ -102,18 +104,18 @@
             // cmbMedicamento
             // 
             this.cmbMedicamento.FormattingEnabled = true;
-            this.cmbMedicamento.Location = new System.Drawing.Point(292, 105);
+            this.cmbMedicamento.Location = new System.Drawing.Point(189, 60);
             this.cmbMedicamento.Name = "cmbMedicamento";
-            this.cmbMedicamento.Size = new System.Drawing.Size(126, 21);
+            this.cmbMedicamento.Size = new System.Drawing.Size(126, 24);
             this.cmbMedicamento.TabIndex = 30;
             this.cmbMedicamento.SelectedIndexChanged += new System.EventHandler(this.cmbMedicamento_SelectedIndexChanged);
             // 
             // cmbConsulta
             // 
             this.cmbConsulta.FormattingEnabled = true;
-            this.cmbConsulta.Location = new System.Drawing.Point(292, 78);
+            this.cmbConsulta.Location = new System.Drawing.Point(189, 33);
             this.cmbConsulta.Name = "cmbConsulta";
-            this.cmbConsulta.Size = new System.Drawing.Size(126, 21);
+            this.cmbConsulta.Size = new System.Drawing.Size(126, 24);
             this.cmbConsulta.TabIndex = 36;
             // 
             // lblConsulta
@@ -121,12 +123,32 @@
             this.lblConsulta.AutoSize = true;
             this.lblConsulta.BackColor = System.Drawing.Color.Transparent;
             this.lblConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConsulta.Location = new System.Drawing.Point(181, 78);
+            this.lblConsulta.Location = new System.Drawing.Point(78, 33);
             this.lblConsulta.Name = "lblConsulta";
             this.lblConsulta.Size = new System.Drawing.Size(60, 13);
             this.lblConsulta.TabIndex = 37;
             this.lblConsulta.Text = "Consulta:";
             this.lblConsulta.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // Recetas
+            // 
+            this.Recetas.BackColor = System.Drawing.Color.Transparent;
+            this.Recetas.Controls.Add(this.dtgDetalleMedicamento);
+            this.Recetas.Controls.Add(this.lblConsulta);
+            this.Recetas.Controls.Add(this.cmbMedicamento);
+            this.Recetas.Controls.Add(this.cmbConsulta);
+            this.Recetas.Controls.Add(this.label13);
+            this.Recetas.Controls.Add(this.btnEliminarReceta);
+            this.Recetas.Controls.Add(this.label11);
+            this.Recetas.Controls.Add(this.btnAgregarReceta);
+            this.Recetas.Controls.Add(this.txtCantidad);
+            this.Recetas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Recetas.Location = new System.Drawing.Point(105, 40);
+            this.Recetas.Name = "Recetas";
+            this.Recetas.Size = new System.Drawing.Size(530, 359);
+            this.Recetas.TabIndex = 38;
+            this.Recetas.TabStop = false;
+            this.Recetas.Text = "Recetas";
             // 
             // frmReceta
             // 
@@ -135,21 +157,14 @@
             this.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.PARA_FONDO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(720, 483);
-            this.Controls.Add(this.lblConsulta);
-            this.Controls.Add(this.cmbConsulta);
-            this.Controls.Add(this.btnEliminarReceta);
-            this.Controls.Add(this.btnAgregarReceta);
-            this.Controls.Add(this.dtgDetalleMedicamento);
-            this.Controls.Add(this.txtCantidad);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.cmbMedicamento);
+            this.Controls.Add(this.Recetas);
             this.Name = "frmReceta";
             this.Text = "frmReceta";
             this.Load += new System.EventHandler(this.frmReceta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleMedicamento)).EndInit();
+            this.Recetas.ResumeLayout(false);
+            this.Recetas.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -164,5 +179,6 @@
         private System.Windows.Forms.ComboBox cmbMedicamento;
         private System.Windows.Forms.ComboBox cmbConsulta;
         private System.Windows.Forms.Label lblConsulta;
+        private System.Windows.Forms.GroupBox Recetas;
     }
 }
