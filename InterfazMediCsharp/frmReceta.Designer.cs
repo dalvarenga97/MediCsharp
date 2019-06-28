@@ -46,6 +46,7 @@
             this.btnEliminarReceta.TabIndex = 35;
             this.btnEliminarReceta.Text = "Eliminar";
             this.btnEliminarReceta.UseVisualStyleBackColor = true;
+            this.btnEliminarReceta.Click += new System.EventHandler(this.btnEliminarReceta_Click);
             // 
             // btnAgregarReceta
             // 
@@ -55,6 +56,7 @@
             this.btnAgregarReceta.TabIndex = 34;
             this.btnAgregarReceta.Text = "Agregar";
             this.btnAgregarReceta.UseVisualStyleBackColor = true;
+            this.btnAgregarReceta.Click += new System.EventHandler(this.btnAgregarReceta_Click);
             // 
             // dtgDetalleMedicamento
             // 
@@ -63,6 +65,7 @@
             this.dtgDetalleMedicamento.Name = "dtgDetalleMedicamento";
             this.dtgDetalleMedicamento.Size = new System.Drawing.Size(356, 151);
             this.dtgDetalleMedicamento.TabIndex = 33;
+            this.dtgDetalleMedicamento.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDetalleMedicamento_CellContentClick);
             // 
             // txtCantidad
             // 
@@ -70,6 +73,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(126, 20);
             this.txtCantidad.TabIndex = 31;
+            this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
             // 
             // label11
             // 
@@ -100,6 +104,7 @@
             this.cmbMedicamento.Name = "cmbMedicamento";
             this.cmbMedicamento.Size = new System.Drawing.Size(126, 21);
             this.cmbMedicamento.TabIndex = 30;
+            this.cmbMedicamento.SelectedIndexChanged += new System.EventHandler(this.cmbMedicamento_SelectedIndexChanged);
             // 
             // frmReceta
             // 

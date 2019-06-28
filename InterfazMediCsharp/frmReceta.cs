@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediCsharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace InterfazMediCsharp
 {
     public partial class frmReceta : Form
     {
+        Consulta consulta;
+
         public frmReceta()
         {
             InitializeComponent();
@@ -20,6 +23,54 @@ namespace InterfazMediCsharp
         private void frmReceta_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAgregarReceta_Click(object sender, EventArgs e)
+        {
+            DetalleMedicamento dm = new DetalleMedicamento();
+            dm.Cantidad = Convert.ToInt16(txtCantidad.Text);
+            dm.NombreMedicamento = (Medicamento)cmbMedicamento.SelectedItem;
+            consulta.detalle_medicamento.Add(dm);
+            ActualizarDataGrid();
+            LimpiarReceta();
+        }
+
+        private void btnEliminarReceta_Click(object sender, EventArgs e)
+        {
+            DetalleMedicamento dtm = (DetalleMedicamento)dtgDetalleMedicamento.CurrentRow.DataBoundItem;
+            if (dtm != null)
+            {
+                consulta.detalle_medicamento.Remove(dtm);
+            }
+            ActualizarDataGrid();
+            LimpiarReceta();
+        }
+
+        private void cmbMedicamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtgDetalleMedicamento_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ActualizarDataGrid()
+        {
+            dtgDetalleMedicamento.DataSource = null;
+            dtgDetalleMedicamento.DataSource = consulta.detalle_medicamento;
+        }
+
+        private void LimpiarReceta()
+        {
+            txtCantidad.Text = "";
+            cmbMedicamento.SelectedItem = null;
         }
     }
 }

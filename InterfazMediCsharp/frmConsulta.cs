@@ -210,6 +210,26 @@ namespace InterfazMediCsharp
             btnEliminarReceta.Enabled = false;
 
         }
+
+        private void gpbMedicamento_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbMedicamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtgDetalleMedicamento_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 
