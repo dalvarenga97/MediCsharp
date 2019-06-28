@@ -45,7 +45,7 @@ namespace InterfazMediCsharp
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Sucursal su = new Sucursal();
-             su.NombreSucursal = txtNombre.Text;
+            su.NombreSucursal = txtNombre.Text;
             su.Direccion = txtDireccion.Text;
             su.CantidadPisos = Convert.ToInt16(txtCantidadPisos.Text);
             su.HorarioInicioVisitas = dtpiniciovisitas.Value.Date;
