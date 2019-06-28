@@ -113,7 +113,7 @@
             // cmbConsulta
             // 
             this.cmbConsulta.FormattingEnabled = true;
-            this.cmbConsulta.Location = new System.Drawing.Point(189, 33);
+            this.cmbConsulta.Location = new System.Drawing.Point(189, 28);
             this.cmbConsulta.Name = "cmbConsulta";
             this.cmbConsulta.Size = new System.Drawing.Size(126, 24);
             this.cmbConsulta.TabIndex = 36;
@@ -145,7 +145,7 @@
             this.Recetas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Recetas.Location = new System.Drawing.Point(105, 40);
             this.Recetas.Name = "Recetas";
-            this.Recetas.Size = new System.Drawing.Size(530, 359);
+            this.Recetas.Size = new System.Drawing.Size(520, 359);
             this.Recetas.TabIndex = 38;
             this.Recetas.TabStop = false;
             this.Recetas.Text = "Recetas";
