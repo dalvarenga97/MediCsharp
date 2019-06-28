@@ -18,7 +18,8 @@ namespace MediCsharp
 
         public static void AgregarReposo(Reposo r)
         {
-            listaReposo.Add(r);
+            //listaReposo.Add(r);
+
         }
         public static void EliminarReposo(Reposo r)
         {
