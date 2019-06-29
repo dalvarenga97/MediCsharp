@@ -16,7 +16,7 @@ namespace MediCsharp
    public class Sucursal
     {
         //public int Id { get; set; }               No se necesita, se usa el numero de sucursal(?)
-        public int NumeroSucursal { get; set; }
+        public int Id { get; set; }
         public string NombreSucursal { get; set; }
         public string Direccion { get; set; }
         public Int32 CantidadPisos { get; set; }
@@ -40,7 +40,7 @@ namespace MediCsharp
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"INSERT INTO Sucursal (NumeroSucursal, NombreSucursal, Direccion, CantidadPisos, HorarioInicioVisitas, HorarioFinVisitas) VALUES (@NumeroSucursal, @NombreSucursal, @Direccion, @CantidadPisos, @HorarioInicioVisitas, @HorarioFinVisitas)";
+                string textoCmd = @"INSERT INTO Sucursal (NombreSucursal, Direccion, CantidadPisos, HorarioInicioVisitas, HorarioFinVisitas) VALUES (@NombreSucursal, @Direccion, @CantidadPisos, @HorarioInicioVisitas, @HorarioFinVisitas)";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
                 cmd = s.ObtenerParametros(cmd);
 
@@ -55,7 +55,7 @@ namespace MediCsharp
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"DELETE FROM Sucursal WHERE NumeroSucursal = @NumeroSucursal";
+                string textoCmd = @"DELETE FROM Sucursal WHERE Id = @Id";
 
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
                 cmd = s.ObtenerParametroId(cmd);
@@ -71,7 +71,7 @@ namespace MediCsharp
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"UPDATE Sucursal SET Nombre_Sucursal = @NombreSucursal, Direccion = @Direccion ,Cantidad_Pisos = @CantidadPisos, HorarioInicioVisitas = @HorarioInicioVisitas, HorarioFinVisitas = @HorarioFinVisitas WHERE NroSucursal = @NumeroSucursal";
+                string textoCmd = @"UPDATE Sucursal SET Nombre_Sucursal = @NombreSucursal, Direccion = @Direccion ,Cantidad_Pisos = @CantidadPisos, HorarioInicioVisitas = @HorarioInicioVisitas, HorarioFinVisitas = @HorarioFinVisitas WHERE Id = @Id";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
                 cmd = s.ObtenerParametros(cmd, true);
 
@@ -82,9 +82,9 @@ namespace MediCsharp
 
         private SqlCommand ObtenerParametros(SqlCommand cmd, Boolean Id = false)
         {
-            SqlParameter p1 = new SqlParameter("@Nombre_Sucursal", this.NombreSucursal);
+            SqlParameter p1 = new SqlParameter("@NombreSucursal", this.NombreSucursal);
             SqlParameter p2 = new SqlParameter("@Direccion", this.Direccion);
-            SqlParameter p3 = new SqlParameter("@Cantidad_Pisos", this.CantidadPisos);
+            SqlParameter p3 = new SqlParameter("@CantidadPisos", this.CantidadPisos);
             SqlParameter p4 = new SqlParameter("@HorarioInicioVisitas", this.HorarioInicioVisitas);
             SqlParameter p5 = new SqlParameter("@HorarioFinVisitas", this.HorarioFinVisitas);
 
@@ -110,7 +110,7 @@ namespace MediCsharp
 
         private SqlCommand ObtenerParametroId(SqlCommand cmd)
         {
-            SqlParameter p6 = new SqlParameter("@NroSucursal", this.NumeroSucursal);
+            SqlParameter p6 = new SqlParameter("@NroSucursal", this.Id);
             p6.SqlDbType = SqlDbType.Int;
             cmd.Parameters.Add(p6);
             return cmd;
@@ -134,7 +134,7 @@ namespace MediCsharp
                 while (elLectorDeDatos.Read())
                 {
                     sucursal = new Sucursal();
-                    sucursal.NumeroSucursal = elLectorDeDatos.GetInt32(0);
+                    sucursal.Id = elLectorDeDatos.GetInt32(0);
                     sucursal.NombreSucursal = elLectorDeDatos.GetString(1);
                     sucursal.Direccion = elLectorDeDatos.GetString(2);
                     sucursal.CantidadPisos = elLectorDeDatos.GetInt32(3);
