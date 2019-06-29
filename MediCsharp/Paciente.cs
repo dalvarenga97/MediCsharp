@@ -70,7 +70,7 @@ namespace MediCsharp
             }
         }
 
-        public static List<Paciente> ObtenerPaciente()
+        public static List<Paciente> ObtenerPacientes()
         {
             //return listaPacientes;
 
@@ -110,6 +110,24 @@ namespace MediCsharp
         public static List<Paciente> ObtenerCIPaciente()
         {
             return listaPacientes;
+        }
+
+        public static Paciente ObtenerPaciente(int id)
+        {
+            Paciente paciente = null;
+
+            if (listaPacientes.Count == 0) Paciente.ObtenerPacientes();
+
+            foreach (Paciente p in listaPacientes)
+            {
+                if (p.Id == id)
+                {
+                    paciente = p;
+                    break;
+                }
+
+            }
+            return paciente;
         }
 
         public override string ToString()
