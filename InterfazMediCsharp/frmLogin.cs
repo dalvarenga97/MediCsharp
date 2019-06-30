@@ -20,7 +20,7 @@ namespace InterfazMediCsharp
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            txtUsuario.Focus();
+            txtusuario.Focus();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace InterfazMediCsharp
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text.Trim().Equals(string.Empty))
+            if (txtusuario.Text.Trim().Equals(string.Empty))
             {
                 MessageBox.Show("Favor Ingresa el Usuario");
                 return;
@@ -42,10 +42,10 @@ namespace InterfazMediCsharp
                 return;
             }
 
-            if (Usuario.Autenticar(txtUsuario.Text, txtContrasenha.Text))
+            if (Usuario.Autenticar(txtusuario.Text, txtContrasenha.Text))
             {
                 this.Hide();
-                MessageBox.Show("Bienvenido " + txtUsuario.Text);
+                MessageBox.Show("Bienvenido " + txtusuario.Text);
                 frmMenu elmenuPrincipal = new frmMenu();
                 elmenuPrincipal.ShowDialog();
                 this.Close();
