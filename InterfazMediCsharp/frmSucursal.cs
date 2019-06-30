@@ -51,20 +51,6 @@ namespace InterfazMediCsharp
             su.HorarioInicioVisitas = dtpiniciovisitas.Value.Date;
             su.HorarioFinVisitas = dtpfinvisitas.Value.Date;
 
-
-            if (DateTime.Parse(dtpfinvisitas.Text) > DateTime.Parse(dtpfinvisitas.Text))
-                System.Windows.Forms.MessageBox.Show("La fecha de inicio de visita no puede superar a la fecha fin de visita");
-            return;
-
-            if (txtNombre.Text == "")
-                System.Windows.Forms.MessageBox.Show("El nombre se ecuentra vacio favor llenar..");
-            return;
-            if (txtDireccion.Text == "")
-                System.Windows.Forms.MessageBox.Show("la direccion se encuentra vacio favor llenar..");
-            return;
-            if (txtNombre.Text == "")
-                System.Windows.Forms.MessageBox.Show("El nombre se ecuentra vacio favor llenar..");
-            return;
         }
     
         private void btnModificar_Click(object sender, EventArgs e)
