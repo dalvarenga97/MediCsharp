@@ -69,7 +69,7 @@ namespace MediCsharp
             }
         }
 
-        public static List<Doctor> ObtenerDoctor()
+        public static List<Doctor> ObtenerDoctores()
         {
             Doctor doctor;
             listaDoctores.Clear();
@@ -101,6 +101,24 @@ namespace MediCsharp
                 }
             }
             return listaDoctores;
+        }
+
+        public static Doctor ObtenerDoctor(int id)
+        {
+            Doctor doctor = null;
+
+            if (listaDoctores.Count == 0) Doctor.ObtenerDoctores();
+
+            foreach (Doctor d in listaDoctores)
+            {
+                if (d.Id == id)
+                {
+                    doctor = d;
+                    break;
+                }
+
+            }
+            return doctor;
         }
 
         private string ObtenerStringDiasGuardia()
@@ -164,6 +182,8 @@ namespace MediCsharp
 
             return cmd;
         }
+
+
 
 
     }

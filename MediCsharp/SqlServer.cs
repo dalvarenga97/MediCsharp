@@ -9,8 +9,8 @@ namespace MediCsharp
    public  class SqlServer
     {
 
-        public const string CADENA_CONEXION = "Data Source = LOCALHOST; Initial Catalog = MediCsharp; Integrated Security=true";
-        //public const string CADENA_CONEXION = "Data Source = DESKTOP-GV3FFMK; Initial Catalog = MediCsharp; Integrated Security=SSPI";
+        public const string CADENA_CONEXION = "Data Source = DESKTOP-URRFB53; Initial Catalog = MediCsharp; Integrated Security=true";
+
 
     }
 }

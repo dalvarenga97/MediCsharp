@@ -17,7 +17,7 @@ namespace InterfazMediCsharp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSucursal ());
+            Application.Run(new frmLogin ());
         }
     }
 }
