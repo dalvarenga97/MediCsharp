@@ -35,6 +35,8 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.ptbcregistrausuario = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbcregistrausuario)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -104,13 +106,27 @@
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
+            // ptbcregistrausuario
+            // 
+            this.ptbcregistrausuario.ErrorImage = null;
+            this.ptbcregistrausuario.Image = global::InterfazMediCsharp.Properties.Resources.para_paciente;
+            this.ptbcregistrausuario.ImageLocation = "";
+            this.ptbcregistrausuario.InitialImage = null;
+            this.ptbcregistrausuario.Location = new System.Drawing.Point(473, 91);
+            this.ptbcregistrausuario.Name = "ptbcregistrausuario";
+            this.ptbcregistrausuario.Size = new System.Drawing.Size(110, 108);
+            this.ptbcregistrausuario.TabIndex = 7;
+            this.ptbcregistrausuario.TabStop = false;
+            this.ptbcregistrausuario.Click += new System.EventHandler(this.ptbcregistrausuario_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.PARA_FONDO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(559, 258);
+            this.ClientSize = new System.Drawing.Size(623, 348);
+            this.Controls.Add(this.ptbcregistrausuario);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtContrasenha);
@@ -125,6 +141,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ":.Login:.     MediCsharp";
             this.Load += new System.EventHandler(this.frmLogin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbcregistrausuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +155,6 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.PictureBox ptbcregistrausuario;
     }
 }
