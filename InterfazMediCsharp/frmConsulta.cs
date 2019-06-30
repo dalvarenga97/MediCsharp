@@ -29,8 +29,8 @@ namespace InterfazMediCsharp
 
 
             dtgDetalleConsulta.AutoGenerateColumns = true;
-            cmbNombreDoctor.DataSource = Doctor.ObtenerDoctor();
-            cmbPaciente.DataSource = Paciente.ObtenerPaciente();    
+           // cmbNombreDoctor.DataSource = Doctor.ObtenerDoctor();
+            //cmbPaciente.DataSource = Paciente.ObtenerPaciente();    
             
 
 
