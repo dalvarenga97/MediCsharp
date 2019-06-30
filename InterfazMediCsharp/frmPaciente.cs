@@ -25,14 +25,6 @@ namespace InterfazMediCsharp
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            //int contador = 0;
-
-            // Paciente paciente = ObtenerPacienteFormulario();
-
-            // Paciente.AgregarPaciente(paciente);
-
-
-            //            LimpiarFormulario();
             if (modo == "I")
             {
                 Paciente paciente = ObtenerPacienteFormulario();
@@ -69,10 +61,9 @@ namespace InterfazMediCsharp
             if (!string.IsNullOrEmpty(txtId.Text))
             {
                 paciente.Id = Convert.ToInt32(txtId.Text);
-            }
-            paciente.CIPaciente = txtCI.Text;
-            paciente.NombrePaciente = txtNombre.Text;
-            paciente.ApellidoPaciente = txtApellido.Text;
+            }           
+            paciente.NombrePaciente = txtNombrePaciente.Text;
+            paciente.ApellidoPaciente = txtApellidoPaciente.Text;
             paciente.Edad = Convert.ToInt16(txtEdad.Text);
             if (rdbFemenino.Checked)
             {
@@ -95,9 +86,9 @@ namespace InterfazMediCsharp
         private void LimpiarFormulario()
         {
             txtId.Text = "";
-            txtCI.Text = "";
-            txtNombre.Text = "";
-            txtApellido.Text = "";
+            
+            txtNombrePaciente.Text = "";
+            txtApellidoPaciente.Text = "";
             txtEdad.Text = "";
             rdbFemenino.Checked = false;
             rdbMasculino.Checked = false;
@@ -112,10 +103,9 @@ namespace InterfazMediCsharp
 
             if (paciente != null)
             {
-                txtId.Text = Convert.ToString(paciente.Id);
-                txtCI.Text = paciente.CIPaciente;
-                txtNombre.Text = paciente.NombrePaciente;
-                txtApellido.Text = paciente.ApellidoPaciente;
+                txtId.Text = Convert.ToString(paciente.Id);                
+                txtNombrePaciente.Text = paciente.NombrePaciente;
+                txtApellidoPaciente.Text = paciente.ApellidoPaciente;
                 txtEdad.Text = Convert.ToString(paciente.Edad);
                 if (paciente.sexo == Sexo.Femenino)
                 {
@@ -202,9 +192,9 @@ namespace InterfazMediCsharp
 
         private void DesbloquearFormulario()
         {
-            txtCI.Enabled = true;
-            txtNombre.Enabled = true;
-            txtApellido.Enabled = true;
+            
+            txtNombrePaciente.Enabled = true;
+            txtApellidoPaciente.Enabled = true;
             rdbFemenino.Enabled = true;
             rdbMasculino.Enabled = true;
             txtEdad.Enabled = true;
@@ -217,9 +207,9 @@ namespace InterfazMediCsharp
 
         private void BloquearFormulario()
         {
-            txtCI.Enabled = false;
-            txtNombre.Enabled = false;
-            txtApellido.Enabled = false;
+            
+            txtNombrePaciente.Enabled = false;
+            txtApellidoPaciente.Enabled = false;
             rdbFemenino.Enabled = false;
             rdbMasculino.Enabled = false;
             txtEdad.Enabled = false;

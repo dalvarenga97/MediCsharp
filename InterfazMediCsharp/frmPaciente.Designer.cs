@@ -41,14 +41,12 @@
             this.rdbFemenino = new System.Windows.Forms.RadioButton();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtEdad = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtCI = new System.Windows.Forms.TextBox();
+            this.txtApellidoPaciente = new System.Windows.Forms.TextBox();
+            this.txtNombrePaciente = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -86,14 +84,12 @@
             this.groupBox1.Controls.Add(this.rdbFemenino);
             this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.txtEdad);
-            this.groupBox1.Controls.Add(this.txtApellido);
-            this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.txtCI);
+            this.groupBox1.Controls.Add(this.txtApellidoPaciente);
+            this.groupBox1.Controls.Add(this.txtNombrePaciente);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -195,26 +191,19 @@
             this.txtEdad.Size = new System.Drawing.Size(153, 22);
             this.txtEdad.TabIndex = 4;
             // 
-            // txtApellido
+            // txtApellidoPaciente
             // 
-            this.txtApellido.Location = new System.Drawing.Point(178, 150);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(153, 22);
-            this.txtApellido.TabIndex = 3;
+            this.txtApellidoPaciente.Location = new System.Drawing.Point(178, 150);
+            this.txtApellidoPaciente.Name = "txtApellidoPaciente";
+            this.txtApellidoPaciente.Size = new System.Drawing.Size(153, 22);
+            this.txtApellidoPaciente.TabIndex = 3;
             // 
-            // txtNombre
+            // txtNombrePaciente
             // 
-            this.txtNombre.Location = new System.Drawing.Point(178, 110);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(153, 22);
-            this.txtNombre.TabIndex = 2;
-            // 
-            // txtCI
-            // 
-            this.txtCI.Location = new System.Drawing.Point(178, 67);
-            this.txtCI.Name = "txtCI";
-            this.txtCI.Size = new System.Drawing.Size(153, 22);
-            this.txtCI.TabIndex = 1;
+            this.txtNombrePaciente.Location = new System.Drawing.Point(178, 110);
+            this.txtNombrePaciente.Name = "txtNombrePaciente";
+            this.txtNombrePaciente.Size = new System.Drawing.Size(153, 22);
+            this.txtNombrePaciente.TabIndex = 2;
             // 
             // label8
             // 
@@ -251,15 +240,6 @@
             this.label5.Size = new System.Drawing.Size(47, 16);
             this.label5.TabIndex = 3;
             this.label5.Text = "Sexo:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 70);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(152, 16);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Cedula de Identidad:";
             // 
             // label3
             // 
@@ -381,16 +361,14 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton rdbMasculino;
         private System.Windows.Forms.RadioButton rdbFemenino;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtEdad;
-        private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtCI;
+        private System.Windows.Forms.TextBox txtApellidoPaciente;
+        private System.Windows.Forms.TextBox txtNombrePaciente;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;

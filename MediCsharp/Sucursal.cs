@@ -138,11 +138,7 @@ namespace MediCsharp
                     sucursal.NombreSucursal = elLectorDeDatos.GetString(1);
                     sucursal.Direccion = elLectorDeDatos.GetString(2);
                     sucursal.CantidadPisos = elLectorDeDatos.GetInt32(3);
-                    sucursal.HorarioInicioVisitas = elLectorDeDatos.GetDateTime(4);
-                    sucursal.HorarioFinVisitas = elLectorDeDatos.GetDateTime(5);
-
-
-
+                    
                     listaSucursal.Add(sucursal);
 
                 }

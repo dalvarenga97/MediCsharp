@@ -25,7 +25,7 @@ namespace MediCsharp
                 con.Open();
                 string textoCmd = @"INSERT INTO Reposo (Doctor, Paciente, CantidadDias) VALUES (@Doctor, @Paciente, @CantidadDias)";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
-                cmd = r.ObtenerParametros(cmd);
+             //   cmd = r.ObtenerParametros(cmd);
 
                 cmd.ExecuteNonQuery();
             }
@@ -39,7 +39,7 @@ namespace MediCsharp
                 string textoCmd = @"delete from Reposo where Id = @Id";
 
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
-                cmd = r.ObtenerParametroId(cmd);
+               // cmd = r.ObtenerParametroId(cmd);
 
                 cmd.ExecuteNonQuery();
             }
@@ -63,8 +63,8 @@ namespace MediCsharp
                 {
                     reposo = new Reposo();
                     reposo.Id = elLectorDeDatos.GetInt32(0);
-                    reposo.NombreDoctor = Doctor.ObtenerDoctor(elLectorDeDatos.GetInt32(1));
-                    reposo.NombrePaciente = Paciente.ObtenerPaciente(elLectorDeDatos.GetInt32(2));
+                   // reposo.NombreDoctor = Doctor.ObtenerDoctor(elLectorDeDatos.GetInt32(1));
+                  //  reposo.NombrePaciente = Paciente.ObtenerPaciente(elLectorDeDatos.GetInt32(2));
                     reposo.CantidadDias = elLectorDeDatos.GetString(3);
                     
 

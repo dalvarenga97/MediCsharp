@@ -15,7 +15,7 @@ namespace MediCsharp
     public class Paciente
     {
         public int Id { get; set; }
-        public string CIPaciente { get; set; }
+        
         public string NombrePaciente { get; set; }
         public string ApellidoPaciente { get; set; }
         public Sexo sexo { get; set; }
@@ -34,7 +34,7 @@ namespace MediCsharp
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"INSERT INTO Paciente (CIPaciente, NombrePaciente, ApellidoPaciente,sexo,Edad,FechaNacimiento,Telefono,EstadoCivil) VALUES (@CIPaciente, @NombrePaciente, @ApellidoPaciente, @sexo, @Edad,@FechaNacimiento,@Telefono,@EstadoCivil)";
+                string textoCmd = @"INSERT INTO Paciente (NombrePaciente, ApellidoPaciente,sexo,Edad,FechaNacimiento,Telefono,EstadoCivil) VALUES ( @NombrePaciente, @ApellidoPaciente, @sexo, @Edad,@FechaNacimiento,@Telefono,@EstadoCivil)";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
                 cmd = p.ObtenerParametros(cmd);
 
@@ -62,7 +62,7 @@ namespace MediCsharp
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"UPDATE Paciente SET CIPaciente = @CIPaciente, NombrePaciente = @NombrePaciente, ApellidoPaciente = @ApellidoPaciente ,sexo = @sexo, Edad = @Edad, FechaNacimiento = @FechaNacimiento,Telefono = @Telefono,EstadoCivil = @EstadoCivil where Id = @Id";
+                string textoCmd = @"UPDATE Paciente SET NombrePaciente = @NombrePaciente, ApellidoPaciente = @ApellidoPaciente ,sexo = @sexo, Edad = @Edad, FechaNacimiento = @FechaNacimiento,Telefono = @Telefono,EstadoCivil = @EstadoCivil where Id = @Id";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
                 cmd = p.ObtenerParametros(cmd, true);
 
@@ -88,15 +88,14 @@ namespace MediCsharp
                 while (elLectorDeDatos.Read())
                 {
                     paciente = new Paciente();
-                    paciente.Id = elLectorDeDatos.GetInt32(0);
-                    paciente.CIPaciente = elLectorDeDatos.GetString(1);
-                    paciente.NombrePaciente = elLectorDeDatos.GetString(2);
-                    paciente.ApellidoPaciente = elLectorDeDatos.GetString(3);
-                    paciente.sexo = (Sexo)elLectorDeDatos.GetInt32(4);
-                    paciente.Edad = elLectorDeDatos.GetInt32(5);
-                    paciente.FechaNacimiento = elLectorDeDatos.GetDateTime(6);
-                    paciente.Telefono = elLectorDeDatos.GetInt32(7);
-                    paciente.estadocivil = (EstadoCivil)elLectorDeDatos.GetInt32(8);
+                    paciente.Id = elLectorDeDatos.GetInt32(0);                    
+                    paciente.NombrePaciente = elLectorDeDatos.GetString(1);
+                    paciente.ApellidoPaciente = elLectorDeDatos.GetString(2);
+                    paciente.sexo = (Sexo)elLectorDeDatos.GetInt32(3);
+                    paciente.Edad = elLectorDeDatos.GetInt32(4);
+                    paciente.FechaNacimiento = elLectorDeDatos.GetDateTime(5);
+                    paciente.Telefono = elLectorDeDatos.GetInt32(6);
+                    paciente.estadocivil = (EstadoCivil)elLectorDeDatos.GetInt32(7);
 
 
 
@@ -107,10 +106,7 @@ namespace MediCsharp
             return listaPacientes;
         }
 
-        public static List<Paciente> ObtenerCIPaciente()
-        {
-            return listaPacientes;
-        }
+       
 
         public override string ToString()
         {
@@ -119,7 +115,7 @@ namespace MediCsharp
 
         private SqlCommand ObtenerParametros(SqlCommand cmd, Boolean Id = false)
         {
-            SqlParameter p1 = new SqlParameter("@CIPaciente", this.CIPaciente);
+            
             SqlParameter p2 = new SqlParameter("@NombrePaciente", this.NombrePaciente);
             SqlParameter p3 = new SqlParameter("@ApellidoPaciente", this.ApellidoPaciente);
             SqlParameter p4 = new SqlParameter("@Sexo", this.sexo);
@@ -127,7 +123,7 @@ namespace MediCsharp
             SqlParameter p6 = new SqlParameter("@FechaNacimiento", this.FechaNacimiento);
             SqlParameter p7 = new SqlParameter("@Telefono", this.Telefono);
             SqlParameter p8 = new SqlParameter("@EstadoCivil", this.estadocivil);
-            p1.SqlDbType = SqlDbType.VarChar;
+            
             p2.SqlDbType = SqlDbType.VarChar;
             p3.SqlDbType = SqlDbType.VarChar;
             p4.SqlDbType = SqlDbType.Int;
@@ -135,7 +131,7 @@ namespace MediCsharp
             p6.SqlDbType = SqlDbType.DateTime;
             p7.SqlDbType = SqlDbType.Int;
             p8.SqlDbType = SqlDbType.Int;
-            cmd.Parameters.Add(p1);
+          
             cmd.Parameters.Add(p2);
             cmd.Parameters.Add(p3);
             cmd.Parameters.Add(p4);

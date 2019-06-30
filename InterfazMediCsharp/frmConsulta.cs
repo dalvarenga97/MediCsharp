@@ -26,207 +26,86 @@ namespace InterfazMediCsharp
 
         private void frmConsulta_Load(object sender, EventArgs e)
         {
-            cmbMedicamento.DataSource = Medicamento.ObtenerMedicamento();
+
+
+            dtgDetalleConsulta.AutoGenerateColumns = true;
             cmbNombreDoctor.DataSource = Doctor.ObtenerDoctor();
-            cmbCIpaciente.DataSource = Paciente.ObtenerPaciente();
-           // txtNombrePaciente.Text = Paciente.ObtenerPaciente();
-            cmbSucursal.DataSource = Sucursal.ObtenerSucursal();
-            BloquearFormulario();
+            cmbPaciente.DataSource = Paciente.ObtenerPaciente();    
+            
+
+
 
             consulta = new Consulta();
-            dtgDetalleMedicamento.AutoGenerateColumns = true;
+            ActualizarDataGrid();
+            
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+       
+
+        private void ActualizarDataGrid()
         {
-            Consulta consulta = ObtenerConsultasFormulario();
-            Consulta.listaConsulta.Add(consulta);
-            ActualizarListaConsultas();
-            LimpiarForm();
+            dtgDetalleConsulta.DataSource = null;
+            dtgDetalleConsulta.DataSource = Consulta.Obtener();
+
         }
-        
+        private void Limpiar()
+        {
+            txtDiagnostico.Text = "0";
+            cmbPaciente.SelectedItem = null;
+
+
+        }
+
+      
         public void LimpiarForm() {
             txtId.Text = "";
             cmbNombreDoctor.SelectedItem = null;
-            cmbCIpaciente.SelectedItem = null;            
-            cmbSucursal.SelectedItem = null;
+            cmbPaciente.SelectedItem = null;            
+            
             txtDiagnostico.Text = "";
-            rdbCritico.Checked = false;
-            rdbGrave.Checked = false;
-            rdbLeve.Checked = false;
+            
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            Consulta consulta = (Consulta)lstconsultas.SelectedItem;
-            Consulta.EliminarConsulta(consulta);
-            ActualizarListaConsultas();
-            LimpiarForm();
-        }
+       
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarForm();
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
-        {;
-            int index = lstconsultas.SelectedIndex;
-            Consulta.listaConsulta[index] = ObtenerConsultasFormulario();
-            MessageBox.Show("Consulta modificada con Exito");
-            ActualizarListaConsultas();
-        }
+     
 
-       
-
-        private Consulta ObtenerConsultasFormulario()
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Consulta c = new Consulta();
-
-            c.NumeroConsulta = Convert.ToInt16(txtId.Text);
-            c.NombreDoctor = (Doctor)cmbNombreDoctor.SelectedItem;
-            c.CIPaciente = (Paciente)cmbCIpaciente.SelectedItem;            
-            c.Sucursal = (Sucursal)cmbSucursal.SelectedValue;            
-            c.Diagnostico = txtDiagnostico.Text;
-            if (rdbCritico.Checked)
-            {
-                c.TipoUrgencia = TipoUrgencia.Critico;
-            }
-            else if (rdbGrave.Checked)
-            {
-                c.TipoUrgencia = TipoUrgencia.Grave;
-            }
-            else if (rdbLeve.Checked)
-            {
-                c.TipoUrgencia = TipoUrgencia.Leve;
-            }
-            return c;
-
-        }
-
-        private void ActualizarListaConsultas()
-        {
-            lstconsultas.DataSource = null;
-            lstconsultas.DataSource = Consulta.ObtenerConsulta();
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)  // btnAgregarReceta
-        {
-            DetalleMedicamento dm = new DetalleMedicamento();
-            dm.Cantidad = Convert.ToInt16(txtCantidad.Text);
-            dm.NombreMedicamento = (Medicamento)cmbMedicamento.SelectedItem;
-            consulta.detalle_medicamento.Add(dm);
+            ConsultaDetalle cd = (ConsultaDetalle)dtgDetalleConsulta.CurrentRow.DataBoundItem;
+            consulta.Detalle_Consulta.Remove(cd);
             ActualizarDataGrid();
-            LimpiarReceta();
         }
 
-        private void btnEliminarReceta_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-            DetalleMedicamento dtm = (DetalleMedicamento)dtgDetalleMedicamento.CurrentRow.DataBoundItem;
-            if (dtm != null)
-            {
-                consulta.detalle_medicamento.Remove(dtm);
-            }
+            Consulta consulta = new Consulta();
+            consulta.paciente = (Paciente)cmbPaciente.SelectedItem;
+            consulta.Diagnostico = Convert.ToString(txtDiagnostico.Text);
+           
+            Consulta.AgregarConsulta(consulta);
+            ConsultaDetalle cd = new ConsultaDetalle();
+            cd.paciente = (Paciente)cmbPaciente.SelectedItem;
+            cd.FechaConsulta = dtpFechaConsulta.Value.Date;
+            cd.doctor = (Doctor)cmbNombreDoctor.SelectedItem;
+            consulta.Detalle_Consulta.Add(cd);
+            MessageBox.Show("La Consulta ha sido guardado con éxito");
+            Limpiar();
+            dtgDetalleConsulta.DataSource = null;
+            dtpFechaConsulta.Value = System.DateTime.Now;
+            cmbNombreDoctor.SelectedItem = null;
+            cmbPaciente.SelectedItem = null;
             ActualizarDataGrid();
-            LimpiarReceta();
-        }
-
-        private void ActualizarDataGrid()
-        {
-            dtgDetalleMedicamento.DataSource = null;
-            dtgDetalleMedicamento.DataSource = consulta.detalle_medicamento;
-        }
-        
-        private void LimpiarReceta()
-        {
-            txtCantidad.Text = "";
-            cmbMedicamento.SelectedItem = null;
-        }
-
-        // cambio de planes
-        private void txtNombrePaciente_Leave(object sender, EventArgs e)
-        {
-          //  cmbCIpaciente.Text = paciente.obtenerPacientexNombre(txtNombrePaciente.Text);
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnReceta_Click(object sender, EventArgs e)
-        {
-            DesbloquearFormulario();
-        }
-
-        /*private void lstconsultas_Click_1(object sender, EventArgs e)
-        {
-            Consulta consul = (Consulta)lstconsultas.SelectedItem;
-
-            if (consul != null)
-            {
-                txtNumeroConsulta.Text = Convert.ToString(consul.NumeroConsulta);
-                cmbNombreDoctor.SelectedItem = consul.NombreDoctor;
-                cmbCIpaciente.SelectedItem = consul.CIPaciente;
-                txtNombrePaciente.Text = consul.NombrePaciente;
-                cmbSucursal.SelectedItem = consul.Sucursal;
-                dtpHoraInicio.Value = consul.HoraInicioConsulta;
-                dtpHoraFin.Value = consul.HoraFinConsulta;
-                txtDiagnostico.Text = consul.Diagnostico;
-                if (consul.TipoUrgencia == TipoUrgencia.Critico)
-                {
-                    rdbCritico.Checked = true;
-                }
-                else if (consul.TipoUrgencia == TipoUrgencia.Grave)
-                {
-                    rdbGrave.Checked = true;
-                }
-                else if (consul.TipoUrgencia == TipoUrgencia.Leve)
-                {
-                    rdbLeve.Checked = true;
-                };
-            }
-        }*/
-
-
-
-
-        private void DesbloquearFormulario()
-        {
-           cmbMedicamento.Enabled = true;
-            txtCantidad.Enabled = true;
-            btnAgregarReceta.Enabled = true;
-            btnEliminarReceta.Enabled = true;
 
 
         }
 
-        private void BloquearFormulario()
-        {
-            cmbMedicamento.Enabled = false;
-            txtCantidad.Enabled = false;
-            btnAgregarReceta.Enabled = false;
-            btnEliminarReceta.Enabled = false;
-
-        }
-
-        private void gpbMedicamento_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbMedicamento_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCantidad_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtgDetalleMedicamento_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

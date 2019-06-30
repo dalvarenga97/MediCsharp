@@ -8,25 +8,21 @@ using System.Data.SqlClient;
 
 namespace MediCsharp
 {
-    public enum TipoUrgencia {Critico, Grave, Leve}
+    public enum TipoUrgencia { Critico, Grave, Leve }
     public class Consulta
     {
-        public Int32 NumeroConsulta { get; set; }
-        public Doctor NombreDoctor { get; set; }
-        public Paciente CIPaciente { get; set; }
-
-        public string NombrePaciente { get; set; }
         
-        public Sucursal Sucursal { get; set; }
+        public Paciente paciente { get; set; }
 
-        public String Medicamento { get; set; }
-        
-        public String Diagnostico { get; set; }
-        public TipoUrgencia TipoUrgencia { get; set; }
 
-        public List<DetalleMedicamento> detalle_medicamento = new List<DetalleMedicamento>();
+        public string Diagnostico { get; set; }
+
+
+        public List<ConsultaDetalle> Detalle_Consulta = new List<ConsultaDetalle>();
 
         public static List<Consulta> listaConsulta = new List<Consulta>();
+
+       
 
         public static void AgregarConsulta(Consulta c)
         {
@@ -34,75 +30,85 @@ namespace MediCsharp
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"INSERT INTO Consulta (Doctor, Paciente, Hora_Inicio_Consulta, Hora_Fin_Consulta, NroSucursal, Diagnostico, Tipo_Urgencia) VALUES (@Doctor, @Paciente, @HoraInicioConsulta, @HoraFinConsulta, @NumeroSucursal, @NumeroMedicamento)"; // DEJO CONSULTA PARA DESPUES
-                SqlCommand cmd = new SqlCommand(textoCmd, con);            // AL LLAMAR A DOCTOR, PACIENTE Y MEDICAMENTO
-                //cmd = c.ObtenerParametros(cmd);                            // Medicamento no seiria llamar a Detallemedic
-                cmd.ExecuteNonQuery();
+                string textoCmd = @"INSERT INTO Consulta (paciente, Diagnostico)  output INSERTED.Id VALUES ( @paciente, @Diagnostico)";
+                SqlCommand cmd = new SqlCommand(textoCmd, con);
+                SqlParameter p1 = new SqlParameter("@paciente", c.paciente.Id);
+                SqlParameter p2 = new SqlParameter("@Diagnostico", c.Diagnostico);
+
+
+                p1.SqlDbType = SqlDbType.Int;
+                p2.SqlDbType = SqlDbType.VarChar;
+
+
+                cmd.Parameters.Add(p1);
+                cmd.Parameters.Add(p2);
+
+
+
+                int Consulta_Id = (int)cmd.ExecuteScalar();
+
+                foreach (ConsultaDetalle cd in c.Detalle_Consulta)
+                {
+                    string textoCmd2 = @"insert into Detalle_Consulta (Consulta_Id, doctor, FechaConsulta )  VALUES (@Id, @doctor, @FechaConsulta)";
+                    SqlCommand cmd2 = new SqlCommand(textoCmd2, con);
+                    SqlParameter p3 = new SqlParameter("@Id", Consulta_Id);                 
+                    SqlParameter p4 = new SqlParameter("@doctor", cd.doctor.Id);
+                   
+                    SqlParameter p5 = new SqlParameter("@FechaConsulta", cd.FechaConsulta);
+                    
+
+                    p3.SqlDbType = SqlDbType.Int;
+                    p4.SqlDbType = SqlDbType.Int;
+                    p5.SqlDbType = SqlDbType.DateTime;
+                 
+                    cmd2.Parameters.Add(p3);
+                    cmd2.Parameters.Add(p4);
+                    cmd2.Parameters.Add(p5);
+                    
+                    cmd2.ExecuteNonQuery();
+                }
             }
+        }
 
+            
+
+
+
+             public static void Eliminar(Consulta c)
+        {
+            listaConsulta.Remove(c);
         }
 
 
-       /* private SqlCommand ObtenerParametros(SqlCommand cmd, Boolean Id = false)
+        public static List<Consulta> Obtener()
         {
-            SqlParameter p1 = new SqlParameter("@NombreMedicamento", this.NombreMedicamento);
-            SqlParameter p2 = new SqlParameter("@DescripcionMedicamento", this.DescripcionMedicamento);
-            SqlParameter p3 = new SqlParameter("@origen", this.origen);
-            SqlParameter p4 = new SqlParameter("@ObservacionMedicamento", this.ObservacionMedicamento);
-            SqlParameter p5 = new SqlParameter("@tipomedicamento", this.tipomedicamento);
-
-            p1.SqlDbType = SqlDbType.VarChar;
-            p2.SqlDbType = SqlDbType.VarChar;
-            p3.SqlDbType = SqlDbType.Int;
-            p4.SqlDbType = SqlDbType.VarChar;
-            p5.SqlDbType = SqlDbType.Int;
-            cmd.Parameters.Add(p1);
-            cmd.Parameters.Add(p2);
-            cmd.Parameters.Add(p3);
-            cmd.Parameters.Add(p4);
-            cmd.Parameters.Add(p5);
-
-
-            if (Id == true) cmd = ObtenerParametroId(cmd);
-
-            return cmd;
-
-        }*/
-        private SqlCommand ObtenerParametroId(SqlCommand cmd)
-        {
-            SqlParameter p6 = new SqlParameter("@NroConsulta", this.NumeroConsulta);
-            p6.SqlDbType = SqlDbType.Int;
-            cmd.Parameters.Add(p6);
-            return cmd;
-        }
-        
-        
-        public static void EliminarConsulta(Consulta c)
-        {
-            //listaConsulta.Remove(c);
+            Consulta consulta;
+            Consulta.listaConsulta.Clear();
 
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"DELETE FROM Consulta WHERE NroConsulta = @NumeroConsulta";
+                string textoCmd = "Select * from Consulta";
 
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
-                cmd = c.ObtenerParametroId(cmd);
 
-                cmd.ExecuteNonQuery();
+                SqlDataReader elLectorDeDatos = cmd.ExecuteReader();
+
+                while (elLectorDeDatos.Read())
+                {
+                    consulta= new Consulta();
+                    
+                                       
+                    listaConsulta.Add(consulta);
+                }
             }
-        }
-
-        public static List<Consulta> ObtenerConsulta()
-        {
             return listaConsulta;
         }
+    }
 
-        public override string ToString()
-        {
-            return this.NumeroConsulta + "      " + NombreDoctor + "      " + NombrePaciente;
-        }
-
+       
 
     }
-}
+
+
+

@@ -17,7 +17,7 @@ namespace InterfazMediCsharp
         public frmreposo()
         {
             InitializeComponent();
-            LimpiarForm();
+           // LimpiarForm();
             ActualizarDataGrid();
         }
 
@@ -37,7 +37,7 @@ namespace InterfazMediCsharp
             dtgReposo.DataSource = Reposo.listaReposo;
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+      /*  private void btnAgregar_Click(object sender, EventArgs e)
         {
             Reposo rp = new Reposo();
             rp.CodigoReposo = txtCodigoReposo.Text;
@@ -50,7 +50,7 @@ namespace InterfazMediCsharp
             ActualizarDataGrid();
             LimpiarForm();
         }
-
+        
         public void LimpiarForm()
         {
             txtCodigoReposo.Text = "";
@@ -58,7 +58,7 @@ namespace InterfazMediCsharp
             cmbPaciente.SelectedItem = null;
             dtpDesde.Value = System.DateTime.Now;
             dtpHasta.Value = System.DateTime.Now;
-        }
+        
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -92,6 +92,6 @@ namespace InterfazMediCsharp
         private void btnModificar_Click(object sender, EventArgs e)
         {
 
-        }
+        }*/
     }
 }
