@@ -8,30 +8,29 @@ using System.Data.SqlClient;
 
 namespace MediCsharp
 {
-    public struct Horario
-    { public int Hora { get; set; }
-      public int Minuto { get; set; }
-    }
+    //public struct Horario
+    //{ public int Hora { get; set; }
+    //  public int Minuto { get; set; }
+    //}
 
    public class Sucursal
     {
-        //public int Id { get; set; }               No se necesita, se usa el numero de sucursal(?)
         public int Id { get; set; }
         public string NombreSucursal { get; set; }
         public string Direccion { get; set; }
         public Int32 CantidadPisos { get; set; }
 
-        public DateTime HorarioInicioVisitas { get; set; }
-        public DateTime HorarioFinVisitas { get; set; }
+        //public DateTime HorarioInicioVisitas { get; set; }
+        //public DateTime HorarioFinVisitas { get; set; }
 
-        public Sucursal()
-        { }
+        //public Sucursal()
+        //{ }
 
 
-        public void ActualizarDatosSucursal()
-        { }
+        //public void ActualizarDatosSucursal()
+        //{ }
 
-        public static List<Sucursal> listaSucursal = new List<Sucursal>();
+        public static List<Sucursal> listaSucursales = new List<Sucursal>();
 
         public static void AgregarSucursal(Sucursal s)
         {
@@ -40,7 +39,7 @@ namespace MediCsharp
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"INSERT INTO Sucursal (NombreSucursal, Direccion, CantidadPisos, HorarioInicioVisitas, HorarioFinVisitas) VALUES (@NombreSucursal, @Direccion, @CantidadPisos, @HorarioInicioVisitas, @HorarioFinVisitas)";
+                string textoCmd = @"INSERT INTO Sucursal (NombreSucursal, Direccion, CantidadPisos) VALUES (@NombreSucursal, @Direccion, @CantidadPisos)";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
                 cmd = s.ObtenerParametros(cmd);
 
@@ -50,12 +49,11 @@ namespace MediCsharp
         }
         public static void EliminarSucursal(Sucursal s)
         {
-            //listaSucursal.Remove(s);
 
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"DELETE FROM Sucursal WHERE Id = @Id";
+                string textoCmd = @"delete from Sucursal where Id = @Id";
 
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
                 cmd = s.ObtenerParametroId(cmd);
@@ -71,7 +69,7 @@ namespace MediCsharp
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"UPDATE Sucursal SET Nombre_Sucursal = @NombreSucursal, Direccion = @Direccion ,Cantidad_Pisos = @CantidadPisos, HorarioInicioVisitas = @HorarioInicioVisitas, HorarioFinVisitas = @HorarioFinVisitas WHERE Id = @Id";
+                string textoCmd = @"UPDATE Sucursal SET NombreSucursal = @NombreSucursal, Direccion = @Direccion , CantidadPisos = @CantidadPisos where Id = @Id";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
                 cmd = s.ObtenerParametros(cmd, true);
 
@@ -80,24 +78,49 @@ namespace MediCsharp
         }
 
 
+        public static List<Sucursal> ObtenerSucursal()
+        {
+            //return listaSucursal;
+            Sucursal sucursal;
+            listaSucursales.Clear();
+            using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
+            {
+
+                con.Open();
+                string textoCmd = "Select * from Sucursal";
+                SqlCommand cmd = new SqlCommand(textoCmd, con);
+
+                SqlDataReader elLectorDeDatos = cmd.ExecuteReader();
+
+                while (elLectorDeDatos.Read())
+                {
+                    sucursal = new Sucursal();
+                    sucursal.Id = elLectorDeDatos.GetInt32(0);
+                    sucursal.NombreSucursal = elLectorDeDatos.GetString(1);
+                    sucursal.Direccion = elLectorDeDatos.GetString(2);
+                    sucursal.CantidadPisos = elLectorDeDatos.GetInt32(3);
+
+
+
+                    listaSucursales.Add(sucursal);
+
+                }
+            }
+            return listaSucursales;
+        }
+
         private SqlCommand ObtenerParametros(SqlCommand cmd, Boolean Id = false)
         {
             SqlParameter p1 = new SqlParameter("@NombreSucursal", this.NombreSucursal);
             SqlParameter p2 = new SqlParameter("@Direccion", this.Direccion);
             SqlParameter p3 = new SqlParameter("@CantidadPisos", this.CantidadPisos);
-            SqlParameter p4 = new SqlParameter("@HorarioInicioVisitas", this.HorarioInicioVisitas);
-            SqlParameter p5 = new SqlParameter("@HorarioFinVisitas", this.HorarioFinVisitas);
 
             p1.SqlDbType = SqlDbType.VarChar;
             p2.SqlDbType = SqlDbType.VarChar;
             p3.SqlDbType = SqlDbType.Int;
-            p4.SqlDbType = SqlDbType.DateTime;
-            p5.SqlDbType = SqlDbType.DateTime;
             cmd.Parameters.Add(p1);
             cmd.Parameters.Add(p2);
             cmd.Parameters.Add(p3);
-            cmd.Parameters.Add(p4);
-            cmd.Parameters.Add(p5);
 
 
             if (Id == true) cmd = ObtenerParametroId(cmd);
@@ -110,46 +133,13 @@ namespace MediCsharp
 
         private SqlCommand ObtenerParametroId(SqlCommand cmd)
         {
-            SqlParameter p6 = new SqlParameter("@NroSucursal", this.Id);
-            p6.SqlDbType = SqlDbType.Int;
-            cmd.Parameters.Add(p6);
+            SqlParameter p4 = new SqlParameter("@Id", this.Id);
+            p4.SqlDbType = SqlDbType.Int;
+            cmd.Parameters.Add(p4);
             return cmd;
         }
+        
 
-
-        public static List<Sucursal> ObtenerSucursal()
-        {
-            //return listaSucursal;
-            Sucursal sucursal;
-            listaSucursal.Clear();
-            using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
-            {
-
-                con.Open();
-                string textoCmd = "SELECT * FROM Sucursal";
-                SqlCommand cmd = new SqlCommand(textoCmd, con);
-
-                SqlDataReader elLectorDeDatos = cmd.ExecuteReader();
-
-                while (elLectorDeDatos.Read())
-                {
-                    sucursal = new Sucursal();
-                    sucursal.Id = elLectorDeDatos.GetInt32(0);
-                    sucursal.NombreSucursal = elLectorDeDatos.GetString(1);
-                    sucursal.Direccion = elLectorDeDatos.GetString(2);
-                    sucursal.CantidadPisos = elLectorDeDatos.GetInt32(3);
-                    sucursal.HorarioInicioVisitas = elLectorDeDatos.GetDateTime(4);
-                    sucursal.HorarioFinVisitas = elLectorDeDatos.GetDateTime(5);
-
-
-
-                    listaSucursal.Add(sucursal);
-
-                }
-            }
-            return listaSucursal;
-        }
-    
         public override string ToString()
         {
             return this.NombreSucursal;

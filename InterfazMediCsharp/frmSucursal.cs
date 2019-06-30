@@ -41,7 +41,7 @@ namespace InterfazMediCsharp
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            
+
             if (modo == "I")
             {
                 Sucursal sucursal = ObtenerSucursalFormulario();
@@ -107,7 +107,8 @@ namespace InterfazMediCsharp
 
         private void frmSucursal_Load(object sender, EventArgs e)
         {
-
+            ActualizarListaSucursal();
+            BloquearFormulario();
         }
 
         private Sucursal ObtenerSucursalFormulario()
@@ -144,7 +145,9 @@ namespace InterfazMediCsharp
                 txtNombre.Text = sucursal.NombreSucursal;
                 txtDireccion.Text = sucursal.Direccion;
                 txtCantidadPisos.Text = Convert.ToString(sucursal.CantidadPisos);
+                DesbloquearFormulario();
             }
+
         }
 
         private void frmSucursal_Load_1(object sender, EventArgs e)

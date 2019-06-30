@@ -40,11 +40,11 @@ namespace InterfazMediCsharp
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Reposo rp = new Reposo();
-            rp.CodigoReposo = txtCodigoReposo.Text;
+            //rp.CodigoReposo = txtCodigoReposo.Text;
             rp.NombreDoctor = (Doctor)cmbDoctor.SelectedItem;
             rp.NombrePaciente = (Paciente)cmbPaciente.SelectedItem;
-            rp.Desde = dtpDesde.Value.Date;
-            rp.Hasta = dtpHasta.Value.Date;
+            //rp.Desde = dtpDesde.Value.Date;
+            //rp.Hasta = dtpHasta.Value.Date;
             Reposo.listaReposo.Add(rp);
 
             ActualizarDataGrid();
@@ -53,11 +53,11 @@ namespace InterfazMediCsharp
 
         public void LimpiarForm()
         {
-            txtCodigoReposo.Text = "";
+            //txtCodigoReposo.Text = "";
             cmbDoctor.SelectedItem = null;
             cmbPaciente.SelectedItem = null;
-            dtpDesde.Value = System.DateTime.Now;
-            dtpHasta.Value = System.DateTime.Now;
+            //dtpDesde.Value = System.DateTime.Now;
+            //dtpHasta.Value = System.DateTime.Now;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -84,8 +84,8 @@ namespace InterfazMediCsharp
             dtgReposo.DataSource = null;
             cmbDoctor.SelectedItem = null;
             cmbPaciente.SelectedItem = null;
-            dtpDesde.Value = System.DateTime.Now;
-            dtpHasta.Value = System.DateTime.Now;
+            //dtpDesde.Value = System.DateTime.Now;
+            //dtpHasta.Value = System.DateTime.Now;
             reposo = new Reposo();
         }
 
