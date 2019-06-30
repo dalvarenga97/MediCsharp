@@ -106,6 +106,12 @@
     <Compile Include="frmSucursal.Designer.cs">
       <DependentUpon>frmSucursal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRegistrarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistrarUsuario.Designer.cs">
+      <DependentUpon>FrmRegistrarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuMediCsharp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSucursal.resx">
       <DependentUpon>frmSucursal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistrarUsuario.resx">
+      <DependentUpon>FrmRegistrarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuMediCsharp.resx">
       <DependentUpon>MenuMediCsharp.cs</DependentUpon>

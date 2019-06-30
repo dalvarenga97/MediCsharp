@@ -66,7 +66,7 @@
             // txtContrasenha
             // 
             this.txtContrasenha.Location = new System.Drawing.Point(288, 145);
-            this.txtContrasenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContrasenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtContrasenha.Name = "txtContrasenha";
             this.txtContrasenha.Size = new System.Drawing.Size(160, 22);
             this.txtContrasenha.TabIndex = 4;
@@ -75,7 +75,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(288, 91);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(160, 22);
             this.txtUsuario.TabIndex = 3;
@@ -84,7 +84,7 @@
             // 
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnSalir.Location = new System.Drawing.Point(288, 215);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(100, 28);
             this.btnSalir.TabIndex = 6;
@@ -96,7 +96,7 @@
             // 
             this.btnIngresar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnIngresar.Location = new System.Drawing.Point(180, 215);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(100, 28);
             this.btnIngresar.TabIndex = 5;
@@ -118,8 +118,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ":.Login:.     MediCsharp";
