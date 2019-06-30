@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtContrasenha = new System.Windows.Forms.TextBox();
-            this.txtusuario = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -72,13 +72,13 @@
             this.txtContrasenha.TabIndex = 4;
             this.txtContrasenha.UseSystemPasswordChar = true;
             // 
-            // txtusuario
+            // txtUsuario
             // 
-            this.txtusuario.Location = new System.Drawing.Point(288, 91);
-            this.txtusuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(160, 22);
-            this.txtusuario.TabIndex = 3;
+            this.txtUsuario.Location = new System.Drawing.Point(288, 91);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(160, 22);
+            this.txtUsuario.TabIndex = 3;
             // 
             // btnSalir
             // 
@@ -114,7 +114,7 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtContrasenha);
-            this.Controls.Add(this.txtusuario);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
@@ -134,7 +134,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtContrasenha;
-        private System.Windows.Forms.TextBox txtusuario;
+        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnIngresar;
     }
