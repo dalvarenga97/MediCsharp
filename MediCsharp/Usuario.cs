@@ -22,17 +22,17 @@ namespace MediCsharp
                 con.Open();
 
                 //Query que se ejecutara en el servidor de base de datos...
-                string textoCmd = "INSERT INTO USUARIO (usuario, password) values(@Usuario, @password)";
+                string textoCmd = "INSERT INTO USUARIO (usuario, password) values(@usuario, @password)";
 
                 //Creamos un objeto comando que es el que 'ejecutara' el comando sql, utilizando la conexion creada..
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
 
                 //Agregamos el parametro de usuario
-                SqlParameter p1 = new SqlParameter("@Usuario", usuario.Trim());
+                SqlParameter p1 = new SqlParameter("@usuario", usuario.Trim());
                 p1.SqlDbType = SqlDbType.VarChar; //indicamos el tipo de dato del parametro
 
                 //Agregamos el parametro password
-                SqlParameter p2 = new SqlParameter("@Password", password_protegido);
+                SqlParameter p2 = new SqlParameter("@password", password_protegido);
                 p2.SqlDbType = SqlDbType.VarChar; //indicamos el tipo de dato del parametro
 
                 //asignamos los parametros al objeto comando
@@ -57,17 +57,17 @@ namespace MediCsharp
                 con.Open();
 
                 //Query que se ejecutara en el servidor de base de datos...
-                string textoCmd = "SELECT Usuario, password from Usuario where Usuario = @Usuario and password = @password";
+                string textoCmd = "SELECT Usuario, password from Usuario where Usuario = @usuario and password = @password";
 
                 //Creamos un objeto comando que es el que 'ejecutara' el comando sql, utilizando la conexion creada..
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
 
                 //Agregamos el parametro de usuario
-                SqlParameter p1 = new SqlParameter("@Usuario", usuario.Trim());
+                SqlParameter p1 = new SqlParameter("@usuario", usuario.Trim());
                 p1.SqlDbType = SqlDbType.VarChar; //indicamos el tipo de dato del parametro
 
                 //Agregamos el parametro password
-                SqlParameter p2 = new SqlParameter("@Password", password_protegido);
+                SqlParameter p2 = new SqlParameter("@password", password_protegido);
                 p2.SqlDbType = SqlDbType.VarChar; //indicamos el tipo de dato del parametro
 
                 //asignamos los parametros al objeto comando

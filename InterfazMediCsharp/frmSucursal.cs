@@ -13,6 +13,7 @@ namespace InterfazMediCsharp
 {
     public partial class frmSucursal : Form
     {
+        string modo;
         public frmSucursal()
         {
             InitializeComponent();
@@ -32,41 +33,60 @@ namespace InterfazMediCsharp
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (lstSucursal.SelectedItem != null)
-            {
-                Sucursal sucursalSeleccionada = (Sucursal)lstSucursal.SelectedItem;
-                Sucursal.EliminarSucursal(sucursalSeleccionada);
-
-                lstSucursal.DataSource = null;
-                lstSucursal.DataSource = Sucursal.ObtenerSucursal();
-            }
+            Sucursal sucrusal = (Sucursal)lstSucursal.SelectedItem;
+            Sucursal.EliminarSucursal(sucrusal);
+            ActualizarListaSucursal();
+            LimpiarFormulario();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Sucursal su = new Sucursal();
-            su.NombreSucursal = txtNombre.Text;
-            su.Direccion = txtDireccion.Text;
-            su.CantidadPisos = Convert.ToInt16(txtCantidadPisos.Text);
-            su.HorarioInicioVisitas = dtpiniciovisitas.Value.Date;
-            su.HorarioFinVisitas = dtpfinvisitas.Value.Date;
+
+            if (modo == "I")
+            {
+                Sucursal sucursal = ObtenerSucursalFormulario();
+
+                Sucursal.AgregarSucursal(sucursal);
 
 
-            if (DateTime.Parse(dtpfinvisitas.Text) > DateTime.Parse(dtpfinvisitas.Text))
-                System.Windows.Forms.MessageBox.Show("La fecha de inicio de visita no puede superar a la fecha fin de visita");
-            return;
+            }
+            else if (modo == "E")
+            {
+                int index = lstSucursal.SelectedIndex;
 
-            if (txtNombre.Text == "")
-                System.Windows.Forms.MessageBox.Show("El nombre se ecuentra vacio favor llenar..");
-            return;
-            if (txtDireccion.Text == "")
-                System.Windows.Forms.MessageBox.Show("la direccion se encuentra vacio favor llenar..");
-            return;
-            if (txtNombre.Text == "")
-                System.Windows.Forms.MessageBox.Show("El nombre se ecuentra vacio favor llenar..");
-            return;
+                Sucursal sucursal = ObtenerSucursalFormulario();
+                Sucursal.EditarSucursal(index, sucursal);
+
+            }
+
+            ActualizarListaSucursal();
+            LimpiarFormulario();
+            BloquearFormulario();
+
         }
-    
+
+        private void BloquearFormulario()
+        {
+            txtNombre.Enabled = false;
+            txtDireccion.Enabled = false;
+            txtCantidadPisos.Enabled = false;
+            btnAgregar.Enabled = false;
+            btnModificar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnLimpiar.Enabled = false;
+
+        }
+        private void DesbloquearFormulario()
+        {
+            txtNombre.Enabled = true;
+            txtDireccion.Enabled = true;
+            txtCantidadPisos.Enabled = true;
+            btnAgregar.Enabled = true;
+            btnModificar.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnLimpiar.Enabled = true;
+
+        }
         private void btnModificar_Click(object sender, EventArgs e)
         {
             Sucursal su = ObtenerSucursalFormulario();
@@ -87,19 +107,17 @@ namespace InterfazMediCsharp
 
         private void frmSucursal_Load(object sender, EventArgs e)
         {
-
+            ActualizarListaSucursal();
+            BloquearFormulario();
         }
 
         private Sucursal ObtenerSucursalFormulario()
         {
             Sucursal s = new Sucursal();
-            s.NumeroSucursal = Convert.ToInt32(txtId.Text);
+            s.Id = Convert.ToInt32(txtId.Text);
             s.NombreSucursal = txtNombre.Text;
             s.Direccion = txtDireccion.Text;
             s.CantidadPisos = Convert.ToInt32(txtCantidadPisos.Text);
-            s.HorarioInicioVisitas = dtpiniciovisitas.Value;
-            s.HorarioFinVisitas = dtpfinvisitas.Value;
-
             return s;
 
         }
@@ -115,8 +133,6 @@ namespace InterfazMediCsharp
             txtNombre.Text = "";
             txtDireccion.Text = "";
             txtCantidadPisos.Text = "";
-            dtpiniciovisitas.Value = System.DateTime.Now;
-            dtpfinvisitas.Value = System.DateTime.Now;
         }
 
         private void lstSucursal_Click(object sender, EventArgs e)
@@ -125,19 +141,26 @@ namespace InterfazMediCsharp
 
             if (sucursal != null)
             {
-                txtId.Text = Convert.ToString(sucursal.NumeroSucursal);
+                txtId.Text = Convert.ToString(sucursal.Id);
                 txtNombre.Text = sucursal.NombreSucursal;
                 txtDireccion.Text = sucursal.Direccion;
                 txtCantidadPisos.Text = Convert.ToString(sucursal.CantidadPisos);
-                dtpiniciovisitas.Value = sucursal.HorarioInicioVisitas;
-                dtpfinvisitas.Value = sucursal.HorarioFinVisitas;
+                DesbloquearFormulario();
             }
+
         }
 
         private void frmSucursal_Load_1(object sender, EventArgs e)
         {
            
 
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            modo = "I";
+            LimpiarFormulario();
+            DesbloquearFormulario();
         }
     }
 }

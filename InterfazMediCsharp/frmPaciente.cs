@@ -167,7 +167,7 @@ namespace InterfazMediCsharp
         private void ActualizarListaPacientes()
         {
             lstPaciente.DataSource = null;
-            lstPaciente.DataSource = Paciente.ObtenerPaciente();
+            lstPaciente.DataSource = Paciente.ObtenerPacientes();
 
         }
 

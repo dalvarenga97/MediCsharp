@@ -49,7 +49,7 @@ namespace InterfazMediCsharp
         private void ActualizarListaDoctor()
         {
             lstDoctor.DataSource = null;
-            lstDoctor.DataSource = Doctor.ObtenerDoctor();
+            lstDoctor.DataSource = Doctor.ObtenerDoctores();
 
         }
 
@@ -172,7 +172,7 @@ namespace InterfazMediCsharp
         private void ActualizarListaDoctores()
         {
             lstDoctor.DataSource = null;
-            lstDoctor.DataSource = Doctor.ObtenerDoctor();
+            lstDoctor.DataSource = Doctor.ObtenerDoctores();
 
         }
         private void lstDoctor_Click(object sender, EventArgs e)
