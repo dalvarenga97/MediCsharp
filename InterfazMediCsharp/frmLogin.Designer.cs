@@ -35,6 +35,8 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.ptbcregistrausuario = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbcregistrausuario)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -66,7 +68,7 @@
             // txtContrasenha
             // 
             this.txtContrasenha.Location = new System.Drawing.Point(288, 145);
-            this.txtContrasenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContrasenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtContrasenha.Name = "txtContrasenha";
             this.txtContrasenha.Size = new System.Drawing.Size(160, 22);
             this.txtContrasenha.TabIndex = 4;
@@ -75,7 +77,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(288, 91);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(160, 22);
             this.txtUsuario.TabIndex = 3;
@@ -84,7 +86,7 @@
             // 
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnSalir.Location = new System.Drawing.Point(288, 215);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(100, 28);
             this.btnSalir.TabIndex = 6;
@@ -96,7 +98,7 @@
             // 
             this.btnIngresar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnIngresar.Location = new System.Drawing.Point(180, 215);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(100, 28);
             this.btnIngresar.TabIndex = 5;
@@ -104,13 +106,27 @@
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
+            // ptbcregistrausuario
+            // 
+            this.ptbcregistrausuario.ErrorImage = null;
+            this.ptbcregistrausuario.Image = global::InterfazMediCsharp.Properties.Resources.para_paciente;
+            this.ptbcregistrausuario.ImageLocation = "";
+            this.ptbcregistrausuario.InitialImage = null;
+            this.ptbcregistrausuario.Location = new System.Drawing.Point(473, 91);
+            this.ptbcregistrausuario.Name = "ptbcregistrausuario";
+            this.ptbcregistrausuario.Size = new System.Drawing.Size(110, 108);
+            this.ptbcregistrausuario.TabIndex = 7;
+            this.ptbcregistrausuario.TabStop = false;
+            this.ptbcregistrausuario.Click += new System.EventHandler(this.ptbcregistrausuario_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.PARA_FONDO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(559, 258);
+            this.ClientSize = new System.Drawing.Size(623, 348);
+            this.Controls.Add(this.ptbcregistrausuario);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtContrasenha);
@@ -118,12 +134,14 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ":.Login:.     MediCsharp";
             this.Load += new System.EventHandler(this.frmLogin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbcregistrausuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,5 +155,6 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.PictureBox ptbcregistrausuario;
     }
 }

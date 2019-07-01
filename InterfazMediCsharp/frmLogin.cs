@@ -55,6 +55,12 @@ namespace InterfazMediCsharp
                 MessageBox.Show("Usuario o contraseña incorrectos");
             }
         }
+
+        private void ptbcregistrausuario_Click(object sender, EventArgs e)
+        {
+            FrmRegistrarUsuario ru = new FrmRegistrarUsuario();
+            ru.Show();
+        }
     }
     }
 
