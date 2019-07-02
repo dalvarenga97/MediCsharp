@@ -114,7 +114,7 @@ namespace InterfazMediCsharp
         private Sucursal ObtenerSucursalFormulario()
         {
             Sucursal s = new Sucursal();
-            s.Id = Convert.ToInt32(txtId.Text);
+           // s.Id = Convert.ToInt32(txtId.Text);
             s.NombreSucursal = txtNombre.Text;
             s.Direccion = txtDireccion.Text;
             s.CantidadPisos = Convert.ToInt32(txtCantidadPisos.Text);
@@ -141,7 +141,7 @@ namespace InterfazMediCsharp
 
             if (sucursal != null)
             {
-                txtId.Text = Convert.ToString(sucursal.Id);
+                //txtId.Text = Convert.ToString(sucursal.Id);
                 txtNombre.Text = sucursal.NombreSucursal;
                 txtDireccion.Text = sucursal.Direccion;
                 txtCantidadPisos.Text = Convert.ToString(sucursal.CantidadPisos);

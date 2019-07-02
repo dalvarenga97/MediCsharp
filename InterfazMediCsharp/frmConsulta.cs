@@ -29,29 +29,35 @@ namespace InterfazMediCsharp
 
 
             dtgDetalleConsulta.AutoGenerateColumns = true;
-           // cmbNombreDoctor.DataSource = Doctor.ObtenerDoctor();
-            //cmbPaciente.DataSource = Paciente.ObtenerPaciente();    
-            
+           cmbNombreDoctor.DataSource = Doctor.ObtenerDoctores();
+           cmbPaciente.DataSource = Paciente.ObtenerPacientes();
+       
 
 
 
             consulta = new Consulta();
             ActualizarDataGrid();
+
+
+          
             
+
         }
 
-       
+        
 
         private void ActualizarDataGrid()
         {
             dtgDetalleConsulta.DataSource = null;
-            dtgDetalleConsulta.DataSource = Consulta.Obtener();
+            dtgDetalleConsulta.DataSource = consulta.detalle_consulta;
 
         }
         private void Limpiar()
         {
             txtDiagnostico.Text = "0";
             cmbPaciente.SelectedItem = null;
+            cmbNombreDoctor.SelectedItem = null;
+            
 
 
         }
@@ -77,38 +83,51 @@ namespace InterfazMediCsharp
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            ConsultaDetalle cd = (ConsultaDetalle)dtgDetalleConsulta.CurrentRow.DataBoundItem;
-            consulta.Detalle_Consulta.Remove(cd);
+            ConsultaDetalle dd = (ConsultaDetalle)dtgDetalleConsulta.CurrentRow.DataBoundItem;
+            if (dd != null)
+            {
+                consulta.detalle_consulta.Remove(dd);
+            }
             ActualizarDataGrid();
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            Consulta consulta = new Consulta();
-            consulta.paciente = (Paciente)cmbPaciente.SelectedItem;
-            consulta.Diagnostico = Convert.ToString(txtDiagnostico.Text);
-           
-            Consulta.AgregarConsulta(consulta);
-            ConsultaDetalle cd = new ConsultaDetalle();
-            cd.paciente = (Paciente)cmbPaciente.SelectedItem;
-            cd.FechaConsulta = dtpFechaConsulta.Value.Date;
-            cd.doctor = (Doctor)cmbNombreDoctor.SelectedItem;
-            consulta.Detalle_Consulta.Add(cd);
-            MessageBox.Show("La Consulta ha sido guardado con éxito");
-            Limpiar();
-            dtgDetalleConsulta.DataSource = null;
-            dtpFechaConsulta.Value = System.DateTime.Now;
-            cmbNombreDoctor.SelectedItem = null;
-            cmbPaciente.SelectedItem = null;
-            ActualizarDataGrid();
-
-
-        }
+        
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
+
+        private void dtgDetalleConsulta_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ConsultaDetalle dd = new ConsultaDetalle();
+            dd.paciente = (Paciente)cmbPaciente.SelectedItem;
+            dd.doctor = (Doctor)cmbNombreDoctor.SelectedItem;
+            dd.Diagnostico = txtDiagnostico.Text;
+            dd.FechaConsulta = dtpFechaConsulta.Value.Date;          
+            consulta.detalle_consulta.Add(dd);
+            ActualizarDataGrid();
+            consulta.paciente = (Paciente)cmbPaciente.SelectedItem;
+            consulta.doctor = (Doctor)cmbNombreDoctor.SelectedItem;
+            Consulta.Agregar(consulta);
+            MessageBox.Show("La Consulta ha sido guardado con éxito");
+            Limpiar();
+            dtgDetalleConsulta.DataSource = null;
+            cmbPaciente.SelectedItem = null;
+            cmbNombreDoctor.SelectedItem = null;
+
+
+            consulta = new Consulta();
+
+            Limpiar();
+        }
+
+
     }
 
 

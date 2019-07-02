@@ -40,10 +40,10 @@ namespace InterfazMediCsharp
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Reposo rp = new Reposo();
-            rp.Id = txtId.Text;
+           // rp.Id = txtId.Text;
             rp.doctor = (Doctor)cmbDoctor.SelectedItem;
             rp.paciente = (Paciente)cmbPaciente.SelectedItem;
-            rp.CantidadDias = txtCantidadDias.Text;
+           // rp.CantidadDias = txtCantidadDias.Text;
             Reposo.listaReposo.Add(rp);
 
             ActualizarDataGrid();

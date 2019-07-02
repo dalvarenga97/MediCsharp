@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.dtpFechaConsulta = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -46,7 +47,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.gpbMedicamento = new System.Windows.Forms.GroupBox();
             this.dtgDetalleConsulta = new System.Windows.Forms.DataGridView();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,7 +69,7 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(560, 445);
+            this.btnLimpiar.Location = new System.Drawing.Point(540, 445);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 15;
@@ -100,6 +100,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(349, 445);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 19;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.button1_Click);
             // 
             // dtpFechaConsulta
             // 
@@ -210,7 +221,7 @@
             this.gpbMedicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbMedicamento.Location = new System.Drawing.Point(482, 74);
             this.gpbMedicamento.Name = "gpbMedicamento";
-            this.gpbMedicamento.Size = new System.Drawing.Size(478, 240);
+            this.gpbMedicamento.Size = new System.Drawing.Size(478, 328);
             this.gpbMedicamento.TabIndex = 16;
             this.gpbMedicamento.TabStop = false;
             this.gpbMedicamento.Text = "Consultas Grabadas";
@@ -222,22 +233,12 @@
             this.dtgDetalleConsulta.Name = "dtgDetalleConsulta";
             this.dtgDetalleConsulta.Size = new System.Drawing.Size(441, 150);
             this.dtgDetalleConsulta.TabIndex = 0;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(361, 445);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 17;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.dtgDetalleConsulta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDetalleConsulta_CellContentClick);
             // 
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(463, 445);
+            this.btnEliminar.Location = new System.Drawing.Point(443, 445);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 18;
@@ -252,8 +253,8 @@
             this.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.PARA_FONDO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(972, 529);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.gpbMedicamento);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.groupBox1);
@@ -289,10 +290,10 @@
         private System.Windows.Forms.GroupBox gpbMedicamento;
         private System.Windows.Forms.ComboBox cmbPaciente;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dtpFechaConsulta;
         private System.Windows.Forms.DataGridView dtgDetalleConsulta;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }

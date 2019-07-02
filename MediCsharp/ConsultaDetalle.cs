@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace MediCsharp
 {
-   public  class ConsultaDetalle
+    public class ConsultaDetalle
     {
         public Paciente paciente { get; set; }
-       
         public Doctor doctor { get; set; }
+
         public DateTime FechaConsulta { get; set; }
 
-
+        public string Diagnostico { get; set; }
 
     }
 }
