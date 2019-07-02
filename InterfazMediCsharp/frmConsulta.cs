@@ -117,7 +117,7 @@ namespace InterfazMediCsharp
             Consulta.Agregar(consulta);
             MessageBox.Show("La Consulta ha sido guardado con éxito");
             Limpiar();
-            dtgDetalleConsulta.DataSource = null;
+            //dtgDetalleConsulta.DataSource = null;
             cmbPaciente.SelectedItem = null;
             cmbNombreDoctor.SelectedItem = null;
 
