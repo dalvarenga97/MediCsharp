@@ -141,7 +141,7 @@ namespace InterfazMediCsharp
 
             if (sucursal != null)
             {
-                //txtId.Text = Convert.ToString(sucursal.Id);
+                txtId.Text = Convert.ToString(sucursal.Id);
                 txtNombre.Text = sucursal.NombreSucursal;
                 txtDireccion.Text = sucursal.Direccion;
                 txtCantidadPisos.Text = Convert.ToString(sucursal.CantidadPisos);
@@ -152,7 +152,8 @@ namespace InterfazMediCsharp
 
         private void frmSucursal_Load_1(object sender, EventArgs e)
         {
-           
+            ActualizarListaSucursal();
+            BloquearFormulario();
 
         }
 
