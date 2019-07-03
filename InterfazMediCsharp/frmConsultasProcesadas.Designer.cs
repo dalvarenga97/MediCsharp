@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultasProcesadas));
-            this.dgtConsultas = new System.Windows.Forms.DataGridView();
+            this.dgtConsultasPendientes = new System.Windows.Forms.DataGridView();
             this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgtConsultas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgtConsultasPendientes)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgtConsultas
+            // dgtConsultasPendientes
             // 
-            this.dgtConsultas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dgtConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgtConsultas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgtConsultasPendientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dgtConsultasPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgtConsultasPendientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Seleccionar});
-            this.dgtConsultas.Location = new System.Drawing.Point(37, 86);
-            this.dgtConsultas.Margin = new System.Windows.Forms.Padding(2);
-            this.dgtConsultas.Name = "dgtConsultas";
-            this.dgtConsultas.RowTemplate.Height = 33;
-            this.dgtConsultas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgtConsultas.Size = new System.Drawing.Size(555, 190);
-            this.dgtConsultas.TabIndex = 1;
+            this.dgtConsultasPendientes.Location = new System.Drawing.Point(37, 86);
+            this.dgtConsultasPendientes.Margin = new System.Windows.Forms.Padding(2);
+            this.dgtConsultasPendientes.Name = "dgtConsultasPendientes";
+            this.dgtConsultasPendientes.RowTemplate.Height = 33;
+            this.dgtConsultasPendientes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgtConsultasPendientes.Size = new System.Drawing.Size(555, 190);
+            this.dgtConsultasPendientes.TabIndex = 1;
             // 
             // Seleccionar
             // 
@@ -86,6 +86,7 @@
             this.btnConfirmar.TabIndex = 14;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // frmConsultasProcesadas
             // 
@@ -97,13 +98,14 @@
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgtConsultas);
+            this.Controls.Add(this.dgtConsultasPendientes);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmConsultasProcesadas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultas Procesadas";
-            ((System.ComponentModel.ISupportInitialize)(this.dgtConsultas)).EndInit();
+            this.Load += new System.EventHandler(this.frmConsultasProcesadas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgtConsultasPendientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,7 +113,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgtConsultas;
+        private System.Windows.Forms.DataGridView dgtConsultasPendientes;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccionar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.VScrollBar vScrollBar1;

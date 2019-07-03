@@ -127,7 +127,11 @@ namespace InterfazMediCsharp
             Limpiar();
         }
 
-
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            frmConsultasProcesadas form = new frmConsultasProcesadas();
+            form.Show();
+        }
     }
 
 

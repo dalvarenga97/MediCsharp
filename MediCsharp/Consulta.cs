@@ -95,7 +95,47 @@ namespace MediCsharp
         }
 
 
-       
+
+        public static DataTable ObtenerConsultasPendientes()
+        {
+            using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
+            {
+                con.Open();
+                string textoCmd = "SELECT P.NombrePaciente, D.NombreDoctor, CD.FechaConsuLTA, CD.Diagnostico FROM CONSULTA_DETALLE CD JOIN        Consulta C   ON C.Id = CD.consulta_id JOIN  Paciente P  ON C.paciente = p.Id  JOIN  Doctor D  ON D.Id = CD.doctor; ";
+
+                SqlCommand cmd = new SqlCommand(textoCmd, con);
+
+                DataTable tabla = new DataTable();
+                tabla.Load(cmd.ExecuteReader());
+                return tabla;
+
+            }
+
+        }
+
+
+        public static void ConfirmarConsultas(List<int> listaIds)
+        {
+
+            using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
+            {
+                con.Open();
+                foreach (int id in listaIds)
+                {
+                    string textoCmd = @"UPDATE Consulta_Detalle SET recibido = 1 where id = @id";
+                    SqlCommand cmd = new SqlCommand(textoCmd, con);
+                    SqlParameter p1 = new SqlParameter("@id", id);
+                    p1.SqlDbType = SqlDbType.Int;
+                    cmd.Parameters.Add(p1);
+                    cmd.ExecuteNonQuery();
+                }
+
+            }
+        }
+
+
+
+
 
         public static List<Consulta> ObtenerConsultas()
         {

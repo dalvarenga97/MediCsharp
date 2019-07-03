@@ -48,6 +48,7 @@
             this.gpbMedicamento = new System.Windows.Forms.GroupBox();
             this.dtgDetalleConsulta = new System.Windows.Forms.DataGridView();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gpbMedicamento.SuspendLayout();
@@ -217,6 +218,7 @@
             // gpbMedicamento
             // 
             this.gpbMedicamento.BackColor = System.Drawing.Color.Transparent;
+            this.gpbMedicamento.Controls.Add(this.button1);
             this.gpbMedicamento.Controls.Add(this.dtgDetalleConsulta);
             this.gpbMedicamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbMedicamento.Location = new System.Drawing.Point(482, 74);
@@ -245,6 +247,17 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(354, 279);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Consultas ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // frmConsulta
             // 
@@ -295,5 +308,6 @@
         private System.Windows.Forms.DataGridView dtgDetalleConsulta;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button button1;
     }
 }
