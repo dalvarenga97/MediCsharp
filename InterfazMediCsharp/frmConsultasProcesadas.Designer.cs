@@ -32,7 +32,6 @@
             this.dgtConsultasPendientes = new System.Windows.Forms.DataGridView();
             this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.btnConfirmar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgtConsultasPendientes)).BeginInit();
             this.SuspendLayout();
@@ -70,13 +69,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Check Consultas";
             // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(594, 86);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 190);
-            this.vScrollBar1.TabIndex = 3;
-            // 
             // btnConfirmar
             // 
             this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -96,7 +88,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(648, 370);
             this.Controls.Add(this.btnConfirmar);
-            this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgtConsultasPendientes);
             this.DoubleBuffered = true;
@@ -116,7 +107,6 @@
         private System.Windows.Forms.DataGridView dgtConsultasPendientes;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccionar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.Button btnConfirmar;
     }
 }
