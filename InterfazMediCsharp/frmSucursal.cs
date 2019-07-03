@@ -141,7 +141,7 @@ namespace InterfazMediCsharp
 
             if (sucursal != null)
             {
-                //txtId.Text = Convert.ToString(sucursal.Id);
+                txtId.Text = Convert.ToString(sucursal.Id);
                 txtNombre.Text = sucursal.NombreSucursal;
                 txtDireccion.Text = sucursal.Direccion;
                 txtCantidadPisos.Text = Convert.ToString(sucursal.CantidadPisos);
