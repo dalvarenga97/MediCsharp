@@ -45,22 +45,28 @@ namespace MediCsharp
 
                 foreach (ConsultaDetalle pd in c.detalle_consulta)
                 {
-                    string textoCmd2 = @"insert into consulta_detalle (consulta_id, Diagnostico, doctor, FechaConsulta) VALUES (@id, @Diagnostico, @doctor, @FechaConsulta)";
+                    string textoCmd2 = @"insert into consulta_detalle (consulta_id, Diagnostico, doctor, FechaConsulta, Sucursal, tipourgencia) VALUES (@id, @Diagnostico, @doctor, @FechaConsulta, @Sucursal, @tipourgencia)";
                     SqlCommand cmd2 = new SqlCommand(textoCmd2, con);
 
                     SqlParameter p3 = new SqlParameter("@id", consulta_id);
                     SqlParameter p4 = new SqlParameter("@Diagnostico", pd.Diagnostico);
                     SqlParameter p5 = new SqlParameter("@doctor", pd.doctor.Id);
                     SqlParameter p6 = new SqlParameter("@FechaConsulta", pd.FechaConsulta);
+                    SqlParameter p7 = new SqlParameter("@Sucursal", pd.Sucursal.Id);
+                    SqlParameter p8 = new SqlParameter("@tipourgencia", pd.tipourgencia);
 
                     p3.SqlDbType = SqlDbType.Int;
                     p4.SqlDbType = SqlDbType.VarChar;
                     p5.SqlDbType = SqlDbType.Int;
                     p6.SqlDbType = SqlDbType.DateTime;
+                    p7.SqlDbType = SqlDbType.Int;
+                    p8.SqlDbType = SqlDbType.Int;
                     cmd2.Parameters.Add(p3);
                     cmd2.Parameters.Add(p4);
                     cmd2.Parameters.Add(p5);
                     cmd2.Parameters.Add(p6);
+                    cmd2.Parameters.Add(p7);
+                    cmd2.Parameters.Add(p8);
 
                     cmd2.ExecuteNonQuery();
                 }

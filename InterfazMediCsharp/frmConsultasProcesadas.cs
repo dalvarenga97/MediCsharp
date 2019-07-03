@@ -27,7 +27,7 @@ namespace InterfazMediCsharp
         {
             dgtConsultasPendientes.DataSource = null;
             dgtConsultasPendientes.DataSource = Consulta.ObtenerConsultasPendientes();
-            //dgtConsultasPendientes.Columns[1].Visible = false;
+           // dgtConsultasPendientes.Columns[0].Visible = false;
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)

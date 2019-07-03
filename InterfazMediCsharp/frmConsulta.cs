@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,24 +21,47 @@ namespace InterfazMediCsharp
         {
             InitializeComponent();
             LimpiarForm();
+            //CargarDT();
         }
 
+        private void CargarDT()
+        {
+            dtgDetalleConsulta.DataSource = CargarData1();
+        }
 
+        private object CargarData1()
+        {
+            using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
+            {
+                con.Open();
+                string textoCmd = "SELECT P.NombrePaciente, D.NombreDoctor, CD.FechaConsuLTA, CD.Diagnostico FROM CONSULTA_DETALLE CD JOIN        Consulta C   ON C.Id = CD.consulta_id JOIN  Paciente P  ON C.paciente = p.Id  JOIN  Doctor D  ON D.Id = CD.doctor; ";
+
+                SqlCommand cmd = new SqlCommand(textoCmd, con);
+
+                DataTable tabla = new DataTable();
+                tabla.Load(cmd.ExecuteReader());
+                return tabla;
+
+            }
+
+        }
 
         private void frmConsulta_Load(object sender, EventArgs e)
         {
 
-
-            dtgDetalleConsulta.AutoGenerateColumns = true;
+           
+           dtgDetalleConsulta.AutoGenerateColumns = true;
            cmbNombreDoctor.DataSource = Doctor.ObtenerDoctores();
            cmbPaciente.DataSource = Paciente.ObtenerPacientes();
+            cmbSucursal.DataSource = Sucursal.ObtenerSucursal();
+            cmbTipoUrgencia.DataSource = Enum.GetValues(typeof(TipoUrgencia));
 
             dtgDetalleConsulta.DataSource = Consulta.ObtenerConsultasPendientes();
 
 
             consulta = new Consulta();
             ActualizarDataGrid();
-
+             CargarDT();
 
           
             
@@ -48,7 +72,8 @@ namespace InterfazMediCsharp
 
         private void ActualizarDataGrid()
         {
-            dtgDetalleConsulta.DataSource = null;
+            //dtgDetalleConsulta.DataSource = null;
+            //dtgDetalleConsulta.DataSource = Consulta.ObtenerConsultasPendientes();
             dtgDetalleConsulta.DataSource = consulta.detalle_consulta;
 
         }
@@ -109,7 +134,9 @@ namespace InterfazMediCsharp
             dd.paciente = (Paciente)cmbPaciente.SelectedItem;
             dd.doctor = (Doctor)cmbNombreDoctor.SelectedItem;
             dd.Diagnostico = txtDiagnostico.Text;
-            dd.FechaConsulta = dtpFechaConsulta.Value.Date;          
+            dd.FechaConsulta = dtpFechaConsulta.Value.Date;
+            dd.Sucursal = (Sucursal)cmbSucursal.SelectedItem;
+            dd.tipourgencia = (TipoUrgencia)cmbTipoUrgencia.SelectedItem;
             consulta.detalle_consulta.Add(dd);
             ActualizarDataGrid();
             consulta.paciente = (Paciente)cmbPaciente.SelectedItem;
