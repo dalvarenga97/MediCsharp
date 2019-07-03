@@ -152,7 +152,8 @@ namespace InterfazMediCsharp
 
         private void frmSucursal_Load_1(object sender, EventArgs e)
         {
-           
+            ActualizarListaSucursal();
+            BloquearFormulario();
 
         }
 
