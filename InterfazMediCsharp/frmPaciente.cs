@@ -93,6 +93,13 @@ namespace InterfazMediCsharp
                 return;
             }
 
+            if (cmbEstadoCivil.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor seleccione el estado civil", "ADVERTENCIA");
+                cmbEstadoCivil.Focus();
+                Valoringresado = "-1";
+                return;
+            }
 
             else
            if (modo == "I")

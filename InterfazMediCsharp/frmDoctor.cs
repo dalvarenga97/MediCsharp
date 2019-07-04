@@ -80,6 +80,14 @@ namespace InterfazMediCsharp
                 Valoringresado = "-1";
                 return;
             }
+            if (cmbEspecialidad.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor Seleccione la especialidad", "ADVERTENCIA");
+                cmbEspecialidad.SelectAll();
+                cmbEspecialidad.Focus();
+                Valoringresado = "-1";
+                return;
+            }
             if (dtpFechaNacimiento.Value < System.DateTime.Today)
             {
                 MessageBox.Show("La fecha de Nacimiento. no puede ser mayor a la Fecha de Hoy", "ADVERTENCIA");

@@ -62,7 +62,7 @@ namespace InterfazMediCsharp
 
             if (txtDescripcion.Text.Trim() == "")
             {
-                MessageBox.Show("Favor ingrese el apellido", "ADVERTENCIA");
+                MessageBox.Show("Favor ingrese el Descripcion", "ADVERTENCIA");
                 txtDescripcion.SelectAll();
                 txtDescripcion.Focus();
                 Valoringresado = "-1";
@@ -71,20 +71,20 @@ namespace InterfazMediCsharp
 
             if (txtObservacion.Text.Trim() == "")
             {
-                MessageBox.Show("Favor ingrese la edad", "ADVERTENCIA");
+                MessageBox.Show("Favor ingrese la Observacion", "ADVERTENCIA");
                 txtObservacion.SelectAll();
                 txtObservacion.Focus();
                 Valoringresado = "-1";
                 return;
             }
-            //if (txtTelefono.Text.Trim() == "")    ORIGEN
-            //{
-            //    MessageBox.Show("Favor ingrese el Telefono", "ADVERTENCIA");
-            //    txtTelefono.SelectAll();
-            //    txtTelefono.Focus();
-            //    Valoringresado = "-1";
-            //    return;
-            //}
+            if (cmbOrigen.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor ingrese el Origen", "ADVERTENCIA");
+                cmbOrigen.SelectAll();
+                cmbOrigen.Focus();
+                Valoringresado = "-1";
+                return;
+            }
             //if (dtpFechaNacimiento.Value < System.DateTime.Today)  TIPO
             //{
             //    MessageBox.Show("La fecha de Nacimiento. no puede ser mayor a la Fecha de Hoy", "ADVERTENCIA");
