@@ -104,9 +104,9 @@ namespace InterfazMediCsharp
             else
            if (modo == "I")
             {
-                Paciente doctor = ObtenerPacienteFormulario();
+                Paciente paciente = ObtenerPacienteFormulario();
 
-                Paciente.AgregarPaciente(doctor);
+                Paciente.AgregarPaciente(paciente);
 
 
             }
@@ -114,8 +114,8 @@ namespace InterfazMediCsharp
             {
                 int index = lstPaciente.SelectedIndex;
 
-                Paciente doctor = ObtenerPacienteFormulario();
-                Paciente.EditarPaciente(index, doctor);
+                Paciente paciente = ObtenerPacienteFormulario();
+                Paciente.EditarPaciente(index, paciente);
 
             }
 
