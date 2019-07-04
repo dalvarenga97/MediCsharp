@@ -58,7 +58,7 @@ namespace InterfazMediCsharp
 
             dtgDetalleConsulta.DataSource = Consulta.ObtenerConsultasPendientes();
 
-
+            CargarDT();
             consulta = new Consulta();
             ActualizarDataGrid();
              CargarDT();
@@ -158,6 +158,13 @@ namespace InterfazMediCsharp
         {
             frmConsultasProcesadas form = new frmConsultasProcesadas();
             form.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Consulta cd = (Consulta)dtgDetalleConsulta.CurrentRow.DataBoundItem;
+            //consulta.detalle_consulta.Remove(cd);
+            ActualizarDataGrid();
         }
     }
 

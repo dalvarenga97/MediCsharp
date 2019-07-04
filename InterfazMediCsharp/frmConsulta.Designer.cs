@@ -32,26 +32,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbSucursal = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbTipoUrgencia = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.dtpFechaConsulta = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.cmbPaciente = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbNombreDoctor = new System.Windows.Forms.ComboBox();
             this.txtDiagnostico = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.gpbMedicamento = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dtgDetalleConsulta = new System.Windows.Forms.DataGridView();
-            this.cmbTipoUrgencia = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cmbSucursal = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gpbMedicamento.SuspendLayout();
@@ -73,7 +71,7 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(482, 445);
+            this.btnLimpiar.Location = new System.Drawing.Point(485, 445);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 15;
@@ -90,14 +88,12 @@
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.dtpFechaConsulta);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.cmbPaciente);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.cmbNombreDoctor);
             this.groupBox1.Controls.Add(this.txtDiagnostico);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -109,10 +105,44 @@
             this.groupBox1.Text = "Datos";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // cmbSucursal
+            // 
+            this.cmbSucursal.FormattingEnabled = true;
+            this.cmbSucursal.Location = new System.Drawing.Point(129, 153);
+            this.cmbSucursal.Name = "cmbSucursal";
+            this.cmbSucursal.Size = new System.Drawing.Size(164, 24);
+            this.cmbSucursal.TabIndex = 41;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(47, 156);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 16);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "Sucursal:";
+            // 
+            // cmbTipoUrgencia
+            // 
+            this.cmbTipoUrgencia.FormattingEnabled = true;
+            this.cmbTipoUrgencia.Location = new System.Drawing.Point(255, 239);
+            this.cmbTipoUrgencia.Name = "cmbTipoUrgencia";
+            this.cmbTipoUrgencia.Size = new System.Drawing.Size(163, 24);
+            this.cmbTipoUrgencia.TabIndex = 39;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(138, 242);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(111, 16);
+            this.label12.TabIndex = 36;
+            this.label12.Text = "Tipo Urgencia:";
+            // 
             // dtpFechaConsulta
             // 
             this.dtpFechaConsulta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaConsulta.Location = new System.Drawing.Point(131, 47);
+            this.dtpFechaConsulta.Location = new System.Drawing.Point(131, 35);
             this.dtpFechaConsulta.Name = "dtpFechaConsulta";
             this.dtpFechaConsulta.Size = new System.Drawing.Size(161, 22);
             this.dtpFechaConsulta.TabIndex = 32;
@@ -120,19 +150,11 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(11, 48);
+            this.label10.Location = new System.Drawing.Point(11, 39);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(119, 16);
             this.label10.TabIndex = 31;
             this.label10.Text = "Fecha Consulta:";
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(141, 15);
-            this.txtId.Name = "txtId";
-            this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(151, 22);
-            this.txtId.TabIndex = 27;
             // 
             // cmbPaciente
             // 
@@ -155,7 +177,7 @@
             // cmbNombreDoctor
             // 
             this.cmbNombreDoctor.FormattingEnabled = true;
-            this.cmbNombreDoctor.Location = new System.Drawing.Point(131, 79);
+            this.cmbNombreDoctor.Location = new System.Drawing.Point(131, 75);
             this.cmbNombreDoctor.Name = "cmbNombreDoctor";
             this.cmbNombreDoctor.Size = new System.Drawing.Size(161, 24);
             this.cmbNombreDoctor.TabIndex = 2;
@@ -185,15 +207,6 @@
             this.label7.TabIndex = 5;
             this.label7.Text = "Nombre Paciente:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 16);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Numero Consulta:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -205,7 +218,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 83);
+            this.label2.Location = new System.Drawing.Point(12, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 16);
             this.label2.TabIndex = 0;
@@ -214,7 +227,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(372, 445);
+            this.btnAgregar.Location = new System.Drawing.Point(353, 445);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 19;
@@ -255,40 +268,6 @@
             this.dtgDetalleConsulta.TabIndex = 0;
             this.dtgDetalleConsulta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDetalleConsulta_CellContentClick);
             // 
-            // cmbTipoUrgencia
-            // 
-            this.cmbTipoUrgencia.FormattingEnabled = true;
-            this.cmbTipoUrgencia.Location = new System.Drawing.Point(255, 239);
-            this.cmbTipoUrgencia.Name = "cmbTipoUrgencia";
-            this.cmbTipoUrgencia.Size = new System.Drawing.Size(163, 24);
-            this.cmbTipoUrgencia.TabIndex = 39;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(138, 242);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(111, 16);
-            this.label12.TabIndex = 36;
-            this.label12.Text = "Tipo Urgencia:";
-            // 
-            // cmbSucursal
-            // 
-            this.cmbSucursal.FormattingEnabled = true;
-            this.cmbSucursal.Location = new System.Drawing.Point(129, 153);
-            this.cmbSucursal.Name = "cmbSucursal";
-            this.cmbSucursal.Size = new System.Drawing.Size(164, 24);
-            this.cmbSucursal.TabIndex = 41;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(47, 156);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 16);
-            this.label6.TabIndex = 40;
-            this.label6.Text = "Sucursal:";
-            // 
             // frmConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,13 +304,11 @@
         private System.Windows.Forms.TextBox txtDiagnostico;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox gpbMedicamento;
         private System.Windows.Forms.ComboBox cmbPaciente;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dtpFechaConsulta;
         private System.Windows.Forms.DataGridView dtgDetalleConsulta;

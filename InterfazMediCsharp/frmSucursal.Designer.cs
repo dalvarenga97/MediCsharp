@@ -36,6 +36,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.lstSucursal = new System.Windows.Forms.ListBox();
             this.errorP = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorP)).BeginInit();
@@ -134,6 +134,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(169, 74);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(153, 22);
+            this.txtId.TabIndex = 28;
             // 
             // pictureBox1
             // 
@@ -220,10 +228,12 @@
             // 
             // lstSucursal
             // 
+            this.lstSucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstSucursal.FormattingEnabled = true;
+            this.lstSucursal.ItemHeight = 15;
             this.lstSucursal.Location = new System.Drawing.Point(110, 81);
             this.lstSucursal.Name = "lstSucursal";
-            this.lstSucursal.Size = new System.Drawing.Size(155, 329);
+            this.lstSucursal.Size = new System.Drawing.Size(155, 319);
             this.lstSucursal.TabIndex = 12;
             this.lstSucursal.Click += new System.EventHandler(this.lstSucursal_Click);
             // 
@@ -241,14 +251,6 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // txtId
-            // 
-            this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(169, 74);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(153, 22);
-            this.txtId.TabIndex = 28;
             // 
             // frmSucursal
             // 
