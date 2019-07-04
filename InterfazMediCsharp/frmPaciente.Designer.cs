@@ -63,11 +63,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Script MT Bold", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(292, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 35);
+            this.label1.Size = new System.Drawing.Size(136, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Paciente";
             // 
@@ -161,13 +161,13 @@
             this.rdbMasculino.Name = "rdbMasculino";
             this.rdbMasculino.Size = new System.Drawing.Size(82, 17);
             this.rdbMasculino.TabIndex = 6;
-            this.rdbMasculino.TabStop = true;
             this.rdbMasculino.Text = "Masculino";
             this.rdbMasculino.UseVisualStyleBackColor = true;
             // 
             // rdbFemenino
             // 
             this.rdbFemenino.AutoSize = true;
+            this.rdbFemenino.Checked = true;
             this.rdbFemenino.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbFemenino.Location = new System.Drawing.Point(187, 195);
             this.rdbFemenino.Name = "rdbFemenino";

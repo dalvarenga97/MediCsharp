@@ -29,7 +29,73 @@ namespace InterfazMediCsharp
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (modo == "I")
+            //if (modo == "I")
+            //{
+            //    Medicamento medicamento = ObtenerMedicamentoFormulario();
+
+            //    Medicamento.AgregarMedicamento(medicamento);
+
+
+            //}
+            //else if (modo == "E")
+            //{
+            //    int index = lstMedicamento.SelectedIndex;
+
+            //    Medicamento medicamento = ObtenerMedicamentoFormulario();
+            //    Medicamento.EditarMedicamento(index, medicamento);
+
+            //}
+
+            //ActualizarListaMedicamento();
+            //LimpiarFormulario();
+            //BloquearFormulario();
+
+            string Valoringresado = "";
+            if (txtNombre.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor ingrese el nombre", "ADVERTENCIA");
+                txtNombre.SelectAll();
+                txtNombre.Focus();
+                Valoringresado = "-1";
+                return;
+            }
+
+            if (txtDescripcion.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor ingrese el Descripcion", "ADVERTENCIA");
+                txtDescripcion.SelectAll();
+                txtDescripcion.Focus();
+                Valoringresado = "-1";
+                return;
+            }
+
+            if (txtObservacion.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor ingrese la Observacion", "ADVERTENCIA");
+                txtObservacion.SelectAll();
+                txtObservacion.Focus();
+                Valoringresado = "-1";
+                return;
+            }
+            if (cmbOrigen.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor ingrese el Origen", "ADVERTENCIA");
+                cmbOrigen.SelectAll();
+                cmbOrigen.Focus();
+                Valoringresado = "-1";
+                return;
+            }
+            //if (dtpFechaNacimiento.Value < System.DateTime.Today)  TIPO
+            //{
+            //    MessageBox.Show("La fecha de Nacimiento. no puede ser mayor a la Fecha de Hoy", "ADVERTENCIA");
+            //    dtpFechaNacimiento.Focus();
+            //    Valoringresado = "-1";
+            //    return;
+            //}
+
+
+            else
+           if (modo == "I")
             {
                 Medicamento medicamento = ObtenerMedicamentoFormulario();
 
