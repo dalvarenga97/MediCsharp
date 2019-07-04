@@ -166,6 +166,24 @@ namespace InterfazMediCsharp
             //consulta.detalle_consulta.Remove(cd);
             ActualizarDataGrid();
         }
+
+        private void txtDiagnostico_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("solo foramto texto");
+            }
+        }
     }
 
 
