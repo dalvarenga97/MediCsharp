@@ -25,15 +25,81 @@ namespace InterfazMediCsharp
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (modo == "I")
+            //if (modo == "I")
+            //{
+            //    Paciente paciente = ObtenerPacienteFormulario();
+
+
+
+            //        Paciente.AgregarPaciente(paciente);
+
+
+
+
+            //}
+            //else if (modo == "E")
+            //{
+            //    int index = lstPaciente.SelectedIndex;
+
+            //    Paciente paciente = ObtenerPacienteFormulario();
+            //    Paciente.EditarPaciente(index, paciente);
+
+            //}
+
+            //ActualizarListaPacientes();
+            //LimpiarFormulario();
+            //BloquearFormulario();
+
+            string Valoringresado = "";
+            if (txtNombrePaciente.Text.Trim() == "")
             {
-                Paciente paciente = ObtenerPacienteFormulario();
-               
+                MessageBox.Show("Favor ingrese el nombre", "ADVERTENCIA");
+                txtNombrePaciente.SelectAll();
+                txtNombrePaciente.Focus();
+                Valoringresado = "-1";
+                return;
+            }
+
+            if (txtApellidoPaciente.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor ingrese el apellido", "ADVERTENCIA");
+                txtApellidoPaciente.SelectAll();
+                txtApellidoPaciente.Focus();
+                Valoringresado = "-1";
+                return;
+            }
+
+            if (txtEdad.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor ingrese la edad", "ADVERTENCIA");
+                txtEdad.SelectAll();
+                txtEdad.Focus();
+                Valoringresado = "-1";
+                return;
+            }
+            if (txtTelefono.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor ingrese el Telefono", "ADVERTENCIA");
+                txtTelefono.SelectAll();
+                txtTelefono.Focus();
+                Valoringresado = "-1";
+                return;
+            }
+            if (dtpFechaNacimiento.Value < System.DateTime.Today)
+            {
+                MessageBox.Show("La fecha de Nacimiento. no puede ser mayor a la Fecha de Hoy", "ADVERTENCIA");
+                dtpFechaNacimiento.Focus();
+                Valoringresado = "-1";
+                return;
+            }
 
 
-                    Paciente.AgregarPaciente(paciente);
-               
-               
+            else
+           if (modo == "I")
+            {
+                Paciente doctor = ObtenerPacienteFormulario();
+
+                Paciente.AgregarPaciente(doctor);
 
 
             }
@@ -41,8 +107,8 @@ namespace InterfazMediCsharp
             {
                 int index = lstPaciente.SelectedIndex;
 
-                Paciente paciente = ObtenerPacienteFormulario();
-                Paciente.EditarPaciente(index, paciente);
+                Paciente doctor = ObtenerPacienteFormulario();
+                Paciente.EditarPaciente(index, doctor);
 
             }
 

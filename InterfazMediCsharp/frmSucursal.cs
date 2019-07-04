@@ -42,7 +42,57 @@ namespace InterfazMediCsharp
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
-            if (modo == "I")
+            //if (modo == "I")
+            //{
+            //    Sucursal sucursal = ObtenerSucursalFormulario();
+
+            //    Sucursal.AgregarSucursal(sucursal);
+
+
+            //}
+            //else if (modo == "E")
+            //{
+            //    int index = lstSucursal.SelectedIndex;
+
+            //    Sucursal sucursal = ObtenerSucursalFormulario();
+            //    Sucursal.EditarSucursal(index, sucursal);
+
+            //}
+
+            //ActualizarListaSucursal();
+            //LimpiarFormulario();
+            //BloquearFormulario();
+
+            string Valoringresado = "";
+            if (txtNombre.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor ingrese el nombre", "ADVERTENCIA");
+                txtNombre.SelectAll();
+                txtNombre.Focus();
+                Valoringresado = "-1";
+                return;
+            }
+
+            if (txtDireccion.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor ingrese el direccion", "ADVERTENCIA");
+                txtDireccion.SelectAll();
+                txtDireccion.Focus();
+                Valoringresado = "-1";
+                return;
+            }
+
+            if (txtCantidadPisos.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor ingrese la Cantidad de pisos", "ADVERTENCIA");
+                txtCantidadPisos.SelectAll();
+                txtCantidadPisos.Focus();
+                Valoringresado = "-1";
+                return;
+            }
+
+            else
+           if (modo == "I")
             {
                 Sucursal sucursal = ObtenerSucursalFormulario();
 
