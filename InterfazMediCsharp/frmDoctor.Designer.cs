@@ -108,9 +108,9 @@
             // cmbEspecialidad
             // 
             this.cmbEspecialidad.FormattingEnabled = true;
-            this.cmbEspecialidad.Location = new System.Drawing.Point(154, 193);
+            this.cmbEspecialidad.Location = new System.Drawing.Point(151, 195);
             this.cmbEspecialidad.Name = "cmbEspecialidad";
-            this.cmbEspecialidad.Size = new System.Drawing.Size(151, 24);
+            this.cmbEspecialidad.Size = new System.Drawing.Size(155, 24);
             this.cmbEspecialidad.TabIndex = 26;
             // 
             // rdbMasculino
@@ -177,7 +177,7 @@
             // 
             this.txtTelefono.Location = new System.Drawing.Point(151, 237);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(153, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(155, 22);
             this.txtTelefono.TabIndex = 7;
             // 
             // label9

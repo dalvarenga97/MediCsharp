@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPaciente));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.cmbEstadoCivil = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -54,7 +55,6 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.lstPaciente = new System.Windows.Forms.ListBox();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -100,12 +100,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(180, 37);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(153, 22);
+            this.txtId.TabIndex = 29;
+            // 
             // cmbEstadoCivil
             // 
             this.cmbEstadoCivil.FormattingEnabled = true;
             this.cmbEstadoCivil.Location = new System.Drawing.Point(178, 316);
             this.cmbEstadoCivil.Name = "cmbEstadoCivil";
-            this.cmbEstadoCivil.Size = new System.Drawing.Size(151, 24);
+            this.cmbEstadoCivil.Size = new System.Drawing.Size(155, 24);
             this.cmbEstadoCivil.TabIndex = 28;
             // 
             // label10
@@ -173,7 +181,7 @@
             // 
             this.txtTelefono.Location = new System.Drawing.Point(178, 279);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(153, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(155, 22);
             this.txtTelefono.TabIndex = 8;
             // 
             // txtEdad
@@ -315,14 +323,6 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // txtId
-            // 
-            this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(180, 37);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(153, 22);
-            this.txtId.TabIndex = 29;
             // 
             // frmPaciente
             // 

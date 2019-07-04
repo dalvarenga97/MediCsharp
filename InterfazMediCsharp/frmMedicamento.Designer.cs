@@ -85,9 +85,9 @@
             // cmbOrigen
             // 
             this.cmbOrigen.FormattingEnabled = true;
-            this.cmbOrigen.Location = new System.Drawing.Point(148, 158);
+            this.cmbOrigen.Location = new System.Drawing.Point(144, 158);
             this.cmbOrigen.Name = "cmbOrigen";
-            this.cmbOrigen.Size = new System.Drawing.Size(151, 24);
+            this.cmbOrigen.Size = new System.Drawing.Size(153, 24);
             this.cmbOrigen.TabIndex = 28;
             // 
             // pictureBox1
