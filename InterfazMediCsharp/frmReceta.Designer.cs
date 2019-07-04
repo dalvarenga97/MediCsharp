@@ -30,10 +30,6 @@
         {
             this.gpbMedicamento = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbCIpaciente = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnEliminarReceta = new System.Windows.Forms.Button();
             this.btnAgregarReceta = new System.Windows.Forms.Button();
@@ -45,7 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbConsulta = new System.Windows.Forms.ComboBox();
             this.gpbMedicamento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleReceta)).BeginInit();
             this.SuspendLayout();
@@ -53,12 +49,8 @@
             // gpbMedicamento
             // 
             this.gpbMedicamento.BackColor = System.Drawing.Color.Transparent;
-            this.gpbMedicamento.Controls.Add(this.comboBox2);
+            this.gpbMedicamento.Controls.Add(this.cmbConsulta);
             this.gpbMedicamento.Controls.Add(this.label1);
-            this.gpbMedicamento.Controls.Add(this.comboBox1);
-            this.gpbMedicamento.Controls.Add(this.label4);
-            this.gpbMedicamento.Controls.Add(this.cmbCIpaciente);
-            this.gpbMedicamento.Controls.Add(this.label7);
             this.gpbMedicamento.Controls.Add(this.label3);
             this.gpbMedicamento.Controls.Add(this.btnEliminarReceta);
             this.gpbMedicamento.Controls.Add(this.btnAgregarReceta);
@@ -84,40 +76,6 @@
             this.label1.Size = new System.Drawing.Size(126, 16);
             this.label1.TabIndex = 34;
             this.label1.Text = "Codigo Consulta:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(160, 57);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(148, 24);
-            this.comboBox1.TabIndex = 33;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 60);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 16);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Numero Consulta:";
-            // 
-            // cmbCIpaciente
-            // 
-            this.cmbCIpaciente.FormattingEnabled = true;
-            this.cmbCIpaciente.Location = new System.Drawing.Point(160, 91);
-            this.cmbCIpaciente.Name = "cmbCIpaciente";
-            this.cmbCIpaciente.Size = new System.Drawing.Size(148, 24);
-            this.cmbCIpaciente.TabIndex = 31;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(31, 94);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(132, 16);
-            this.label7.TabIndex = 30;
-            this.label7.Text = "Nombre Paciente:";
             // 
             // label3
             // 
@@ -158,7 +116,7 @@
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(160, 158);
+            this.txtCantidad.Location = new System.Drawing.Point(156, 136);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(148, 22);
             this.txtCantidad.TabIndex = 25;
@@ -166,7 +124,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(49, 164);
+            this.label11.Location = new System.Drawing.Point(80, 137);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(74, 16);
             this.label11.TabIndex = 25;
@@ -175,7 +133,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(49, 130);
+            this.label13.Location = new System.Drawing.Point(49, 76);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(105, 16);
             this.label13.TabIndex = 3;
@@ -184,7 +142,7 @@
             // cmbMedicamento
             // 
             this.cmbMedicamento.FormattingEnabled = true;
-            this.cmbMedicamento.Location = new System.Drawing.Point(160, 126);
+            this.cmbMedicamento.Location = new System.Drawing.Point(156, 73);
             this.cmbMedicamento.Name = "cmbMedicamento";
             this.cmbMedicamento.Size = new System.Drawing.Size(148, 24);
             this.cmbMedicamento.TabIndex = 7;
@@ -222,13 +180,13 @@
             this.btnAgregar.Text = "Guardar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // cmbConsulta
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(158, 23);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(148, 24);
-            this.comboBox2.TabIndex = 35;
+            this.cmbConsulta.FormattingEnabled = true;
+            this.cmbConsulta.Location = new System.Drawing.Point(158, 23);
+            this.cmbConsulta.Name = "cmbConsulta";
+            this.cmbConsulta.Size = new System.Drawing.Size(148, 24);
+            this.cmbConsulta.TabIndex = 35;
             // 
             // frmReceta
             // 
@@ -262,15 +220,11 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbMedicamento;
-        private System.Windows.Forms.ComboBox cmbCIpaciente;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbConsulta;
     }
 }

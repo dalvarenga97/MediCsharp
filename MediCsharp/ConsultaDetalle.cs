@@ -17,11 +17,16 @@ namespace MediCsharp
 
         public string Diagnostico { get; set; }
 
-        public Sucursal Sucursal { get; set; }        
+        public Sucursal Sucursal { get; set; }
 
         public TipoUrgencia tipourgencia { get; set; }
 
 
+       
 
+    
+
+       
     }
+
 }

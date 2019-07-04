@@ -66,5 +66,11 @@ namespace InterfazMediCsharp
         {
 
         }
+
+        private void recetaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReceta form = new frmReceta();
+            form.Show();
+        }
     }
 }

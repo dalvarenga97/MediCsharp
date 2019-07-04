@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MediCsharp;
+using System.Data.SqlClient;
 
 namespace InterfazMediCsharp
 {
     public partial class frmReceta : Form
     {
 
-       // Receta receta;
+        Receta receta;
         public frmReceta()
         {
             InitializeComponent();
@@ -25,6 +26,9 @@ namespace InterfazMediCsharp
 
         }
 
+        
+
+
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -32,9 +36,10 @@ namespace InterfazMediCsharp
 
         private void btnAgregarReceta_Click(object sender, EventArgs e)
         {
-            DetalleReceta dm = new DetalleReceta();
-            dm.Cantidad = Convert.ToInt16(txtCantidad.Text);
-            dm.NombreMedicamento = (Medicamento)cmbMedicamento.SelectedItem;
+            Receta rc = new Receta();
+           
+            rc.cantidad = Convert.ToInt16(txtCantidad.Text);
+            rc.medicamento = (Medicamento)cmbMedicamento.SelectedItem;
             //receta.detalle_medicamento.Add(dm);
           // ActualizarDataGrid();
             //LimpiarReceta();
@@ -58,7 +63,37 @@ namespace InterfazMediCsharp
 
         private void frmReceta_Load(object sender, EventArgs e)
         {
+            cmbMedicamento.DataSource = Medicamento.ObtenerMedicamento();
+
+
+
+            using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
+            {
+                con.Open();
+
+                {
+                    //SqlCommand cmd = new SqlCommand(@"select consulta_id from //Consulta_Detalle", con);
+                    string sql = " select consulta_id from Consulta_Detalle";
+
+                    SqlCommand com = new SqlCommand(sql, con);
+                    SqlDataAdapter da = new SqlDataAdapter(com);
+                    DataTable factura = new DataTable();
+                    try
+                    {
+                        da.Fill(factura);
+                        cmbConsulta.DataSource = factura;
+                        cmbConsulta.DisplayMember = "consulta_id";
+                        cmbConsulta.ValueMember = "consulta_id";
+
+                    }
+                    catch { throw new Exception("Error en el ID."); }
+
+                }
+            }
 
         }
+
+       
+        }
     }
-}
+
