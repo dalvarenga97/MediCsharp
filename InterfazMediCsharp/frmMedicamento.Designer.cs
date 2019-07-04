@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMedicamento));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbOrigen = new System.Windows.Forms.ComboBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rdbInyectable = new System.Windows.Forms.RadioButton();
             this.rdbPastillas = new System.Windows.Forms.RadioButton();
@@ -49,8 +51,6 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lstMedicamento = new System.Windows.Forms.ListBox();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.cmbOrigen = new System.Windows.Forms.ComboBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -82,6 +82,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
+            // cmbOrigen
+            // 
+            this.cmbOrigen.FormattingEnabled = true;
+            this.cmbOrigen.Location = new System.Drawing.Point(148, 158);
+            this.cmbOrigen.Name = "cmbOrigen";
+            this.cmbOrigen.Size = new System.Drawing.Size(151, 24);
+            this.cmbOrigen.TabIndex = 28;
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(144, 29);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(153, 22);
+            this.txtId.TabIndex = 27;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.para_medicamento;
@@ -100,13 +116,13 @@
             this.rdbInyectable.Name = "rdbInyectable";
             this.rdbInyectable.Size = new System.Drawing.Size(90, 17);
             this.rdbInyectable.TabIndex = 8;
-            this.rdbInyectable.TabStop = true;
             this.rdbInyectable.Text = "Inyectables";
             this.rdbInyectable.UseVisualStyleBackColor = true;
             // 
             // rdbPastillas
             // 
             this.rdbPastillas.AutoSize = true;
+            this.rdbPastillas.Checked = true;
             this.rdbPastillas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbPastillas.Location = new System.Drawing.Point(150, 284);
             this.rdbPastillas.Name = "rdbPastillas";
@@ -124,7 +140,6 @@
             this.rdbJarabe.Name = "rdbJarabe";
             this.rdbJarabe.Size = new System.Drawing.Size(63, 17);
             this.rdbJarabe.TabIndex = 6;
-            this.rdbJarabe.TabStop = true;
             this.rdbJarabe.Text = "Jarabe";
             this.rdbJarabe.UseVisualStyleBackColor = true;
             // 
@@ -207,11 +222,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Script MT Bold", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(272, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 35);
+            this.label1.Size = new System.Drawing.Size(201, 33);
             this.label1.TabIndex = 3;
             this.label1.Text = "Medicamento";
             // 
@@ -268,22 +283,6 @@
             this.lstMedicamento.Size = new System.Drawing.Size(186, 342);
             this.lstMedicamento.TabIndex = 15;
             this.lstMedicamento.Click += new System.EventHandler(this.lstMedicamento_Click);
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(144, 29);
-            this.txtId.Name = "txtId";
-            this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(153, 22);
-            this.txtId.TabIndex = 27;
-            // 
-            // cmbOrigen
-            // 
-            this.cmbOrigen.FormattingEnabled = true;
-            this.cmbOrigen.Location = new System.Drawing.Point(148, 158);
-            this.cmbOrigen.Name = "cmbOrigen";
-            this.cmbOrigen.Size = new System.Drawing.Size(151, 24);
-            this.cmbOrigen.TabIndex = 28;
             // 
             // btnNuevo
             // 
