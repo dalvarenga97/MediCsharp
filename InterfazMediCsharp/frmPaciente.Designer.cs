@@ -33,7 +33,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbEstadoCivil = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
@@ -55,6 +54,7 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.lstPaciente = new System.Windows.Forms.ListBox();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -74,9 +74,9 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.cmbEstadoCivil);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.dtpFechaNacimiento);
             this.groupBox1.Controls.Add(this.label9);
@@ -116,14 +116,6 @@
             this.label10.Size = new System.Drawing.Size(127, 16);
             this.label10.TabIndex = 27;
             this.label10.Text = "Codigo Paciente:";
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(178, 37);
-            this.txtId.Name = "txtId";
-            this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(153, 22);
-            this.txtId.TabIndex = 26;
             // 
             // pictureBox1
             // 
@@ -324,6 +316,14 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(180, 37);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(153, 22);
+            this.txtId.TabIndex = 29;
+            // 
             // frmPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -378,8 +378,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListBox lstPaciente;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.ComboBox cmbEstadoCivil;
+        private System.Windows.Forms.TextBox txtId;
     }
 }

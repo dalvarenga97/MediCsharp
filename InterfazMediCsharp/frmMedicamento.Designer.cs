@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMedicamento));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbOrigen = new System.Windows.Forms.ComboBox();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rdbInyectable = new System.Windows.Forms.RadioButton();
             this.rdbPastillas = new System.Windows.Forms.RadioButton();
@@ -52,6 +51,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lstMedicamento = new System.Windows.Forms.ListBox();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,8 +59,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.cmbOrigen);
             this.groupBox1.Controls.Add(this.txtId);
+            this.groupBox1.Controls.Add(this.cmbOrigen);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.rdbInyectable);
             this.groupBox1.Controls.Add(this.rdbPastillas);
@@ -89,14 +89,6 @@
             this.cmbOrigen.Name = "cmbOrigen";
             this.cmbOrigen.Size = new System.Drawing.Size(151, 24);
             this.cmbOrigen.TabIndex = 28;
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(144, 29);
-            this.txtId.Name = "txtId";
-            this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(153, 22);
-            this.txtId.TabIndex = 27;
             // 
             // pictureBox1
             // 
@@ -295,6 +287,14 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(144, 32);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(153, 22);
+            this.txtId.TabIndex = 29;
+            // 
             // frmMedicamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,8 +345,8 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListBox lstMedicamento;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.ComboBox cmbOrigen;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.TextBox txtId;
     }
 }
