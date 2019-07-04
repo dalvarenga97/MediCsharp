@@ -24,7 +24,73 @@ namespace InterfazMediCsharp
       
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (modo == "I")
+            //if (modo == "I")
+            //{
+            //    Doctor doctor = ObtenerDoctorFormulario();
+
+            //    Doctor.AgregarDoctor(doctor);
+
+
+            //}
+            //else if (modo == "E")
+            //{
+            //    int index = lstDoctor.SelectedIndex;
+
+            //    Doctor doctor = ObtenerDoctorFormulario();
+            //    Doctor.EditarDoctor(index, doctor);
+
+            //}
+
+            //ActualizarListaDoctor();
+            //LimpiarFormulario();
+            //BloquearFormulario();
+
+            string Valoringresado = "";
+            if (txtNombre.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor ingrese el nombre", "ADVERTENCIA");
+                txtNombre.SelectAll();
+                txtNombre.Focus();
+                Valoringresado = "-1";
+                return;
+            }
+
+            if (txtApellido.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor ingrese el apellido", "ADVERTENCIA");
+                txtApellido.SelectAll();
+                txtApellido.Focus();
+                Valoringresado = "-1";
+                return;
+            }
+
+            if (txtEdad.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor ingrese la edad", "ADVERTENCIA");
+                txtEdad.SelectAll();
+                txtEdad.Focus();
+                Valoringresado = "-1";
+                return;
+            }
+            if (txtTelefono.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor ingrese el Telefono", "ADVERTENCIA");
+                txtTelefono.SelectAll();
+                txtTelefono.Focus();
+                Valoringresado = "-1";
+                return;
+            }
+            if (dtpFechaNacimiento.Value < System.DateTime.Today)
+            {
+                MessageBox.Show("La fecha de Nacimiento. no puede ser mayor a la Fecha de Hoy", "ADVERTENCIA");
+                dtpFechaNacimiento.Focus();
+                Valoringresado = "-1";
+                return;
+            }
+
+
+            else
+           if (modo == "I")
             {
                 Doctor doctor = ObtenerDoctorFormulario();
 
