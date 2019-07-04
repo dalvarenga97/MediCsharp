@@ -55,5 +55,10 @@ namespace InterfazMediCsharp
         {
 
         }
+
+        private void frmReceta_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

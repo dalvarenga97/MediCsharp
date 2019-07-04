@@ -107,7 +107,7 @@ namespace MediCsharp
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = "SELECT P.NombrePaciente, D.NombreDoctor, CD.FechaConsuLTA, CD.Diagnostico FROM CONSULTA_DETALLE CD JOIN        Consulta C   ON C.Id = CD.consulta_id JOIN  Paciente P  ON C.paciente = p.Id  JOIN  Doctor D  ON D.Id = CD.doctor; ";
+                string textoCmd = "SELECT CD.id, P.NombrePaciente, D.NombreDoctor, CD.FechaConsuLTA, CD.Diagnostico FROM CONSULTA_DETALLE CD JOIN        Consulta C   ON C.Id = CD.consulta_id JOIN  Paciente P  ON C.paciente = p.Id  JOIN  Doctor D  ON D.Id = CD.doctor  where CD.recibido = 0";
 
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
 

@@ -89,7 +89,7 @@ namespace InterfazMediCsharp
 
       
         public void LimpiarForm() {
-            txtId.Text = "";
+            
             cmbNombreDoctor.SelectedItem = null;
             cmbPaciente.SelectedItem = null;            
             
