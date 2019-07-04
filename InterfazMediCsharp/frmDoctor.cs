@@ -313,5 +313,10 @@ namespace InterfazMediCsharp
             LimpiarFormulario();
             DesbloquearFormulario();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
