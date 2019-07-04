@@ -22,6 +22,7 @@ namespace MediCsharp
 
         public static List<Consulta> listaConsulta = new List<Consulta>();
 
+
         public static void Agregar(Consulta c)
         {
            
@@ -139,6 +140,7 @@ namespace MediCsharp
             }
         }
 
+       
 
 
 
