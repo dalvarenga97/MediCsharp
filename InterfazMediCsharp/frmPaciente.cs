@@ -163,7 +163,7 @@ namespace InterfazMediCsharp
             txtNombrePaciente.Text = "";
             txtApellidoPaciente.Text = "";
             txtEdad.Text = "";
-            rdbFemenino.Checked = false;
+            rdbFemenino.Checked = true;
             rdbMasculino.Checked = false;
             dtpFechaNacimiento.Value = System.DateTime.Now;
             txtTelefono.Text = "";

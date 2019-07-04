@@ -130,7 +130,7 @@ namespace InterfazMediCsharp
             cmbOrigen.SelectedItem = null;
             txtObservacion.Text = "";
             rdbJarabe.Checked = false;
-            rdbPastillas.Checked = false;
+            rdbPastillas.Checked = true;
             rdbInyectable.Checked = false;
             
 
