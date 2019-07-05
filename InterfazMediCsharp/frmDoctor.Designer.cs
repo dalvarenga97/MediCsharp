@@ -158,9 +158,9 @@
             "V",
             "S",
             "D"});
-            this.clbDiasGuardia.Location = new System.Drawing.Point(159, 277);
+            this.clbDiasGuardia.Location = new System.Drawing.Point(154, 277);
             this.clbDiasGuardia.Name = "clbDiasGuardia";
-            this.clbDiasGuardia.Size = new System.Drawing.Size(65, 106);
+            this.clbDiasGuardia.Size = new System.Drawing.Size(65, 123);
             this.clbDiasGuardia.TabIndex = 21;
             // 
             // pictureBox1
