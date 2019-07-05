@@ -5,7 +5,7 @@ GO
 
 CREATE TABLE [dbo].[Paciente](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[CIPaciente] [varchar](255) NULL,
+	--[CIPaciente] [varchar](255) NULL,
 	[NombrePaciente] [varchar](255) NULL,
 	[ApellidoPaciente] [varchar](255) NULL,
 	[sexo] [int] NULL,
@@ -115,6 +115,7 @@ CREATE TABLE [dbo].[Consulta_Detalle](
 	[Diagnostico] [varchar](50) NULL,
 	[doctor] [int] NULL,
 	[FechaConsuLTA] [datetime] NULL,
+	[recibido] [datetime] NULL,
  CONSTRAINT [PK_Consulta_Detalle] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC

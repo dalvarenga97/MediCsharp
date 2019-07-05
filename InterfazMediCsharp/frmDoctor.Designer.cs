@@ -108,9 +108,9 @@
             // cmbEspecialidad
             // 
             this.cmbEspecialidad.FormattingEnabled = true;
-            this.cmbEspecialidad.Location = new System.Drawing.Point(154, 193);
+            this.cmbEspecialidad.Location = new System.Drawing.Point(151, 195);
             this.cmbEspecialidad.Name = "cmbEspecialidad";
-            this.cmbEspecialidad.Size = new System.Drawing.Size(151, 24);
+            this.cmbEspecialidad.Size = new System.Drawing.Size(155, 24);
             this.cmbEspecialidad.TabIndex = 26;
             // 
             // rdbMasculino
@@ -158,9 +158,9 @@
             "V",
             "S",
             "D"});
-            this.clbDiasGuardia.Location = new System.Drawing.Point(159, 277);
+            this.clbDiasGuardia.Location = new System.Drawing.Point(154, 277);
             this.clbDiasGuardia.Name = "clbDiasGuardia";
-            this.clbDiasGuardia.Size = new System.Drawing.Size(46, 123);
+            this.clbDiasGuardia.Size = new System.Drawing.Size(65, 123);
             this.clbDiasGuardia.TabIndex = 21;
             // 
             // pictureBox1
@@ -177,8 +177,9 @@
             // 
             this.txtTelefono.Location = new System.Drawing.Point(151, 237);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(153, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(155, 22);
             this.txtTelefono.TabIndex = 7;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label9
             // 
@@ -212,6 +213,7 @@
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(153, 22);
             this.txtEdad.TabIndex = 4;
+            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
             // 
             // label5
             // 
@@ -228,6 +230,7 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(153, 22);
             this.txtApellido.TabIndex = 3;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // txtNombre
             // 
@@ -235,6 +238,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(153, 22);
             this.txtNombre.TabIndex = 2;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtId
             // 
@@ -339,7 +343,7 @@
             this.lstDoctor.FormattingEnabled = true;
             this.lstDoctor.Location = new System.Drawing.Point(106, 62);
             this.lstDoctor.Name = "lstDoctor";
-            this.lstDoctor.Size = new System.Drawing.Size(186, 407);
+            this.lstDoctor.Size = new System.Drawing.Size(186, 394);
             this.lstDoctor.TabIndex = 19;
             this.lstDoctor.Click += new System.EventHandler(this.lstDoctor_Click);
             this.lstDoctor.SelectedIndexChanged += new System.EventHandler(this.lstDoctor_SelectedIndexChanged);

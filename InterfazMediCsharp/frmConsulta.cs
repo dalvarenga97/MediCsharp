@@ -20,6 +20,7 @@ namespace InterfazMediCsharp
         public frmConsulta()
         {
             InitializeComponent();
+            //Limpiar();
             LimpiarForm();
             //CargarDT();
         }
@@ -65,6 +66,7 @@ namespace InterfazMediCsharp
             consulta = new Consulta();
             ActualizarDataGrid();
              CargarDT();
+            LimpiarForm();
 
           
             
@@ -94,7 +96,9 @@ namespace InterfazMediCsharp
         public void LimpiarForm() {
             
             cmbNombreDoctor.SelectedItem = null;
-            cmbPaciente.SelectedItem = null;            
+            cmbPaciente.SelectedItem = null;
+            cmbSucursal.SelectedItem = null;
+            cmbTipoUrgencia.SelectedItem = null;           
             
             txtDiagnostico.Text = "";
             
@@ -151,10 +155,12 @@ namespace InterfazMediCsharp
             cmbPaciente.SelectedItem = null;
             cmbNombreDoctor.SelectedItem = null;
 
-
+            dtgDetalleConsulta.DataSource = Consulta.ObtenerConsultasPendientes();
             consulta = new Consulta();
 
-            Limpiar();
+
+
+            LimpiarForm();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -168,6 +174,24 @@ namespace InterfazMediCsharp
             Consulta cd = (Consulta)dtgDetalleConsulta.CurrentRow.DataBoundItem;
             //consulta.detalle_consulta.Remove(cd);
             ActualizarDataGrid();
+        }
+
+        private void txtDiagnostico_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("solo foramto texto");
+            }
         }
     }
 
