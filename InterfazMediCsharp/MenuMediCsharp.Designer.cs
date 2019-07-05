@@ -114,7 +114,7 @@
             // 
             this.consultaToolStripMenuItem.Image = global::InterfazMediCsharp.Properties.Resources.REPOSO;
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.consultaToolStripMenuItem.Text = "Consulta";
             this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
@@ -122,14 +122,15 @@
             // 
             this.reposoToolStripMenuItem.Image = global::InterfazMediCsharp.Properties.Resources.REPOSO;
             this.reposoToolStripMenuItem.Name = "reposoToolStripMenuItem";
-            this.reposoToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.reposoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.reposoToolStripMenuItem.Text = "Reposo";
             this.reposoToolStripMenuItem.Click += new System.EventHandler(this.reposoToolStripMenuItem_Click);
             // 
             // recetaToolStripMenuItem
             // 
+            this.recetaToolStripMenuItem.Image = global::InterfazMediCsharp.Properties.Resources.REPOSO;
             this.recetaToolStripMenuItem.Name = "recetaToolStripMenuItem";
-            this.recetaToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.recetaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.recetaToolStripMenuItem.Text = "Receta";
             this.recetaToolStripMenuItem.Click += new System.EventHandler(this.recetaToolStripMenuItem_Click);
             // 
