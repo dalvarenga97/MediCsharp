@@ -40,6 +40,8 @@
             this.reposoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.investigaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.videoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +50,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mantenimientoToolStripMenuItem,
             this.procesosToolStripMenuItem,
-            this.acercaDeToolStripMenuItem});
+            this.acercaDeToolStripMenuItem,
+            this.investigaciónToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(761, 24);
@@ -114,7 +117,7 @@
             // 
             this.consultaToolStripMenuItem.Image = global::InterfazMediCsharp.Properties.Resources.REPOSO;
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.consultaToolStripMenuItem.Text = "Consulta";
             this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
@@ -122,7 +125,7 @@
             // 
             this.reposoToolStripMenuItem.Image = global::InterfazMediCsharp.Properties.Resources.REPOSO;
             this.reposoToolStripMenuItem.Name = "reposoToolStripMenuItem";
-            this.reposoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.reposoToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.reposoToolStripMenuItem.Text = "Reposo";
             this.reposoToolStripMenuItem.Click += new System.EventHandler(this.reposoToolStripMenuItem_Click);
             // 
@@ -130,7 +133,7 @@
             // 
             this.recetaToolStripMenuItem.Image = global::InterfazMediCsharp.Properties.Resources.REPOSO;
             this.recetaToolStripMenuItem.Name = "recetaToolStripMenuItem";
-            this.recetaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.recetaToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.recetaToolStripMenuItem.Text = "Receta";
             this.recetaToolStripMenuItem.Click += new System.EventHandler(this.recetaToolStripMenuItem_Click);
             // 
@@ -141,6 +144,22 @@
             this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
             this.acercaDeToolStripMenuItem.Text = "Acerca de...";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
+            // 
+            // investigaciónToolStripMenuItem
+            // 
+            this.investigaciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.videoToolStripMenuItem});
+            this.investigaciónToolStripMenuItem.Image = global::InterfazMediCsharp.Properties.Resources.REPOSO;
+            this.investigaciónToolStripMenuItem.Name = "investigaciónToolStripMenuItem";
+            this.investigaciónToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
+            this.investigaciónToolStripMenuItem.Text = "Investigación";
+            // 
+            // videoToolStripMenuItem
+            // 
+            this.videoToolStripMenuItem.Name = "videoToolStripMenuItem";
+            this.videoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.videoToolStripMenuItem.Text = "Video";
+            this.videoToolStripMenuItem.Click += new System.EventHandler(this.videoToolStripMenuItem_Click_1);
             // 
             // frmMenu
             // 
@@ -177,5 +196,7 @@
         private System.Windows.Forms.ToolStripMenuItem reposoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem recetaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem investigaciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem videoToolStripMenuItem;
     }
 }

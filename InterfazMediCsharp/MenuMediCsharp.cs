@@ -72,5 +72,17 @@ namespace InterfazMediCsharp
             frmReceta form = new frmReceta();
             form.Show();
         }
+
+        private void videoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVideo form = new frmVideo();
+            form.Show();
+        }
+
+        private void videoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frmVideo form = new frmVideo();
+            form.Show();
+        }
     }
 }
