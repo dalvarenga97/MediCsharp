@@ -145,17 +145,21 @@ namespace InterfazMediCsharp
             dd.Sucursal = (Sucursal)cmbSucursal.SelectedItem;
             dd.tipourgencia = (TipoUrgencia)cmbTipoUrgencia.SelectedItem;
             consulta.detalle_consulta.Add(dd);
+
             ActualizarDataGrid();
+            
             consulta.paciente = (Paciente)cmbPaciente.SelectedItem;
             consulta.doctor = (Doctor)cmbNombreDoctor.SelectedItem;
             Consulta.Agregar(consulta);
             MessageBox.Show("La Consulta ha sido guardado con éxito");
+
             Limpiar();
             //dtgDetalleConsulta.DataSource = null;
             cmbPaciente.SelectedItem = null;
             cmbNombreDoctor.SelectedItem = null;
 
             dtgDetalleConsulta.DataSource = Consulta.ObtenerConsultasPendientes();
+            CargarDT();
             consulta = new Consulta();
 
 

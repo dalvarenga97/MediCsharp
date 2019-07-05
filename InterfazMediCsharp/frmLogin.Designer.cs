@@ -43,11 +43,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Script MT Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(70, 69);
+            this.label1.Location = new System.Drawing.Point(94, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 25);
+            this.label1.Size = new System.Drawing.Size(87, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Usuario:";
             // 
@@ -55,11 +55,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Script MT Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(70, 113);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 25);
+            this.label2.Size = new System.Drawing.Size(112, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Contraseña:";
             // 
@@ -107,7 +107,7 @@
             this.ptbcregistrausuario.ImageLocation = "";
             this.ptbcregistrausuario.InitialImage = null;
             this.ptbcregistrausuario.Location = new System.Drawing.Point(355, 74);
-            this.ptbcregistrausuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ptbcregistrausuario.Margin = new System.Windows.Forms.Padding(2);
             this.ptbcregistrausuario.Name = "ptbcregistrausuario";
             this.ptbcregistrausuario.Size = new System.Drawing.Size(82, 88);
             this.ptbcregistrausuario.TabIndex = 7;

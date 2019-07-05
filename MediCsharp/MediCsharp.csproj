@@ -43,6 +43,7 @@
     <Compile Include="Consulta.cs" />
     <Compile Include="ConsultaDetalle.cs" />
     <Compile Include="DetalleReceta.cs" />
+    <Compile Include="DetalleReposo.cs" />
     <Compile Include="Doctor.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Medicamento.cs" />

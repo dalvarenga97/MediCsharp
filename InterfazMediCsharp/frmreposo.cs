@@ -17,9 +17,11 @@ namespace InterfazMediCsharp
         public frmreposo()
         {
             InitializeComponent();
-            LimpiarForm();
-            ActualizarDataGrid();
+            Limpiar();
+            
         }
+
+
 
         private void frmreposo_Load(object sender, EventArgs e)
         {
@@ -28,87 +30,96 @@ namespace InterfazMediCsharp
             reposo = new Reposo();
             dtgReposo.AutoGenerateColumns = true;
 
-            ActualizarDataGrid();
+            
+
         }
 
         private void ActualizarDataGrid()
         {
             dtgReposo.DataSource = null;
-            dtgReposo.DataSource = Reposo.listaReposo;
+            dtgReposo.DataSource = reposo.detalle_reposo;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Reposo rp = new Reposo();
-           // rp.Id = txtId.Text;
+           
             rp.doctor = (Doctor)cmbDoctor.SelectedItem;
             rp.paciente = (Paciente)cmbPaciente.SelectedItem;
-           // rp.CantidadDias = txtCantidadDias.Text;
+          
             Reposo.listaReposo.Add(rp);
 
             ActualizarDataGrid();
-            LimpiarForm();
+            Limpiar();
         }
 
-        public void LimpiarForm()
+        public void Limpiar()
         {
-            txtId.Text = "";
+           
             cmbDoctor.SelectedItem = null;
             cmbPaciente.SelectedItem = null;
-            txtCantidadDias.Text = "";
+            txtCantidad.Text = "";
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Reposo reposo = (Reposo)dtgReposo.CurrentRow.DataBoundItem;
-            if (reposo != null)
+
             {
-                Reposo.listaReposo.Remove(reposo);
+                DetalleReposo dr = (DetalleReposo)dtgReposo.CurrentRow.DataBoundItem;
+                if (dr != null)
+                {
+                    reposo.detalle_reposo.Remove(dr);
+                }
+                ActualizarDataGrid();
             }
-            ActualizarDataGrid();
-            LimpiarForm();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            LimpiarForm();
+            Limpiar();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Reposo.AgregarReposo(reposo);
+            Reposo.Agregar(reposo);
             MessageBox.Show("El reposo se guardó con Exito!!");
-            LimpiarForm();
+            Limpiar();
             dtgReposo.DataSource = null;
             cmbDoctor.SelectedItem = null;
             cmbPaciente.SelectedItem = null;
             reposo = new Reposo();
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
+     
 
+      
+
+        private void btnAgregar_Click_1(object sender, EventArgs e)
+        {
+            DetalleReposo dr = new DetalleReposo();
+
+            dr.cantidad = Convert.ToString(txtCantidad.Text);
+            dr.paciente = (Paciente)cmbPaciente.SelectedItem;
+            dr.doctor = (Doctor)cmbDoctor.SelectedItem;
+            reposo.detalle_reposo.Add(dr);
+            ActualizarDataGrid();
         }
 
-        private void txtCantidadDias_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-                MessageBox.Show("solo foramto Numero");
-            }
+
+            reposo.paciente = (Paciente)cmbPaciente.SelectedItem;
+            reposo.cantidad = txtCantidad.Text;
+            reposo.doctor = (Doctor)cmbDoctor.SelectedItem;
+
+            Reposo.Agregar(reposo);
+            MessageBox.Show("El Reposo ha sido guardado con éxito");
+            Limpiar();
+            dtgReposo.DataSource = null;
+            cmbPaciente.SelectedItem = null;
+            cmbDoctor.SelectedItem = null;
+
+            reposo = new Reposo();
         }
     }
 }
