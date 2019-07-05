@@ -29,6 +29,7 @@ namespace InterfazMediCsharp
             dtgDetalleConsulta.DataSource = CargarData1();
         }
 
+      
         private object CargarData1()
         {
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
@@ -45,6 +46,8 @@ namespace InterfazMediCsharp
             }
 
         }
+
+
 
         private void frmConsulta_Load(object sender, EventArgs e)
         {

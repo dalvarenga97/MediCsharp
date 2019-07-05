@@ -155,6 +155,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAcercade";
+            this.Opacity = 0.8D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "..: SISTEMA DE GESTION HOSPITALARIO - MEDICSHARP :..";
             this.ResumeLayout(false);

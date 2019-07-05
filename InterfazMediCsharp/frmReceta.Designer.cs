@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gpbMedicamento = new System.Windows.Forms.GroupBox();
+            this.cmbPaciente = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnEliminarReceta = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.cmbConsulta = new System.Windows.Forms.ComboBox();
             this.gpbMedicamento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleReceta)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +49,7 @@
             // gpbMedicamento
             // 
             this.gpbMedicamento.BackColor = System.Drawing.Color.Transparent;
-            this.gpbMedicamento.Controls.Add(this.cmbConsulta);
+            this.gpbMedicamento.Controls.Add(this.cmbPaciente);
             this.gpbMedicamento.Controls.Add(this.label1);
             this.gpbMedicamento.Controls.Add(this.label3);
             this.gpbMedicamento.Controls.Add(this.btnEliminarReceta);
@@ -68,14 +68,22 @@
             this.gpbMedicamento.Text = "Receta";
             this.gpbMedicamento.Enter += new System.EventHandler(this.gpbMedicamento_Enter);
             // 
+            // cmbPaciente
+            // 
+            this.cmbPaciente.FormattingEnabled = true;
+            this.cmbPaciente.Location = new System.Drawing.Point(156, 23);
+            this.cmbPaciente.Name = "cmbPaciente";
+            this.cmbPaciente.Size = new System.Drawing.Size(148, 24);
+            this.cmbPaciente.TabIndex = 35;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 28);
+            this.label1.Location = new System.Drawing.Point(77, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 16);
+            this.label1.Size = new System.Drawing.Size(73, 16);
             this.label1.TabIndex = 34;
-            this.label1.Text = "Codigo Consulta:";
+            this.label1.Text = "Paciente:";
             // 
             // label3
             // 
@@ -151,11 +159,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Script MT Bold", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(255, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 33);
+            this.label2.Size = new System.Drawing.Size(94, 35);
             this.label2.TabIndex = 18;
             this.label2.Text = "Receta";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -179,14 +187,7 @@
             this.btnAgregar.TabIndex = 19;
             this.btnAgregar.Text = "Guardar";
             this.btnAgregar.UseVisualStyleBackColor = true;
-            // 
-            // cmbConsulta
-            // 
-            this.cmbConsulta.FormattingEnabled = true;
-            this.cmbConsulta.Location = new System.Drawing.Point(158, 23);
-            this.cmbConsulta.Name = "cmbConsulta";
-            this.cmbConsulta.Size = new System.Drawing.Size(148, 24);
-            this.cmbConsulta.TabIndex = 35;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // frmReceta
             // 
@@ -213,8 +214,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gpbMedicamento;
-        private System.Windows.Forms.Button btnEliminarReceta;
-        private System.Windows.Forms.Button btnAgregarReceta;
         private System.Windows.Forms.DataGridView dtgDetalleReceta;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label11;
@@ -225,6 +224,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.ComboBox cmbConsulta;
+        private System.Windows.Forms.ComboBox cmbPaciente;
+        private System.Windows.Forms.Button btnEliminarReceta;
+        private System.Windows.Forms.Button btnAgregarReceta;
     }
 }

@@ -10,7 +10,7 @@ namespace MediCsharp
     {
 
         //public static string CADENA_CONEXION = "Data Source = LOCALHOST; Initial Catalog = MediCsharp; Integrated Security=true";
-        public static string CADENA_CONEXION = "Data Source = DESKTOP-GV3FFMK\\SQLEXPRESS; Initial Catalog = MediCsharp; Integrated Security=true";
+        public static string CADENA_CONEXION = "Data Source = LOCALHOST; Initial Catalog = MediCsharp; Integrated Security=true";
 
     }
 }

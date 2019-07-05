@@ -10,11 +10,14 @@ namespace MediCsharp
 {
     public class DetalleReceta
     {
-        public Medicamento NombreMedicamento { get; set; }
+        public Medicamento medicamento { get; set; }
 
-        public Consulta Id { get; set; }
-       
-        public Int16 Cantidad { get; set; }
+        public Paciente paciente { get; set; }
+
+
+
+
+        public string cantidad { get; set; }
 
 
     }

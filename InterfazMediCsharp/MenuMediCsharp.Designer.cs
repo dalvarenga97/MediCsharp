@@ -38,8 +38,8 @@
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reposoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,7 +114,7 @@
             // 
             this.consultaToolStripMenuItem.Image = global::InterfazMediCsharp.Properties.Resources.REPOSO;
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.consultaToolStripMenuItem.Text = "Consulta";
             this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
@@ -122,9 +122,16 @@
             // 
             this.reposoToolStripMenuItem.Image = global::InterfazMediCsharp.Properties.Resources.REPOSO;
             this.reposoToolStripMenuItem.Name = "reposoToolStripMenuItem";
-            this.reposoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.reposoToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.reposoToolStripMenuItem.Text = "Reposo";
             this.reposoToolStripMenuItem.Click += new System.EventHandler(this.reposoToolStripMenuItem_Click);
+            // 
+            // recetaToolStripMenuItem
+            // 
+            this.recetaToolStripMenuItem.Name = "recetaToolStripMenuItem";
+            this.recetaToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.recetaToolStripMenuItem.Text = "Receta";
+            this.recetaToolStripMenuItem.Click += new System.EventHandler(this.recetaToolStripMenuItem_Click);
             // 
             // acercaDeToolStripMenuItem
             // 
@@ -133,13 +140,6 @@
             this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
             this.acercaDeToolStripMenuItem.Text = "Acerca de...";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
-            // 
-            // recetaToolStripMenuItem
-            // 
-            this.recetaToolStripMenuItem.Name = "recetaToolStripMenuItem";
-            this.recetaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.recetaToolStripMenuItem.Text = "Receta";
-            this.recetaToolStripMenuItem.Click += new System.EventHandler(this.recetaToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -153,7 +153,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMenu";
-            this.Opacity = 0.9D;
             this.Text = "..:SISTEMA HOSPITALARIO MEDICSHARP:..";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMenu_Load);

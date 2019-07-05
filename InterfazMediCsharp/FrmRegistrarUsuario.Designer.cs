@@ -40,30 +40,32 @@
             // lblusuario
             // 
             this.lblusuario.AutoSize = true;
-            this.lblusuario.Location = new System.Drawing.Point(13, 36);
-            this.lblusuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblusuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblusuario.Font = new System.Drawing.Font("Script MT Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblusuario.Location = new System.Drawing.Point(39, 29);
             this.lblusuario.Name = "lblusuario";
-            this.lblusuario.Size = new System.Drawing.Size(61, 17);
+            this.lblusuario.Size = new System.Drawing.Size(87, 25);
             this.lblusuario.TabIndex = 3;
             this.lblusuario.Text = "Usuario:";
             // 
             // lblpassword
             // 
             this.lblpassword.AutoSize = true;
-            this.lblpassword.Location = new System.Drawing.Point(13, 104);
-            this.lblpassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblpassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblpassword.Font = new System.Drawing.Font("Script MT Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpassword.Location = new System.Drawing.Point(20, 84);
             this.lblpassword.Name = "lblpassword";
-            this.lblpassword.Size = new System.Drawing.Size(73, 17);
+            this.lblpassword.Size = new System.Drawing.Size(103, 25);
             this.lblpassword.TabIndex = 4;
             this.lblpassword.Text = "Password:";
             // 
             // btnSalir
             // 
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSalir.Location = new System.Drawing.Point(189, 198);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.Location = new System.Drawing.Point(200, 170);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(100, 28);
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 31;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -71,11 +73,11 @@
             // 
             // btnRegistrar
             // 
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnRegistrar.Location = new System.Drawing.Point(33, 198);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRegistrar.Location = new System.Drawing.Point(91, 170);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(100, 28);
+            this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
             this.btnRegistrar.TabIndex = 30;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
@@ -83,26 +85,28 @@
             // 
             // txtusuario
             // 
-            this.txtusuario.Location = new System.Drawing.Point(116, 36);
+            this.txtusuario.Location = new System.Drawing.Point(142, 35);
+            this.txtusuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(142, 22);
+            this.txtusuario.Size = new System.Drawing.Size(108, 20);
             this.txtusuario.TabIndex = 32;
             // 
             // txtpassword
             // 
-            this.txtpassword.Location = new System.Drawing.Point(116, 99);
+            this.txtpassword.Location = new System.Drawing.Point(142, 89);
+            this.txtpassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.PasswordChar = '*';
-            this.txtpassword.Size = new System.Drawing.Size(142, 22);
+            this.txtpassword.Size = new System.Drawing.Size(108, 20);
             this.txtpassword.TabIndex = 33;
             // 
             // FrmRegistrarUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.PARA_FONDO;
-            this.ClientSize = new System.Drawing.Size(526, 317);
+            this.ClientSize = new System.Drawing.Size(394, 258);
             this.Controls.Add(this.txtpassword);
             this.Controls.Add(this.txtusuario);
             this.Controls.Add(this.btnSalir);
@@ -110,6 +114,7 @@
             this.Controls.Add(this.lblpassword);
             this.Controls.Add(this.lblusuario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmRegistrarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Usuario";

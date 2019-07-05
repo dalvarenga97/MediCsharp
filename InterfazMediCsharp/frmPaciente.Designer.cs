@@ -63,11 +63,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Script MT Bold", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(292, 9);
+            this.label1.Location = new System.Drawing.Point(298, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 33);
+            this.label1.Size = new System.Drawing.Size(112, 35);
             this.label1.TabIndex = 0;
             this.label1.Text = "Paciente";
             // 
@@ -307,7 +307,7 @@
             // 
             this.lstPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstPaciente.FormattingEnabled = true;
-            this.lstPaciente.Location = new System.Drawing.Point(107, 57);
+            this.lstPaciente.Location = new System.Drawing.Point(107, 69);
             this.lstPaciente.Name = "lstPaciente";
             this.lstPaciente.Size = new System.Drawing.Size(186, 342);
             this.lstPaciente.TabIndex = 14;

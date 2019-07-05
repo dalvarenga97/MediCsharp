@@ -36,24 +36,49 @@ namespace InterfazMediCsharp
 
         private void btnAgregarReceta_Click(object sender, EventArgs e)
         {
-            Receta rc = new Receta();
-           
-            rc.cantidad = Convert.ToInt16(txtCantidad.Text);
-            rc.medicamento = (Medicamento)cmbMedicamento.SelectedItem;
-            //receta.detalle_medicamento.Add(dm);
-          // ActualizarDataGrid();
-            //LimpiarReceta();
+            DetalleReceta dc = new DetalleReceta();
+
+            dc.cantidad = Convert.ToString(txtCantidad.Text);
+            dc.paciente = (Paciente)cmbPaciente.SelectedItem;
+            dc.medicamento = (Medicamento)cmbMedicamento.SelectedItem;
+            receta.detalle_receta.Add(dc);
+            ActualizarDataGrid();
+
+            
+
+
+        }
+
+
+
+        private void Limpiar()
+        {
+            
+            cmbPaciente.SelectedItem = null;
+            cmbMedicamento.SelectedItem = null;
+            txtCantidad.Text = "";
+            
+
+
+        }
+
+        private void ActualizarDataGrid()
+        {
+            dtgDetalleReceta.DataSource = null;
+            dtgDetalleReceta.DataSource = receta.detalle_receta;
+
         }
 
         private void btnEliminarReceta_Click(object sender, EventArgs e)
         {
-            DetalleReceta dtm = (DetalleReceta)dtgDetalleReceta.CurrentRow.DataBoundItem;
-            if (dtm != null)
             {
-               // consulta.detalle_medicamento.Remove(dtm);
+                DetalleReceta dd = (DetalleReceta)dtgDetalleReceta.CurrentRow.DataBoundItem;
+                if (dd != null)
+                {
+                    receta.detalle_receta.Remove(dd);
+                }
+                ActualizarDataGrid();
             }
-          //  ActualizarDataGrid();
-           // LimpiarReceta();
         }
 
         private void dtgDetalleMedicamento_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -63,37 +88,38 @@ namespace InterfazMediCsharp
 
         private void frmReceta_Load(object sender, EventArgs e)
         {
+            
             cmbMedicamento.DataSource = Medicamento.ObtenerMedicamento();
+            cmbPaciente.DataSource = Paciente.ObtenerPacientes();
+            receta = new Receta();
+            dtgDetalleReceta.AutoGenerateColumns = true;
+           
 
-
-
-            using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
-            {
-                con.Open();
-
-                {
-                    //SqlCommand cmd = new SqlCommand(@"select consulta_id from //Consulta_Detalle", con);
-                    string sql = " select consulta_id from Consulta_Detalle";
-
-                    SqlCommand com = new SqlCommand(sql, con);
-                    SqlDataAdapter da = new SqlDataAdapter(com);
-                    DataTable factura = new DataTable();
-                    try
-                    {
-                        da.Fill(factura);
-                        cmbConsulta.DataSource = factura;
-                        cmbConsulta.DisplayMember = "consulta_id";
-                        cmbConsulta.ValueMember = "consulta_id";
-
-                    }
-                    catch { throw new Exception("Error en el ID."); }
-
-                }
-            }
 
         }
 
-       
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+           
+            receta.paciente = (Paciente)cmbPaciente.SelectedItem;
+            receta.cantidad = txtCantidad.Text;
+            receta.medicamento = (Medicamento)cmbMedicamento.SelectedItem;
+           
+            Receta.Agregar(receta);
+            MessageBox.Show("La Receta ha sido guardada con éxito");
+            Limpiar();
+            dtgDetalleReceta.DataSource = null;
+           cmbPaciente.SelectedItem = null;
+            cmbMedicamento.SelectedItem = null;
+
+            receta = new Receta();
+
         }
     }
+
+
+        
+
+    }
+    
 
