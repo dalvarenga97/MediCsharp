@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPaciente));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.cmbEstadoCivil = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
@@ -67,16 +67,16 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(292, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 33);
+            this.label1.Size = new System.Drawing.Size(172, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "Paciente";
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.cmbEstadoCivil);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.dtpFechaNacimiento);
             this.groupBox1.Controls.Add(this.label9);
@@ -100,12 +100,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(180, 37);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(153, 26);
+            this.txtId.TabIndex = 29;
+            // 
             // cmbEstadoCivil
             // 
             this.cmbEstadoCivil.FormattingEnabled = true;
             this.cmbEstadoCivil.Location = new System.Drawing.Point(178, 316);
             this.cmbEstadoCivil.Name = "cmbEstadoCivil";
-            this.cmbEstadoCivil.Size = new System.Drawing.Size(151, 24);
+            this.cmbEstadoCivil.Size = new System.Drawing.Size(155, 28);
             this.cmbEstadoCivil.TabIndex = 28;
             // 
             // label10
@@ -113,17 +121,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(45, 37);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(127, 16);
+            this.label10.Size = new System.Drawing.Size(152, 20);
             this.label10.TabIndex = 27;
             this.label10.Text = "Codigo Paciente:";
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(178, 37);
-            this.txtId.Name = "txtId";
-            this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(153, 22);
-            this.txtId.TabIndex = 26;
             // 
             // pictureBox1
             // 
@@ -141,7 +141,7 @@
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(178, 238);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(155, 22);
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(155, 26);
             this.dtpFechaNacimiento.TabIndex = 7;
             // 
             // label9
@@ -149,7 +149,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(35, 238);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(137, 16);
+            this.label9.Size = new System.Drawing.Size(166, 20);
             this.label9.TabIndex = 22;
             this.label9.Text = "Fecha Nacimiento:";
             // 
@@ -159,7 +159,7 @@
             this.rdbMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbMasculino.Location = new System.Drawing.Point(272, 195);
             this.rdbMasculino.Name = "rdbMasculino";
-            this.rdbMasculino.Size = new System.Drawing.Size(82, 17);
+            this.rdbMasculino.Size = new System.Drawing.Size(101, 21);
             this.rdbMasculino.TabIndex = 6;
             this.rdbMasculino.Text = "Masculino";
             this.rdbMasculino.UseVisualStyleBackColor = true;
@@ -171,7 +171,7 @@
             this.rdbFemenino.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbFemenino.Location = new System.Drawing.Point(187, 195);
             this.rdbFemenino.Name = "rdbFemenino";
-            this.rdbFemenino.Size = new System.Drawing.Size(79, 17);
+            this.rdbFemenino.Size = new System.Drawing.Size(99, 21);
             this.rdbFemenino.TabIndex = 5;
             this.rdbFemenino.TabStop = true;
             this.rdbFemenino.Text = "Femenino";
@@ -181,36 +181,40 @@
             // 
             this.txtTelefono.Location = new System.Drawing.Point(178, 279);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(153, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(155, 26);
             this.txtTelefono.TabIndex = 8;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtEdad
             // 
             this.txtEdad.Location = new System.Drawing.Point(178, 162);
             this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(153, 22);
+            this.txtEdad.Size = new System.Drawing.Size(153, 26);
             this.txtEdad.TabIndex = 4;
+            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
             // 
             // txtApellidoPaciente
             // 
             this.txtApellidoPaciente.Location = new System.Drawing.Point(178, 121);
             this.txtApellidoPaciente.Name = "txtApellidoPaciente";
-            this.txtApellidoPaciente.Size = new System.Drawing.Size(153, 22);
+            this.txtApellidoPaciente.Size = new System.Drawing.Size(153, 26);
             this.txtApellidoPaciente.TabIndex = 3;
+            this.txtApellidoPaciente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoPaciente_KeyPress);
             // 
             // txtNombrePaciente
             // 
             this.txtNombrePaciente.Location = new System.Drawing.Point(178, 81);
             this.txtNombrePaciente.Name = "txtNombrePaciente";
-            this.txtNombrePaciente.Size = new System.Drawing.Size(153, 22);
+            this.txtNombrePaciente.Size = new System.Drawing.Size(153, 26);
             this.txtNombrePaciente.TabIndex = 2;
+            this.txtNombrePaciente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombrePaciente_KeyPress);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(77, 319);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 16);
+            this.label8.Size = new System.Drawing.Size(116, 20);
             this.label8.TabIndex = 6;
             this.label8.Text = "Estado Civil:";
             // 
@@ -219,7 +223,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(123, 162);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 16);
+            this.label7.Size = new System.Drawing.Size(57, 20);
             this.label7.TabIndex = 5;
             this.label7.Text = "Edad:";
             // 
@@ -228,7 +232,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(98, 279);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 16);
+            this.label6.Size = new System.Drawing.Size(87, 20);
             this.label6.TabIndex = 4;
             this.label6.Text = "Telefono:";
             // 
@@ -237,7 +241,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(125, 195);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 16);
+            this.label5.Size = new System.Drawing.Size(56, 20);
             this.label5.TabIndex = 3;
             this.label5.Text = "Sexo:";
             // 
@@ -246,7 +250,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(102, 121);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 16);
+            this.label3.Size = new System.Drawing.Size(82, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "Apellido:";
             // 
@@ -255,7 +259,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(105, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 16);
+            this.label2.Size = new System.Drawing.Size(80, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Nombre:";
             // 
@@ -307,9 +311,10 @@
             // 
             this.lstPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstPaciente.FormattingEnabled = true;
+            this.lstPaciente.ItemHeight = 17;
             this.lstPaciente.Location = new System.Drawing.Point(107, 57);
             this.lstPaciente.Name = "lstPaciente";
-            this.lstPaciente.Size = new System.Drawing.Size(186, 342);
+            this.lstPaciente.Size = new System.Drawing.Size(186, 327);
             this.lstPaciente.TabIndex = 14;
             this.lstPaciente.Click += new System.EventHandler(this.lstPaciente_Click);
             this.lstPaciente.SelectedIndexChanged += new System.EventHandler(this.lstPaciente_SelectedIndexChanged);
@@ -326,7 +331,7 @@
             // 
             // frmPaciente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InterfazMediCsharp.Properties.Resources.PARA_FONDO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -378,8 +383,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListBox lstPaciente;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.ComboBox cmbEstadoCivil;
+        private System.Windows.Forms.TextBox txtId;
     }
 }

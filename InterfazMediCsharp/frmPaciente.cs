@@ -163,7 +163,7 @@ namespace InterfazMediCsharp
             txtNombrePaciente.Text = "";
             txtApellidoPaciente.Text = "";
             txtEdad.Text = "";
-            rdbFemenino.Checked = false;
+            rdbFemenino.Checked = true;
             rdbMasculino.Checked = false;
             dtpFechaNacimiento.Value = System.DateTime.Now;
             txtTelefono.Text = "";
@@ -295,6 +295,86 @@ namespace InterfazMediCsharp
         private void lstPaciente_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtNombrePaciente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("solo foramto texto");
+            }
+        }
+
+        private void txtApellidoPaciente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("solo foramto texto");
+            }
+
+        }
+
+        private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("solo foramto Numero");
+            }
+
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("solo foramto Numero");
+            }
         }
     }
 

@@ -130,7 +130,7 @@ namespace InterfazMediCsharp
             cmbOrigen.SelectedItem = null;
             txtObservacion.Text = "";
             rdbJarabe.Checked = false;
-            rdbPastillas.Checked = false;
+            rdbPastillas.Checked = true;
             rdbInyectable.Checked = false;
             
 
@@ -275,6 +275,60 @@ namespace InterfazMediCsharp
             modo = "I";
             LimpiarFormulario();
             DesbloquearFormulario();
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("solo foramto texto");
+            }
+        }
+
+        private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("solo foramto texto");
+            }
+        }
+
+        private void txtObservacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //if (Char.IsLetter(e.KeyChar))
+            //{
+            //    e.Handled = false;
+            //}
+
+            //else if (Char.IsControl(e.KeyChar))
+            //{
+            //    e.Handled = false;
+            //}
+            //else
+            //{
+            //    e.Handled = true;
+            //    MessageBox.Show("solo foramto texto");
+            //}
         }
     }
     
